@@ -44,7 +44,7 @@ function App() {
           >
             <div className="fixedPart">
               <SocialLinks socialLinks={personData.socialLinks}/>
-              <Footer personName={personData.name} />
+              <Footer name={personData.name} email={personData.email}/>
             </div>
           </div>
         </div>

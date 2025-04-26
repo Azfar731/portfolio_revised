@@ -1,13 +1,21 @@
-import "./Footer.css"
+import "./Footer.css";
 
-export default function Footer(props){
-    return (
-        <div id="Footer">
-            <div className="nameEmail">
-                <span className="footer name">{props.personName}</span>
-                <div className="email animated-underline">azfarrazzaq23@gmail.com</div>
-            </div>
-            <span>Azfar Razzaq  {"©"}  All Rights Reserved</span>
-        </div>
-    )
+export default function Footer({
+  name,
+  email,
+}: {
+  name: string;
+  email: string;
+}) {
+  return (
+    <div id="Footer">
+      <div className="nameEmail">
+        <span className="footer name">{name}</span>
+        <div className="email animated-underline">{email}</div>
+      </div>
+      <span>
+        {name} {"©"} All Rights Reserved
+      </span>
+    </div>
+  );
 }
