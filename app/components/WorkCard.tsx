@@ -1,8 +1,16 @@
 import { useState } from "react";
 import "./WorkCard.css";
-import arrow from "/src/assets/icons8-arrow-32.png";
-import Flag from "react-world-flags";
-export default function WorkCard({ title, project_image, project_url }) {
+import arrow from "~/assets/icons8-arrow-32.png";
+// import Flag from "react-world-flags";
+export default function WorkCard({
+  title,
+  project_image,
+  project_url,
+}: {
+  title: string;
+  project_image: string;
+  project_url: string;
+}) {
   const [isHovering, setIsHovering] = useState(false);
 
   const workCardInfostyles = {
@@ -89,7 +97,7 @@ export default function WorkCard({ title, project_image, project_url }) {
           </div>
           <div className="workCardLocation">
             {/* <img src={flag} alt="usa flag" className="locationFlag" /> */}
-            <Flag code={"PK"} className="locationFlag" />
+            {/* <Flag code={"PK"} className="locationFlag" /> */}
             <span className="locationText">Pakistan</span>
           </div>
           <div className="workCardPartners">

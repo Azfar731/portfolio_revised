@@ -1,6 +1,6 @@
 import "./Technologies.css";
-import globe from "/src/assets/globe.png";
-import globe2 from "/src/assets/globe2.png";
+import globe from "~/assets/globe.png";
+import globe2 from "~/assets/globe2.png";
 import Technology from "./Technology";
 import { useScroll } from "framer-motion";
 import { useRef } from "react";

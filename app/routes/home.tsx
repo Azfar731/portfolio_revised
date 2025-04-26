@@ -11,7 +11,7 @@ import Technologies from "../components/Technologies";
 import LoadingScreen from "../components/LoadingScreen";
 import personData from "../data/personalData.json";
 
-function App() {
+export default function  Home() {
   const [currentSection, setCurrentSection] = useState("");
   const [hasDataLoaded, setHasDataLoaded] = useState(true);
 
@@ -53,4 +53,4 @@ function App() {
   );
 }
 
-export default App;
+

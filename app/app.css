@@ -4,12 +4,114 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+* {
+  margin: 0;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.7vw;
+  position: relative;
+  /* box-sizing: border-box; */
+}
 
-html,
+html {
+  scroll-behavior: smooth; /* CSS property for smooth scrolling */
+}
+
 body {
-  @apply bg-white dark:bg-gray-950;
+  position: relative;
+  z-index: -7;
+  background-color: #010405;
+}
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
+.loadingScreen {
+  /* background-color: red; */
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#root {
+  position: relative;
+  z-index: -6;
+}
+.appPage {
+  position: relative;
+  z-index: -4;
+}
+
+.scrollablePart {
+  z-index: 0;
+  background: #010405;
+}
+
+.transparentDiv {
+  position: relative;
+  background: transparent;
+  height: 50vh;
+  z-index: -5;
+}
+
+.fixedPart {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: -3;
+  width: 100%;
+  height: 50vh;
+  background: #010405;
+}
+
+#infoSection {
+  position: relative;
+  max-width: 100%;
+  margin-top: 50px;
+  z-index: 2;
+}
+
+/* global classes*/
+
+.smallText {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.4rem;
+  background: linear-gradient(90deg, #19eada, #14fdb1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+}
+
+.h2Titles {
+  font-size: 14rem;
+  font-weight: normal;
+}
+
+.radialGradient {
+  position: absolute;
+  z-index: 1;
+}
+
+.rightBorder {
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.centered {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  * {
+    font-size: 0.9vw;
   }
 }

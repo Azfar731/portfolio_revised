@@ -1,5 +1,5 @@
 import "./WhatsAppButton.css";
-import whatsappLogo from "/src/assets/whatsappLogo.png";
+import whatsappLogo from "~/assets/whatsappLogo.png";
 
 export default function WhatsAppButton() {
   return (

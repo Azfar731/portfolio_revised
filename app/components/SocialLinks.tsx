@@ -1,5 +1,5 @@
 import "./SocialLinks.css";
-import arrow from "/src/assets/icons8-arrow-32.png";
+import arrow from "~/assets/icons8-arrow-32.png";
 export default function SocialLinks({
   socialLinks,
 }: {
