@@ -1,9 +1,9 @@
 import "./Nav.css";
 
-export default function Nav(props) {
+export default function Nav({name}: {name: string}) {
   return (
     <nav>
-      <span>{props.personName}</span>
+      <span>{name}</span>
       <a
         href="https://wa.me/923134549126"
         target="_blank"

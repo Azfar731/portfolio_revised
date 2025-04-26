@@ -5,42 +5,18 @@ import AboutMe from '~/components/AboutMe'
 import RecentWork from '../components/RecentWork'
 import Services from '../components/Services'
 import SocialLinks from '../components/SocialLinks'
-import { personCollection } from '../firebase' 
 import ScrollingText from '../components/ScrollingText'
 import Footer from '../layout/Footer'
 import Technologies from '../components/Technologies'
 import LoadingScreen from '../components/LoadingScreen'
-
+import personData from "../data/personalData.json"
 
 
 function App() {
   const [currentSection,setCurrentSection] = useState("")
-  const [personData, setPersonData] = useState({})
-  const[hasDataLoaded, setHasDataLoaded] = useState(false)
-
-  const handleSectionChange = (id)=>{
-    if(id !== currentSection){
-      setCurrentSection(id)
-    }
-  }
+  const[hasDataLoaded, setHasDataLoaded] = useState(true)
 
   
-
-
-  useEffect(()=>{
-    const unsubscribe = onSnapshot(personCollection, (snapshot) =>{
-      const docArray = snapshot.docs
-      const snapshotData = docArray[0].data() //we only have one element
-      setPersonData(snapshotData)
-      setHasDataLoaded(() =>{
-        console.log("data loaded")
-        return true
-      })
-    } )
-
-    return unsubscribe;
-  }, [])
-
   
   return (
   <>

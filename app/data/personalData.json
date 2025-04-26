@@ -1,4 +1,11 @@
 {
+  "name": "Azfar Razzaq",
+
+  "introContent": {
+    "jobTitle": "Full Stack Web and Web3 Developer",
+    "sellingPoint": "Agency-level web development services at freelancer rates",
+    "missionStatement": "My mission is to design and develop a website that you and your audience love."
+  },
   "aboutMeList": [
     "Dedicated to crafting seamless front-end experiences using React, focusing on clarity, responsiveness, and intuitive design.",
     "Passionate about cybersecurity, implementing secure coding practices, encryption, and protocols to protect user data.",
