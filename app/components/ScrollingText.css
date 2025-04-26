@@ -1,0 +1,22 @@
+
+.scrollingTextContainer{
+    overflow: hidden;
+    white-space: pre;
+    background-color: #13e5a1;
+}
+
+.scrollingText{
+    font-size: 30rem;
+    display: inline-block;
+    animation: 10s scroller infinite linear;
+    color: black;
+}
+
+
+@keyframes scroller {
+    from {
+        transform: translateX(0);
+    } to {
+        transform: translateX(-100%);
+    }
+}

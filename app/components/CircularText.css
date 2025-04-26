@@ -1,0 +1,48 @@
+
+.circularTextContainer{
+    height: 15rem;
+    width: 15rem;
+    display: grid; 
+    place-items: center;
+    background: linear-gradient(to bottom left, #020b0b, #072728);;
+    border-radius: 50%;
+    position: relative;
+}
+
+.circularTextContainer > img {
+    position: absolute;
+    transform: rotate(180deg);
+}
+
+.circularText{ 
+  height: 13rem; 
+  font-size: 1.2rem;
+  animation: circle 10s linear infinite;
+
+}
+
+.circularText > span {
+    position: absolute;
+    transform-origin: 0 6.5rem;
+    font-size: 1.2rem;
+    color:#92a49e;
+    white-space: pre;
+}
+
+@keyframes circle {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg)
+    }
+}
+
+.circularTextSpan{
+
+}
+
+
+h5{
+    /* white-space: pre; */
+}

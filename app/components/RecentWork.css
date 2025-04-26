@@ -1,0 +1,26 @@
+
+#Work {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    margin: 5rem auto 0;
+    margin-bottom: 7rem;
+    padding:5rem 0;
+    gap: 3rem;
+    /* background-color: brown; */
+}
+
+#workCardsContainer {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2%;
+    width: 100%;
+    margin-top:3rem;
+    /* background: yellow; */
+   
+}
+
+

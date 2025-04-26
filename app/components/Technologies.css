@@ -1,0 +1,121 @@
+
+#Technologies{
+    position: relative;
+    height: 100rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.technologiesCenterdiv {
+    height: 100%;
+    width: 80%;
+    /* top:50%;
+    left:50%;
+    transform: translate(-50%,-50%); */
+    background-image: radial-gradient(circle at center, #093436 0%,  #010405 45%)
+}
+
+.circle{
+    position: absolute;
+    /* top:50%;
+    left:50%;
+    transform: translate(-50%,-50%); */
+    border-radius: 50%;
+    border: 1px dashed #707b79;
+    z-index: 2;
+}
+
+#technologiesOuterCircle{
+    height: 50rem;
+    width: 50rem;
+}
+
+#technologiesInnerCircle{
+    height: 25rem;
+    width: 25rem;    
+}
+
+.globeImageContainer{
+    position: absolute;
+    height:65rem;
+    width:65rem;
+    z-index: 3;
+    /* background-color: green; */
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.globeImage{
+    position: absolute;
+    height: 51rem;
+    width: 51rem;
+    right: -32%;
+    bottom: -26%;
+    opacity: 20%;
+    transform: rotate(-136deg);
+}
+
+
+.globeIconContainer{
+    position: absolute;
+    z-index:4;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+.rotationAxis{
+    height: 54rem;
+    animation: movement 10s linear infinite; 
+}
+
+.globeImageContainer2 {
+    height: 4rem;
+    width: 4rem;
+    background: aquamarine;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    /* animation: movement 30s linear infinite; */
+    
+}
+
+.globeImage2 {
+    height: 60%;
+    width: 60%;
+    animation: movement 8s linear infinite;
+    
+}
+
+@keyframes movement {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.technologiesText {
+    position: absolute;
+    z-index: 5;
+    width: 80rem;
+    font-size: 8rem;
+    text-align: center;
+}
+
+.scrollingAnimationContainer{
+    position: relative;
+    z-index: 6;
+    width: 85rem;
+    height: 53rem;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* opacity: 20%; */
+}
+

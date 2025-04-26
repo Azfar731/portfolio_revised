@@ -1,0 +1,104 @@
+.workCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  background-color: #181a1e;
+  padding: 2rem 1rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+}
+
+.workCard:hover {
+  background-color: transparent;
+  box-shadow: 0 0 0.1rem 0.1rem rgba(255, 255, 255, 0.3);
+}
+
+.workCardImage {
+  width: 95%;
+  height: auto;
+  border-radius: 1.5rem;
+}
+
+.workCardHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.workCardTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.workCardTitleHover {
+  font-size: 2.5rem;
+  font-weight: normal;
+}
+
+.workCardLocation {
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.locationFlag {
+  width: 1.5em;
+}
+
+.locationText {
+  color: #cacbcb;
+  font-size: 1.8rem;
+}
+
+.workCardPartners {
+  margin-top: 3em;
+  font-size: 1.2rem;
+  white-space: pre;
+  display: flex;
+  align-items: center;
+  color: #707b79;
+}
+
+.dot {
+  color: #707b79;
+  font-size: 1.5em;
+}
+
+.titleContainer {
+  position: relative;
+  overflow: hidden;
+  height: 3em;
+  width: 100%;
+}
+
+.textLine {
+  position: absolute;
+  /* transition: all 0.5s ease-in-out; */
+}
+
+.line1-enter {
+  top: 0px;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+.line1-exit {
+  top: -50px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.line2-enter {
+  top: 0px;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+.line2-exit {
+  top: 50px;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}

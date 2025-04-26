@@ -1,0 +1,53 @@
+
+header {
+    position: sticky;
+    top: 50px;
+    margin: 0 auto;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    border-radius: 50px;
+    box-shadow: 0 0 0.1rem grey;
+    background: rgb(2 10 7/ 50%);
+    backdrop-filter: blur(20px);
+    z-index: 10;
+}
+
+
+.headerInner{
+    width: 100%;
+    display:flex;
+}
+
+.headerInner > a{
+    text-decoration: none;
+    flex: 1;
+}
+
+.headerElement{
+    display: flex;
+    justify-content: center;
+
+}
+
+.headerElementName:hover {
+    color: #00ff84; /* Highlight color */
+    font-weight: 200;
+}
+
+.headerElementName{
+    padding: 0.5rem 0;
+    font-weight: 400;
+    font-size: 14px;
+    transition: color 0.3s;
+    display: flex;
+    justify-content: center;
+}
+
+.active{
+    border-bottom: 0.1rem solid #16eaa1;
+}
+
+
+

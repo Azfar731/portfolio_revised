@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Movie Finder",
+    "project_image": "MovieFinder.png",
+    "project_url": "https://moviefinderproject.netlify.app/"
+  },
+  {
+    "title": "Colour Picker",
+    "project_image": "Color-Picker.PNG",
+    "project_url": "https://colourpickerproject.netlify.app/"
+  },
+  {
+    "title": "CapCompare",
+    "project_image": "CapCompare.PNG",
+    "project_url": "https://randomUrl.com"
+  },
+  {
+    "title": "Khalil&Khalil",
+    "project_image": "CapCompare.PNG",
+    "project_url": "https://randomUrl.com"
+  }
+]

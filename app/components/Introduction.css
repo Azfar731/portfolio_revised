@@ -1,0 +1,25 @@
+
+#intro {
+    position: relative;
+    
+}
+
+#introTopLeftGradient {
+    height: 50rem;
+    width: 50rem;
+    top: auto;
+    left: auto;
+    background-image: radial-gradient(circle at top left, #093436 0%,  #010405 70%);
+    
+}
+
+
+
+#introRightGradient{
+    
+    height: 60rem;
+    width: 60rem;
+    right: 0;  
+    background-image: radial-gradient(circle at 70% 38% , #093436 0%,  #010405 70%);
+    
+}

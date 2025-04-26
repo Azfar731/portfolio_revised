@@ -1,0 +1,49 @@
+
+#SocialLinks {
+    position: relative;
+    height: 11rem;   
+    padding-top: 10rem; 
+}
+
+.slTopGradient {
+    position: absolute;
+    top: 0;
+    z-index:-2;
+    height: 20rem;
+    width: 100%;
+    background-image: radial-gradient(ellipse at 50% -3%, #093436 0%,  #010405 70%);
+}
+
+
+.linkContainer{
+    flex:1
+}
+
+.linkContainer > a {
+    text-decoration: none;
+}
+
+.link {
+    height: 7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.link > img {
+    width: 2rem;
+    transform: rotate(45deg);
+
+}
+
+.linkName {
+    font-size: 1.8rem;
+}
+
+.link:hover{
+    background-color: #05292b;
+    cursor: pointer;
+}
+
+
