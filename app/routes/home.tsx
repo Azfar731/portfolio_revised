@@ -41,11 +41,9 @@ function App() {
           <div
             id="Profiles"
             className="transparentDiv"
-            onMouseEnter={() => handleSectionChange("Profiles")}
-            onMouseLeave={() => handleSectionChange("")}
           >
             <div className="fixedPart">
-              <SocialLinks />
+              <SocialLinks socialLinks={personData.socialLinks}/>
               <Footer personName={personData.name} />
             </div>
           </div>

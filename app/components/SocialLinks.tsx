@@ -1,20 +1,16 @@
 import "./SocialLinks.css";
 import arrow from "/src/assets/icons8-arrow-32.png";
-export default function SocialLinks() {
-  const arr = [
-    {
-      name: "Stack OverFlow",
-      link: "https://stackoverflow.com/users/26767975/azfar-razzaq",
-    },
-    { name: "Github", link: "https://github.com/Azfar731" },
-  ];
-
-  const elem = arr.map((site, index) => {
+export default function SocialLinks({
+  socialLinks,
+}: {
+  socialLinks: { name: string; link: string }[];
+}) {
+  const elem = socialLinks.map((site, index) => {
     return (
       <div
         key={site.link}
         className={` linkContainer ${
-          index < arr.length - 1 ? "rightBorder" : ""
+          index < socialLinks.length - 1 ? "rightBorder" : ""
         }`}
       >
         <a href={site.link} target="_blank">
@@ -28,7 +24,7 @@ export default function SocialLinks() {
   });
 
   const styles = {
-    width: `${arr.length * 20}%`,
+    width: `${socialLinks.length * 20}%`,
     margin: "auto",
     maxWidth: "80%",
     height: "7rem",

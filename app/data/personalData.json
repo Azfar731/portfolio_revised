@@ -11,5 +11,12 @@
     "Passionate about cybersecurity, implementing secure coding practices, encryption, and protocols to protect user data.",
     "Exploring the future of web development with Web3, experimenting with blockchain integrations for transparent, decentralized applications.",
     "Committed to continuous learning, collaborating in open-source communities, and building impactful projects that merge innovation and security."
+  ],
+  "socialLinks": [
+    {
+      "name": "Stack OverFlow",
+      "link": "https://stackoverflow.com/users/26767975/azfar-razzaq"
+    },
+    { "name": "Github", "link": "https://github.com/Azfar731" }
   ]
 }
