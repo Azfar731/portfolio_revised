@@ -37,8 +37,8 @@ export default function Technologies() {
 
       <div ref={targetRef} className="scrollingAnimationContainer">
         <Technology
-          text={"Remix"}
-          scrollYProgress={scrollYProgress}
+          text="Remix"
+          scrollYprogress={scrollYProgress}
           x={{ start: "0rem", end: "10rem" }}
           y={{ start: "0rem", end: "20rem" }}
         />
