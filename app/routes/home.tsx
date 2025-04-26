@@ -32,10 +32,7 @@ function App() {
               <AboutMe aboutMeList={personData.aboutMeList} />
 
               <RecentWork />
-              <Services
-                unsetCurrentSection={() => handleSectionChange("")}
-                setCurrentSection={() => handleSectionChange("Services")}
-              />
+              <Services />
               <ScrollingText text={" - Let's Connect"} />
             </div>
           </div>
