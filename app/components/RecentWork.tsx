@@ -1,8 +1,8 @@
 import "./RecentWork.css";
 import WorkCard from "./WorkCard";
-import projectsData from "/src/data/projects.Data.json";
+import projectsData from "~/data/projectsdata.json";
 
-export default function RecentWork(props) {
+export default function RecentWork() {
   const projectCards = projectsData.map((proj) => {
     return (
       <WorkCard
@@ -14,20 +14,8 @@ export default function RecentWork(props) {
     );
   });
 
-  const handleMouseEnter = () => {
-    props.setCurrentSection();
-  };
-
-  const handleMouseLeave = () => {
-    props.unsetCurrentSection();
-  };
-
   return (
-    <div
-      id="Work"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div id="Work">
       <span className="smallText">Happy Clients {"<3"}</span>
       <h2 className="h2Titles">Recent Work</h2>
       <div id="workCardsContainer">{projectCards}</div>

@@ -31,11 +31,7 @@ function App() {
               <Technologies />
               <AboutMe aboutMeList={personData.aboutMeList} />
 
-              <RecentWork
-                projects={personData.projects}
-                unsetCurrentSection={() => handleSectionChange("")}
-                setCurrentSection={() => handleSectionChange("Work")}
-              />
+              <RecentWork />
               <Services
                 unsetCurrentSection={() => handleSectionChange("")}
                 setCurrentSection={() => handleSectionChange("Services")}
