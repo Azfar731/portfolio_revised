@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import personalData from "../data/personalData.json";
+
 import "./AboutMe.css";
 
-export default function AboutMe() {
+export default function AboutMe({ aboutMeList }: { aboutMeList: string[] }) {
   const [hoverState, setHoverState] = useState(true);
   const styles = useRef({
     default: {
@@ -16,7 +16,7 @@ export default function AboutMe() {
     },
   });
 
-  const listItems = personalData.aboutMeList.map((item, index) => {
+  const listItems = aboutMeList.map((item, index) => {
     return (
       <div key={item}>
         <div className="list-item">
