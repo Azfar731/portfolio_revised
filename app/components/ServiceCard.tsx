@@ -1,24 +1,29 @@
-import './Services.css'
+import "./Services.css";
 
-
-
-
-export default function ServiceCard({number, title1, title2, description}){
-    return(
-        <div className='serviceCard'>
-            <div className='serviceCardNumber'>
-                <span className='greyLine'>⎯⎯⎯⎯⎯</span>
-                <span className='serviceNumber'>   {number}</span>
-            </div>
-            <div className='serviceTitle'>
-                <h3 className='serviceTitleLine'>{title1}</h3>
-                <h3 className='serviceTitleLine'>{title2}</h3>
-            </div>
-            <div className='serviceDescription'>
-                <p className='serviceDescriptionText'>
-                {description}
-                </p>
-            </div>
-        </div>
-    )
+export default function ServiceCard({
+  number,
+  title1,
+  title2,
+  description,
+}: {
+  number: string;
+  title1: string;
+  title2: string;
+  description: string;
+}) {
+  return (
+    <div className="serviceCard">
+      <div className="serviceCardNumber">
+        <span className="greyLine">⎯⎯⎯⎯⎯</span>
+        <span className="serviceNumber"> {number}</span>
+      </div>
+      <div className="serviceTitle">
+        <h3 className="serviceTitleLine">{title1}</h3>
+        <h3 className="serviceTitleLine">{title2}</h3>
+      </div>
+      <div className="serviceDescription">
+        <p className="serviceDescriptionText">{description}</p>
+      </div>
+    </div>
+  );
 }
