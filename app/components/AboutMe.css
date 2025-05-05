@@ -1,48 +1,59 @@
-
 hr {
-    border-color: #151515;
+  border-color: #151515;
 }
-
+/* 
 .container {
     display: flex;
     justify-content: center;
     gap: 8rem;
     padding-top: 12rem;
-    
+    width: 95%;
+    align-items: stretch;
+} */
+
+#AboutMe {
+    width: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+  padding-top: 12rem;
+  
+  /* align-items: stretch; */
 }
 
 .listContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    max-width: 70%;    
-    padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 70%;
+  padding: 2rem;
 }
 
 .list-item {
-    display: flex;
-    align-items: flex-start;
-    padding: 2rem;
-    box-shadow: 0 0.2rem 0.4rem rgba(255, 255, 255, 0.3);
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  padding: 2rem;
+  box-shadow: 0 0.2rem 0.4rem rgba(255, 255, 255, 0.3);
 }
 .list-item .number {
-    background-color: #2d2d2d;
-    border-radius: 0.5rem;
-    padding: 0.5rem 1rem;
-    margin-right: 1.5rem;
-    font-size: 1.8rem;
-    font-weight: bold;
+  background-color: #2d2d2d;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin-right: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 .list-item .text {
-    flex: 1;
-    line-height: 1.5;
-    font-size: 2rem;    
-    
+  flex: 1;
+  line-height: 1.5;
+  font-size: 2rem;
 }
 .list-item .text a {
-    color: #00aaff;
-    text-decoration: none;
+  color: #00aaff;
+  text-decoration: none;
 }
 .list-item .text a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }

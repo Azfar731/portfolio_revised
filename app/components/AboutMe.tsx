@@ -18,12 +18,9 @@ export default function AboutMe({ aboutMeList }: { aboutMeList: string[] }) {
 
   const listItems = aboutMeList.map((item, index) => {
     return (
-      <div key={item}>
-        <div className="list-item">
-          <div className="number">{index + 1}</div>
-          <div className="text">{item}</div>
-        </div>
-        {/* <hr /> */}
+      <div key={index} className="list-item">
+        <div className="number">{index + 1}</div>
+        <div className="text">{item}</div>
       </div>
     );
   });
@@ -35,7 +32,7 @@ export default function AboutMe({ aboutMeList }: { aboutMeList: string[] }) {
       styles.current = {
         default: {
           height: cheight,
-          borderLeft: "2px solid #151515",
+          // borderLeft: "2px solid #151515",
         },
         hover: {
           height: cheight,
@@ -43,15 +40,14 @@ export default function AboutMe({ aboutMeList }: { aboutMeList: string[] }) {
           boxShadow: "0 0 20px 2px #1b878a",
         },
       };
-
       setHoverState(false); //doing this for vertical line next to the list
     }
   }, []);
 
   return (
-    <div id="AboutMe" className="container">
+    <div id="AboutMe" className="group">
       <div
-        className="vl"
+        className="vl border-l-2 border-stone-900 group-hover:border-oceanBlue group-hover:shadow-[0_0_20px_2px_#1b878a]"
         style={hoverState ? styles.current.hover : styles.current.default}
       ></div>
       <div className="listContainer">{listItems}</div>

@@ -57,7 +57,7 @@ nav > span {
     background-color: #00272b; /* slightly lighter on hover */
 }
 
-
+/* 
 @media (max-width: 768px) {
     nav {
         padding-left: 5rem;
@@ -86,4 +86,4 @@ nav > span {
         font-size: 3rem;
     }
     
-}
+} */
