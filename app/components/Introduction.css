@@ -19,6 +19,20 @@
     background-image: radial-gradient(circle at 70% 38% , #093436 0%,  #010405 70%);
 }
 
+
+
+@media (max-width: 990px) {
+    #introTopLeftGradient {
+        height: 50rem;
+        width: 50rem;
+        /* display:none; */
+    }
+    #introRightGradient{
+        display: none;
+    }
+}
+
+
 @media (max-width: 480px) {
     #introTopLeftGradient {
         height: 50rem;
