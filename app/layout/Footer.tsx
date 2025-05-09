@@ -10,7 +10,7 @@ export default function Footer({
   return (
     <div id="Footer">
       <div className="nameEmail">
-        <span className="footer name">{name}</span>
+        <span className="footer-name">{name}</span>
         <div className="email animated-underline">{email}</div>
       </div>
       <span>

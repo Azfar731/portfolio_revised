@@ -3,7 +3,7 @@ import "./Nav.css";
 export default function Nav({name}: {name: string}) {
   return (
     <nav>
-      <img src="/logo_edited.png" className="w-24 h-24" alt="logo" />
+      <span>Azfar Razzaq</span>
       <a
         href="https://wa.me/923134549126"
         target="_blank"
