@@ -1,7 +1,6 @@
 
 #intro {
-    position: relative;
-    
+    position: relative; 
 }
 
 #introTopLeftGradient {
@@ -13,13 +12,19 @@
     
 }
 
-
-
-#introRightGradient{
-    
+#introRightGradient{   
     height: 60rem;
     width: 60rem;
     right: 0;  
     background-image: radial-gradient(circle at 70% 38% , #093436 0%,  #010405 70%);
-    
+}
+
+@media (max-width: 480px) {
+    #introTopLeftGradient {
+        height: 50rem;
+        width: 50rem;
+    }
+    #introRightGradient{
+        display: none;
+    }
 }

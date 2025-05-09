@@ -15,6 +15,13 @@
   /* box-sizing: border-box; */
 }
 
+@media screen and (max-width: 480px) {
+  * {
+    font-size: 16px;
+  }
+  
+}
+
 html {
   scroll-behavior: smooth; /* CSS property for smooth scrolling */
 }
