@@ -37,22 +37,14 @@
   font-weight: normal;
 }
 
-.workCardLocation {
+.workCardStack {
   margin-top: 1em;
   display: flex;
   align-items: center;
-  gap: 0.5em;
+  gap: 1em;
 }
 
-.locationFlag {
-  width: 1.5em;
-}
-
-.locationText {
-  color: #cacbcb;
-  font-size: 1.8rem;
-}
-
+/* 
 .workCardPartners {
   margin-top: 3em;
   font-size: 1.2rem;
@@ -60,6 +52,16 @@
   display: flex;
   align-items: center;
   color: #707b79;
+} */
+
+.project_description_container {
+  margin-top: 1em;
+  height: 80px;
+}
+
+.project_description_text {
+  font-size: 1.6rem;
+  /* line-height: 2rem; */
 }
 
 .dot {

@@ -1,22 +1,27 @@
 import { useState } from "react";
 import "./WorkCard.css";
 import arrow from "~/assets/icons8-arrow-32.png";
+import { FaReact } from "react-icons/fa6";
 // import Flag from "react-world-flags";
 export default function WorkCard({
   title,
   project_image,
   project_url,
+  project_description,
+  tech_icons,
 }: {
   title: string;
   project_image: string;
   project_url: string;
+  project_description: string;
+  tech_icons: React.ComponentType[];
 }) {
   const [isHovering, setIsHovering] = useState(false);
 
   const workCardInfostyles = {
     default: {
       display: "flex",
-      flexDirection: "column",
+      flexDirection: "column" as const,
       background: "#242629",
       width: "90%",
       borderRadius: "1rem",
@@ -25,7 +30,7 @@ export default function WorkCard({
     },
     hover: {
       display: "flex",
-      flexDirection: "column",
+      flexDirection: "column" as const,
       background: "#0d0d0d",
       width: "90%",
       borderRadius: "1rem",
@@ -95,14 +100,17 @@ export default function WorkCard({
               }
             />
           </div>
-          <div className="workCardLocation">
-            {/* <img src={flag} alt="usa flag" className="locationFlag" /> */}
-            {/* <Flag code={"PK"} className="locationFlag" /> */}
-            <span className="locationText">Pakistan</span>
+          <div className="workCardStack">
+            {tech_icons.map((Icon, i) => (
+              <Icon key={i} className="h-10 w-10" />
+            ))}
           </div>
-          <div className="workCardPartners">
-            Developed By: AzfarRazzaq <span className="dot">•</span> Designed
-            By: AzfarRazzaq
+          <div className="project_description_container">
+            <p className="project_description_text">
+              {project_description.length > 130
+                ? project_description.slice(0, 130) + "..."
+                : project_description}
+            </p>
           </div>
         </div>
       </div>
