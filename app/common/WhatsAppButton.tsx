@@ -14,5 +14,5 @@ export default function WhatsAppButton() {
         <img src={whatsappLogo} alt="WhatsAppLogo" />
       </div>
     </a>
-  );
+  )
 }

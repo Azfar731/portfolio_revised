@@ -26,15 +26,15 @@ export default function  Home() {
               name={personData.name}
               introContent={personData.introContent}
             />
-            {/* <div id="infoSection">
+            <div id="infoSection">
               <Header currentSection={currentSection} />
               <Technologies />
-              <AboutMe aboutMeList={personData.aboutMeList} />
+              {/* <AboutMe aboutMeList={personData.aboutMeList} />
 
               <RecentWork />
               <Services />
-              <ScrollingText text={" - Let's Connect"} />
-            </div> */}
+              <ScrollingText text={" - Let's Connect"} /> */}
+            </div>
           </div>
           {/*Transparents div id is used to scroll to fixed section,
       as fixed section is not a part of the scrollabel div*/}

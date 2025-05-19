@@ -119,3 +119,39 @@
     /* opacity: 20%; */
 }
 
+
+@media (max-width: 990px) {
+    
+.technologiesText {
+    
+    z-index: 5;
+    width: 40rem;
+    font-size: 4rem;
+}
+
+
+.globeImageContainer{
+    
+    position: absolute;
+    height:40rem;
+    width:40rem;
+    
+}
+
+#technologiesOuterCircle{
+    height: 25rem;
+    width: 25rem;
+}
+
+#technologiesInnerCircle{
+    height: 12rem;
+    width: 12rem;    
+}
+
+
+.rotationAxis{
+    height: 29rem;
+    animation: movement 10s linear infinite; 
+}
+
+}   
