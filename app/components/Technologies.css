@@ -11,17 +11,11 @@
 .technologiesCenterdiv {
     height: 100%;
     width: 80%;
-    /* top:50%;
-    left:50%;
-    transform: translate(-50%,-50%); */
     background-image: radial-gradient(circle at center, #093436 0%,  #010405 45%)
 }
 
 .circle{
     position: absolute;
-    /* top:50%;
-    left:50%;
-    transform: translate(-50%,-50%); */
     border-radius: 50%;
     border: 1px dashed #707b79;
     z-index: 2;
@@ -122,6 +116,14 @@
 
 @media (max-width: 990px) {
     
+
+#Technologies{
+
+    height: 40rem;
+    
+}
+
+
 .technologiesText {
     
     z-index: 5;

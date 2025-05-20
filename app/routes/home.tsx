@@ -29,9 +29,9 @@ export default function  Home() {
             <div id="infoSection">
               <Header currentSection={currentSection} />
               <Technologies />
-              {/* <AboutMe aboutMeList={personData.aboutMeList} />
+              <AboutMe aboutMeList={personData.aboutMeList} />
 
-              <RecentWork />
+              {/* <RecentWork />
               <Services />
               <ScrollingText text={" - Let's Connect"} /> */}
             </div>

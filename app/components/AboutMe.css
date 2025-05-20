@@ -1,24 +1,15 @@
 hr {
   border-color: #151515;
 }
-/* 
-.container {
-    display: flex;
-    justify-content: center;
-    gap: 8rem;
-    padding-top: 12rem;
-    width: 95%;
-    align-items: stretch;
-} */
 
 #AboutMe {
-    width: 95%;
+  width: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 8rem;
   padding-top: 12rem;
-  
+
   /* align-items: stretch; */
 }
 
@@ -56,4 +47,40 @@ hr {
 }
 .list-item .text a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 990px) {
+  #AboutMe {
+    width: 100%;
+    gap: 1rem;
+   
+    padding: 2rem 2rem;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .listContainer {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;    
+  }
+
+  
+.list-item {  
+  padding: 1rem;
+}
+
+
+.list-item .number {
+  padding: 0.5rem 1rem; 
+  margin-right: 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.list-item .text {
+  flex: 1;
+  line-height: 1.5;
+  font-size: 1.2rem;
+}
+
 }
