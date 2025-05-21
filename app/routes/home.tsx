@@ -31,8 +31,8 @@ export default function  Home() {
               <Technologies />
               <AboutMe aboutMeList={personData.aboutMeList} />
 
-              {/* <RecentWork />
-              <Services />
+              <RecentWork />
+              {/*<Services />
               <ScrollingText text={" - Let's Connect"} /> */}
             </div>
           </div>

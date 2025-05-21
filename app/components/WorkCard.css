@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   background-color: #181a1e;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   border-radius: 1.5rem;
   cursor: pointer;
 }
@@ -16,7 +16,7 @@
 }
 
 .workCardImage {
-  width: 95%;
+  width: 100%;
   height: auto;
   border-radius: 1.5rem;
 }
@@ -103,4 +103,36 @@
   top: 50px;
   opacity: 0;
   transition: all 0.2s ease-in-out;
+}
+
+.tech_stack_icons {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+@media (max-width: 990px) {
+  .workCardTitle {
+    font-size: 2rem;
+  }
+
+  .workCardTitleHover {
+    font-size: 2rem;
+  }
+
+  .tech_stack_icons {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  
+.project_description_container {
+  margin-top: 1em;
+  height: 60px;
+}
+
+.project_description_text {
+  font-size: 1.2rem;
+  
+}
+
 }

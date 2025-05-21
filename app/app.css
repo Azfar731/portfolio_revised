@@ -127,7 +127,12 @@ a {
     width: 100vw;
   }
 
+
   
+.h2Titles {
+  font-size: 5rem;
+  font-weight: normal;
+}
 .smallText {
   font-size: 0.9rem;
   letter-spacing: 0.2rem;
