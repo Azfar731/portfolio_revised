@@ -14,9 +14,11 @@
 #workCardsContainer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2%;
+  grid-gap: 2rem;
   width: 100%;
-  margin-top: 3rem;
+  margin: 3rem 0;
+  padding: 1rem;
+  min-height: min-content;
   /* background: yellow; */
 }
 
@@ -40,7 +42,7 @@
     grid-template-columns: 1fr;
     gap: 2%;
     width: 100%;
-    margin-top: 3rem;
+    margin: 3rem;
     /* background: yellow; */
 }
 }

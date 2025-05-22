@@ -32,8 +32,8 @@ export default function  Home() {
               <AboutMe aboutMeList={personData.aboutMeList} />
 
               <RecentWork />
-              {/*<Services />
-              <ScrollingText text={" - Let's Connect"} /> */}
+              <Services />
+              {/*<ScrollingText text={" - Let's Connect"} /> */}
             </div>
           </div>
           {/*Transparents div id is used to scroll to fixed section,
