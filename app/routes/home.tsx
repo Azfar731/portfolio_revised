@@ -44,7 +44,7 @@ export default function  Home() {
           >
             <div className="fixedPart">
               <SocialLinks socialLinks={personData.socialLinks}/>
-              {/* <Footer name={personData.name} email={personData.email}/> */}
+              <Footer name={personData.name} email={personData.email}/>
             </div>
           </div>
         </div>

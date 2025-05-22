@@ -66,3 +66,35 @@
   transform-origin: bottom left;
   transition-duration: 0.25s;
 }
+
+@media (max-width: 990px) {
+  #Footer {
+    width: 100%;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem 2rem;
+  }
+
+  .nameEmail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  .footer-name {
+    font-size: 2rem;
+  }
+
+  .email {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+
+  #Footer > span {
+    color: #92a49e;
+    white-space: pre;
+    font-size: 0.9rem;
+  }
+
+}
