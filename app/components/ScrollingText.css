@@ -19,3 +19,9 @@
     transform: translateX(-100%);
   }
 }
+
+@media (max-width: 990px) {
+  .scrollingText {
+    font-size: 10rem;
+  }
+}

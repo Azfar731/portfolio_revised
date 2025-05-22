@@ -33,20 +33,20 @@ export default function  Home() {
 
               <RecentWork />
               <Services />
-              {/*<ScrollingText text={" - Let's Connect"} /> */}
+              <ScrollingText text={" - Let's Connect"} />
             </div>
           </div>
           {/*Transparents div id is used to scroll to fixed section,
       as fixed section is not a part of the scrollabel div*/}
-          {/* <div
+          <div
             id="Profiles"
             className="transparentDiv"
           >
             <div className="fixedPart">
               <SocialLinks socialLinks={personData.socialLinks}/>
-              <Footer name={personData.name} email={personData.email}/>
+              {/* <Footer name={personData.name} email={personData.email}/> */}
             </div>
-          </div> */}
+          </div>
         </div>
       )}
     </>
