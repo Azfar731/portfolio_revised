@@ -23,26 +23,23 @@
 }
 
 @media (max-width: 990px) {
+  #Work {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 5rem 2rem;
+    gap: 3rem;
+    /* background-color: brown; */
+  }
 
-#Work {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 95%;
-  margin: 5rem auto 0;
-  margin-bottom: 7rem;
-  padding: 5rem 2rem;
-  gap: 3rem;
-  /* background-color: brown; */
-}
-
-#workCardsContainer {
+  #workCardsContainer {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2%;
     width: 100%;
-    margin: 3rem;
+   padding: 0;
     /* background: yellow; */
-}
+  }
 }

@@ -141,7 +141,7 @@
   }
 
   .serviceDescription {
-    width: 90%;
+    width: 95%;
   }
 
   .serviceDescriptionText {
@@ -164,9 +164,16 @@
     right: 0;
   }
 
-#bottomLeftDiv {
-  display:none; 
+  #bottomLeftDiv {
+    display: none;
+  }
 }
 
-
+@media (max-width: 640px) {
+  #topDiv {
+    height: 40rem;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
 }

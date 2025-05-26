@@ -23,8 +23,8 @@
 
 @media (max-width: 990px) {
     #introTopLeftGradient {
-        height: 50rem;
-        width: 50rem;
+        height: 100%;
+        width: 100%;
         /* display:none; */
     }
     #introRightGradient{
@@ -33,12 +33,3 @@
 }
 
 
-@media (max-width: 480px) {
-    #introTopLeftGradient {
-        height: 50rem;
-        width: 50rem;
-    }
-    #introRightGradient{
-        display: none;
-    }
-}

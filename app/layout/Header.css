@@ -3,7 +3,7 @@ header {
     position: sticky;
     top: 50px;
     margin: 0 auto;
-    width: 50vw;
+    width: 60%;
     display: flex;
     justify-content: center;
     padding: 2rem 0;
@@ -49,5 +49,17 @@ header {
     border-bottom: 0.1rem solid #16eaa1;
 }
 
+
+@media (max-width: 990px) {
+   header {
+        width: 700px;
+   }
+}
+
+@media (max-width: 768px){
+    header {
+        display: none;
+    }
+}
 
 

@@ -13,7 +13,7 @@ export default function Technologies() {
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["start end", "end end"],
+    offset: ["start end", "center end"],
   });
 
   const [screenWidth, setScreenWidth] = useState<number>(0);
@@ -42,7 +42,7 @@ export default function Technologies() {
       end_point = ending_positions.b;
       break;
     default:
-      end_point = ending_positions.a;
+      end_point = ending_positions.b;
   }
 
   useEffect(() => {

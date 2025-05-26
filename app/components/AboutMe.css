@@ -62,7 +62,9 @@ hr {
   .listContainer {
     display: flex;
     flex-direction: column;
-    max-width: 100%;    
+    max-width: 100%; 
+    padding: 0;
+    padding-left: 1rem;   
   }
 
   

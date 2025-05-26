@@ -28,12 +28,12 @@ export default function Header({ currentSection }: { currentSection: string }) {
     );
   });
 
-  const headerStyle = {
-    width: `${arr.length * 15}%`,
-  };
+  // const headerStyle = {
+  //   width: `${arr.length * 15}%`,
+  // };
 
   return (
-    <header style={headerStyle}>
+    <header >
       <div className="headerInner">{elem}</div>
     </header>
   );
