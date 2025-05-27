@@ -159,7 +159,6 @@ nav {
     z-index: 100;
   }
   .whatsapp-btn { display: none; }
-  .hamburger-btn { display: flex; }
 
   /* shrink brand a bit if you want */
   .nav__brand { font-size: 2.2rem; }

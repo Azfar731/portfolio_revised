@@ -1,9 +1,8 @@
 import { useState } from "react";
 import "./Nav.css";
-import { NavLink, useLocation } from "react-router";
-// optionally, if you want a nice SVG hamburger, install react-icons:
-//    npm install react-icons
-// import { FaBars, FaTimes } from "react-icons/fa";
+import { useLocation } from "react-router";
+import { Cross as Hamburger } from 'hamburger-react'
+
 
 export default function Nav({ name }: { name: string }) {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -35,14 +34,10 @@ export default function Nav({ name }: { name: string }) {
 
         {/* hamburger – hidden on large screens */}
         <button
-          className="hamburger-btn"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           onClick={toggleMenu}
         >
-          {/* you can swap these spans for <FaBars/> / <FaTimes/> */}
-          <span />
-          <span />
-          <span />
+          <Hamburger size={40}/>
         </button>
       </nav>
 
