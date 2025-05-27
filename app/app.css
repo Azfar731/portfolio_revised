@@ -136,3 +136,20 @@ a {
     letter-spacing: 0.2rem;
   }
 }
+
+@media (max-width: 768px) {
+  .h2Titles {
+    font-size: 4rem;
+    font-weight: normal;
+  }
+}
+
+@media (max-width: 480px) {
+   .h2Titles {
+    font-size: 2.5rem;
+    font-weight: normal;
+  }
+  .smallText {
+    font-size: 0.8rem;
+  }
+}

@@ -53,7 +53,7 @@ hr {
   #AboutMe {
     width: 100%;
     gap: 1rem;
-   
+
     padding: 2rem 2rem;
     justify-content: start;
     align-items: center;
@@ -62,27 +62,34 @@ hr {
   .listContainer {
     display: flex;
     flex-direction: column;
-    max-width: 100%; 
+    max-width: 100%;
     padding: 0;
-    padding-left: 1rem;   
+    padding-left: 1rem;
   }
 
-  
-.list-item {  
-  padding: 1rem;
+  .list-item {
+    padding: 1rem;
+  }
+
+  .list-item .number {
+    padding: 0.5rem 1rem;
+    margin-right: 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .list-item .text {
+    flex: 1;
+    line-height: 1.5;
+    font-size: 1.2rem;
+  }
 }
 
+@media (max-width: 768px) {
+  #AboutMe {
+    padding: 18px 18px;
+  }
 
-.list-item .number {
-  padding: 0.5rem 1rem; 
-  margin-right: 1.5rem;
-  font-size: 1rem;
-  font-weight: bold;
-}
-.list-item .text {
-  flex: 1;
-  line-height: 1.5;
-  font-size: 1.2rem;
-}
-
+  .list-item .text {
+    font-size: 1.1rem;
+  }
 }

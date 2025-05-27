@@ -30,7 +30,7 @@
     align-items: center;
     width: 100%;
     padding: 5rem 2rem;
-    gap: 3rem;
+    gap: 1rem;
     /* background-color: brown; */
   }
 
@@ -39,7 +39,34 @@
     grid-template-columns: 1fr;
     gap: 2%;
     width: 100%;
-   padding: 0;
+    padding: 0;
     /* background: yellow; */
   }
+}
+
+@media (max-width: 768px) {
+  #Work {
+    padding: 5rem 18px;
+    gap: 1rem;
+    /* background-color: brown; */
+  }
+
+  #workCardsContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    /* background: yellow; */
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  #Work {
+    gap: 1.5rem;
+  }
+
 }
