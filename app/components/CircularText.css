@@ -35,3 +35,20 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 990px) {
+  .circularTextContainer {
+    height: 10rem;
+    width: 10rem;
+  }
+
+  .circularText {
+    height: 8rem;
+    font-size: 0.6rem;
+  }
+
+  .circularText > span {
+    transform-origin: 0 4rem;
+    font-size: 0.6rem;
+  }
+}

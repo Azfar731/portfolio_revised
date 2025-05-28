@@ -38,10 +38,11 @@ export default function Services() {
       />
     );
   });
+
   return (
     <div id="Services">
       <div id="servicesLogo">
-        <CircularText text={` React Developer •`} />
+        <CircularText text_param={` Azfar Razzaq •`} />
       </div>
       <div id="topDiv" className="radialGradient"></div>
       <div id="bottomLeftDiv" className="radialGradient"></div>
