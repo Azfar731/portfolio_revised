@@ -182,3 +182,23 @@
     left: 0;
   }
 }
+
+@media (max-width: 480px) {
+  #servicesContent {
+    padding: 10rem 0rem;
+  }
+
+  .serviceTitleLine {
+    font-size: 2rem;
+  }
+
+  #bottomRightDiv {
+    height: 60rem;
+    width: 80rem;
+    background-image: radial-gradient(
+      circle at 60% 70%,
+      #093436 0%,
+      #07080e 50%
+    );
+  }
+}
