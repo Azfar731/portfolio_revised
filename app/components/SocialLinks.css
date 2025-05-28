@@ -20,8 +20,9 @@
 }
 
 .linksContainer {
-  width: 40%;
+  width: 60%;
   margin: 0 auto;
+
   max-width: 80%;
   height: 7rem; /* Tailwind’s h-28 */
   border-radius: 5rem; /* Tailwind’s rounded-[5rem] */
@@ -52,8 +53,13 @@
   transform: rotate(45deg);
 }
 
-.linkName {
-  font-size: 1.8rem;
+.link > span {
+  font-size: 16px;
+}
+
+.site-icons {
+  height: 16px;
+  width: 16px;
 }
 
 .link:hover {
@@ -68,12 +74,8 @@
   }
 
   .linksContainer {
-    width: 60%;
+    width: 70%;
     height: 5rem; /* Tailwind’s h-28 */
-  }
-
-  .linkContainer {
-    flex: 1;
   }
 
   .link {
@@ -83,22 +85,26 @@
     justify-content: center;
     gap: 0.5rem;
   }
+}
 
-  .link > img {
-    width: 2rem;
-    transform: rotate(45deg);
+@media (max-width: 768px) {
+  .link > span {
+    display: none;
   }
 
-  .linkName {
-    font-size: 1rem;
+  .top-right-arrow {
+    display: none;
   }
 
-  .link:hover {
-    background-color: #05292b;
-    cursor: pointer;
+  .site-icons {
+    height: 40px;
+    width: 40px;
   }
+}
 
-  .linkContainer {
-    flex: 1;
+@media (max-width: 480px) {
+    .site-icons {
+    height: 30px;
+    width: 30px;
   }
 }
