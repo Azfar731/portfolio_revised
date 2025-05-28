@@ -34,6 +34,7 @@ export default function Nav({ name }: { name: string }) {
 
         {/* hamburger – hidden on large screens */}
         <button
+          className="hamburger-btn"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           onClick={toggleMenu}
         >

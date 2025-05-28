@@ -81,22 +81,10 @@ nav {
 /* -------------- hamburger button -------------- */
 .hamburger-btn {
   display: none;          /* hidden by default */
-  flex-direction: column;
-  justify-content: space-between;
-  width: 2rem;
-  height: 1.5rem;
-  background: none;
-  border: none;
   cursor: pointer;
   z-index: 60;            /* above nav */
 }
 
-.hamburger-btn span {
-  display: block;
-  height: 0.2rem;
-  border-radius: 1px;
-  background: #fff;
-}
 
 /* -------------- full-screen overlay -------------- */
 .nav-overlay {
@@ -163,6 +151,9 @@ nav {
   /* shrink brand a bit if you want */
   .nav__brand { font-size: 2.2rem; }
   
+  .hamburger-btn{
+    display: block;
+  }
 }
 
 /* 
