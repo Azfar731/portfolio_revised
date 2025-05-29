@@ -96,5 +96,37 @@
     white-space: pre;
     font-size: 0.9rem;
   }
+}
+
+@media (max-width: 768px) {
+  .footer-name {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 510px) {
+  .footer-name {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  
+  #Footer {
+    padding: 2rem 2rem;
+  }
+  .nameEmail {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .footer-name {
+    font-size: 1.8rem;
+  }
+  .email{
+    font-size: 1.2rem;
+  }
 
 }
