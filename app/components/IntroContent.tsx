@@ -1,5 +1,5 @@
 import "./IntroContent.css";
-import WhatsAppButton from "~/common/WhatsAppButton";
+import WhatsAppButton from "../common/WhatsAppButton";
 
 export default function IntroContent({
   introContent,

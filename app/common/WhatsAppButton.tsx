@@ -1,5 +1,5 @@
 import "./WhatsAppButton.css";
-import whatsappLogo from "~/assets/whatsappLogo.png";
+import whatsappLogo from "../assets/whatsappLogo.png";
 
 export default function WhatsAppButton() {
   return (
@@ -14,5 +14,5 @@ export default function WhatsAppButton() {
         <img src={whatsappLogo} alt="WhatsAppLogo" />
       </div>
     </a>
-  )
+  );
 }

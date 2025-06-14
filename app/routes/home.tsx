@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Introduction from "../components/Introduction";
 import Header from "../layout/Header";
-import AboutMe from "~/components/AboutMe";
+import AboutMe from "../components/AboutMe";
 import RecentWork from "../components/RecentWork";
 import Services from "../components/Services";
 import SocialLinks from "../components/SocialLinks";

@@ -1,6 +1,6 @@
 import "./Technologies.css";
-import globe from "~/assets/globe.png";
-import globe2 from "~/assets/globe2.png";
+import globe from "../assets/globe.png";
+import globe2 from "../assets/globe2.png";
 import Technology from "./Technology";
 import { useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
@@ -17,8 +17,8 @@ export default function Technologies() {
   });
 
   const [screenWidth, setScreenWidth] = useState<number>(0);
-  let end_point
-  
+  let end_point;
+
   const ending_positions = {
     a: [
       { x: "10rem", y: "20rem" },
@@ -46,16 +46,16 @@ export default function Technologies() {
   }
 
   useEffect(() => {
-    
     //set width the first time the application loads
-    setScreenWidth(window.innerWidth)
-    
+    setScreenWidth(window.innerWidth);
+
     //set width on resize
     const handleResize = () => {
-      console.log("Width: ", window.innerWidth)
-      setScreenWidth(window.innerWidth)};
-    
-      window.addEventListener("resize", handleResize);
+      console.log("Width: ", window.innerWidth);
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
 
     // Cleanup the event listener on unmount
     return () => window.removeEventListener("resize", handleResize);
@@ -84,26 +84,26 @@ export default function Technologies() {
         <Technology
           text="Remix"
           scrollYprogress={scrollYProgress}
-          x={{ start: "0rem", end: end_point[0].x  }}
-          y={{ start: "0rem", end: end_point[0].y  }}
+          x={{ start: "0rem", end: end_point[0].x }}
+          y={{ start: "0rem", end: end_point[0].y }}
         />
         <Technology2
           text={"React"}
           scrollYProgress={scrollYProgress}
-          x={{ start: "0rem", end: end_point[1].x  }}
-          y={{ start: "0rem", end: end_point[1].y  }}
+          x={{ start: "0rem", end: end_point[1].x }}
+          y={{ start: "0rem", end: end_point[1].y }}
         />
         <Technology3
           text={"Solidity"}
           scrollYProgress={scrollYProgress}
-          x={{ start: "0rem", end: end_point[2].x  }}
-          y={{ start: "0rem", end: end_point[2].y  }}
+          x={{ start: "0rem", end: end_point[2].x }}
+          y={{ start: "0rem", end: end_point[2].y }}
         />
         <Technology4
           text={"Typescript"}
           scrollYProgress={scrollYProgress}
-          x={{ start: "0rem", end: end_point[3].x  }}
-          y={{ start: "0rem", end: end_point[3].y  }}
+          x={{ start: "0rem", end: end_point[3].x }}
+          y={{ start: "0rem", end: end_point[3].y }}
         />
       </div>
     </div>

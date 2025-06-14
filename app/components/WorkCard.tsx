@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./WorkCard.css"; // Keep for non-style animations
-import arrow from "~/assets/icons8-arrow-32.png";
+import arrow from "../assets/icons8-arrow-32.png";
 
 export default function WorkCard({
   title,

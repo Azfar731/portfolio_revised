@@ -1,6 +1,6 @@
 import "./Services.css";
 import ServiceCard from "./ServiceCard";
-import WhatsAppButton from "~/common/WhatsAppButton";
+import WhatsAppButton from "../common/WhatsAppButton";
 import CircularText from "./CircularText";
 
 export default function Services() {
