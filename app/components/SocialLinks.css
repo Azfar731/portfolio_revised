@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   justify-items: center;
+  
 }
 
 .slTopGradient {
@@ -30,6 +31,7 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  color: white;
 }
 
 .linkContainer {

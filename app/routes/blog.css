@@ -1,0 +1,8 @@
+
+
+.blogContainer {
+    font-size: 16px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
