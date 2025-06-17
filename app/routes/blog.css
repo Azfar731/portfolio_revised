@@ -1,8 +1,24 @@
+.dot-grid {
+  position: absolute;
+  top: 0;
 
+  /* stretch it however big you need: */
+  width: 300px;
+  height: 100%;
+  /* pick a transparent or semi‐opaque black if you like: */
+  background-color: rgba(0, 0, 0, 0.5); /* or just “transparent” */
+  /* create 2px dots of #14fdb1 on transparent */
+  background-image: radial-gradient(#14fdb1 2px, transparent 2px);
+  /* space them every 20px horizontally & vertically */
+  background-size: 20px 20px;
+  pointer-events: none; /* so it won’t block clicks */
+  z-index: 0; /* or whatever layer you need */
+}
 
-.blogContainer {
-    font-size: 16px !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.dot-grid-left {
+  left: -200px;
+}
+
+.dot-grid-right {
+  right: -200px;
 }

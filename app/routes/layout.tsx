@@ -10,6 +10,9 @@ export default function Layout() {
     <>
       <Nav name="Azfar Razzaq" />
       <Outlet />
+      <h2 className="mt-12 mb-8 text-4xl text-neonGreen font-semibold text-center">
+        Get in Touch
+      </h2>
       <LinksContainer />
       <Footer name="Azfar Razzaq" email="azfarrazzaq23@gmail.com" />
     </>

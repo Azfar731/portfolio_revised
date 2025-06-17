@@ -66,12 +66,15 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
   //   const html = marked(article.body_markdown);
 
   return (
-    <div className="w-full max-w-[100vw] pt-20 px-4 flex flex-col items-center overflow-x-hidden">
-      <header className="py-12 mx-auto flex flex-col items-center gap-8 text-white">
+    <div className="max-w-3xl w-full max-w-[100vw] pt-20 px-4 flex flex-col items-center overflow-x-hidden">
+      <header className="py-12 mx-auto flex flex-col items-center gap-8 text-white relative">
+        <div className="dot-grid dot-grid-left hidden lg:block"></div>
+        <div className="dot-grid dot-grid-right hidden lg:block"></div>
+        
         <img
           src={article.cover_image}
           alt="Package Icon"
-          className="max-w-full h-auto"
+          className="max-w-full lg:w-1/2 h-auto"
         />
 
         <div className="flex items-center uppercase tracking-widest text-gray-400 mb-4 space-x-2">
@@ -84,7 +87,7 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
           {article.title}
         </h1>
       </header>{" "}
-      <div id="article-body" className="w-full max-w-4xl mx-auto text-white">
+      <div id="article-body" className="w-full max-w-3xl mx-auto text-white">
         <div className="px-4 py-8 space-y-4 leading-relaxed text-lg prose prose-invert">
           <Markdown
             components={{
@@ -149,6 +152,16 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
           </Markdown>
         </div>
       </div>
+      <section className="text-center py-8 px-6 my-8 bg-gray-800 border-t border-gray-700 rounded-full border-opacity-40">
+        <h3 className="text-2xl text-[#14fdb1] font-semibold mb-4">
+          Thank you for reading ❤️
+        </h3>
+        <p className="text-gray-300 text-base max-w-xl mx-auto">
+          I appreciate you taking the time to read this blog. If you have any
+          questions or would like to discuss anything further, please feel free
+          to connect using the links below.
+        </p>
+      </section>
     </div>
   );
 }
