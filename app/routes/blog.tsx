@@ -9,30 +9,7 @@ import rehypeRaw from "rehype-raw";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import "./blog.css";
-type ArticleSuccess = {
-  id: number;
-  title: string;
-  description: string;
-  readable_publish_date: string;
-  slug: string;
-  path: string;
-  url: string;
-  language: string;
-  cover_image: string;
-  social_image: string;
-  canonical_url: string;
-  reading_time_minutes: number;
-  tags: string[];
-  body_html: string;
-  body_markdown: string;
-};
-
-type ArticleError = {
-  error: string;
-  status: number;
-};
-
-type Article = ArticleSuccess | ArticleError;
+import type { Article } from "~/utils/types";
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const { slug } = params;

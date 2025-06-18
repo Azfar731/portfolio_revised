@@ -21,11 +21,10 @@
 }
 
 .linksContainer {
-  width: 60%;
+  width: 55%;
   margin: 0 auto;
-
   max-width: 80%;
-  height: 7rem; /* Tailwind’s h-28 */
+  height: 5rem; /* Tailwind’s h-28 */
   border-radius: 5rem; /* Tailwind’s rounded-[5rem] */
   box-shadow: 0 0 0.1rem 0.1rem rgba(255, 255, 255, 0.3);
   display: flex;
@@ -43,25 +42,21 @@
 }
 
 .link {
-  height: 7rem;
+  height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
 }
 
-.link > img {
-  width: 2rem;
-  transform: rotate(45deg);
-}
 
 .link > span {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .site-icons {
-  height: 16px;
-  width: 16px;
+  height: 1rem;
+  width: 1rem;
 }
 
 .link:hover {
