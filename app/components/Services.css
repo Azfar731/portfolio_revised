@@ -48,7 +48,7 @@
   position: absolute;
   z-index: 1;
   height: 37.5rem;
-  width: 50rem;
+  width: 40rem;
   bottom: 0;
   right: 0;
   background-image: radial-gradient(circle at 60% 70%, #093436 0%, #07080e 70%);
@@ -104,6 +104,29 @@
   color: #92a49e;
   font-size: 1rem;
   line-height: 1.5;
+}
+
+
+@media (min-width: 991px) and (max-width: 1440px) {
+  .serviceTitleLine {
+    /* slope = (40px − 27px) / (1440 − 990) ≈ 0.0288889px per px of viewport
+       intercept = 27px − slope × 990px ≈ −1.6px */
+    font-size: clamp(
+      27px,
+      calc(100vw * 0.0288889 - 1.6px),
+      40px
+    );
+  }
+
+  .serviceDescriptionText {
+    /* slope = (16px − 11px) / (1440 − 990) = 5/450 = 0.0111111px per px
+       intercept ≈ 0px */
+    font-size: clamp(
+      11px,
+      calc(100vw * 0.0111111),
+      16px
+    );
+  }
 }
 
 @media (max-width: 990px) {
