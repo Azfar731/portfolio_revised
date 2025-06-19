@@ -21,10 +21,10 @@ export default function Technologies() {
 
   const ending_positions = {
     a: [
-      { x: "10rem", y: "20rem" },
-      { x: "-5rem", y: "-20rem" },
-      { x: "-2rem", y: "25rem" },
-      { x: "-5rem", y: "-20rem" },
+      { x: "7rem", y: "12rem" },
+      { x: "-1rem", y: "-14rem" },
+      { x: "-1.2rem", y: "15rem" },
+      { x: "-7rem", y: "-14rem" },
     ],
     b: [
       { x: "5rem", y: "10rem" },
