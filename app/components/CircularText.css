@@ -1,6 +1,6 @@
 .circularTextContainer {
-  height: 15rem;
-  width: 15rem;
+  height: 10rem;
+  width: 10rem;
   display: grid;
   place-items: center;
   background: linear-gradient(to bottom left, #020b0b, #072728);
@@ -14,15 +14,15 @@
 }
 
 .circularText {
-  height: 13rem;
-  font-size: 1.2rem;
+  height: 9rem;
+  font-size: 0.8rem;
   animation: circle 10s linear infinite;
 }
 
 .circularText > span {
   position: absolute;
-  transform-origin: 0 6.5rem;
-  font-size: 1.2rem;
+  transform-origin: 0 4.5rem;
+  font-size: 0.8rem;
   color: #92a49e;
   white-space: pre;
 }

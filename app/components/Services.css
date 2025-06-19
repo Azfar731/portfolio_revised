@@ -14,7 +14,7 @@
 #servicesContent {
   display: flex;
   flex-direction: column;
-  padding: 20rem 0rem 10rem;
+  padding: 12.5rem 0rem 6.25rem;
   align-items: center;
   position: relative;
   z-index: 2;
@@ -55,14 +55,14 @@
 }
 
 #serviceTitle {
-  margin-top: 2rem;
+  margin-top: 1.2rem;
 }
 
 #servicesCardContainer {
   display: flex;
   justify-content: space-between;
   width: 95%;
-  margin: 4rem;
+  margin: 2.5rem;
 }
 
 /* Service Card CSS starts here */
@@ -78,7 +78,7 @@
 }
 
 .serviceNumber {
-  font-size: 1.8rem;
+  font-size: 1.125rem;
   color: #19eada;
   white-space: pre;
 }
@@ -92,7 +92,7 @@
 }
 
 .serviceTitleLine {
-  font-size: 4rem;
+  font-size: 2.5rem;
   font-weight: normal;
 }
 
@@ -102,7 +102,7 @@
 
 .serviceDescriptionText {
   color: #92a49e;
-  font-size: 1.8rem;
+  font-size: 1.125rem;
   line-height: 1.5;
 }
 
