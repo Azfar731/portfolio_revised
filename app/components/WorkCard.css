@@ -28,12 +28,12 @@
 }
 
 .workCardTitle {
-  font-size: 2.5rem;
+  font-size: 1.7rem;
   font-weight: bold;
 }
 
 .workCardTitleHover {
-  font-size: 2.5rem;
+  font-size: 1.7rem;
   font-weight: normal;
 }
 
@@ -60,7 +60,7 @@
 }
 
 .project_description_text {
-  font-size: 1.6rem;
+  font-size: 1rem;
   /* line-height: 2rem; */
 }
 
