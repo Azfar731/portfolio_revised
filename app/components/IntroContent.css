@@ -10,6 +10,7 @@
 #intro-Content {
   position: relative;
   width: 40vw;
+  max-width: 38.7rem;
 }
 
 #intro-Content h1 {
@@ -18,6 +19,7 @@
   font-style: normal;
   font-size: 4rem;
 }
+
 #intro-Content p {
   font-size: 1.2rem;
   margin-bottom: 2rem;

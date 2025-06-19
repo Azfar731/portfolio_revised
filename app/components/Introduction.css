@@ -3,8 +3,8 @@
 }
 
 #introTopLeftGradient {
-  height: 50rem;
-  width: 50rem;
+  height: 50vh;
+  width: 50vh;
   top: auto;
   left: auto;
   background-image: radial-gradient(
@@ -15,11 +15,15 @@
 }
 
 #introRightGradient {
-  height: 60rem;
-  width: 60rem;
+  height: 60vh;
+  width: 60vh;
   right: 0;
   background-image: radial-gradient(circle at 70% 38%, #093436 0%, #010405 70%);
 }
+
+
+
+
 
 @media (max-width: 990px) {
   #introTopLeftGradient {
