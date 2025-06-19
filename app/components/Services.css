@@ -23,8 +23,8 @@
 #topDiv {
   position: absolute;
   z-index: 1;
-  height: 80rem;
-  width: 80rem;
+  height: 50rem;
+  width: 50rem;
   top: 0;
   left: 0;
   background-image: radial-gradient(circle at 20% 30%, #093436 0%, #07080e 70%);
@@ -33,22 +33,22 @@
 #bottomLeftDiv {
   position: absolute;
   z-index: 1;
-  height: 20rem;
-  width: 100rem;
+  height: 14rem;
+  width: 62.5rem;
   left: 0;
   bottom: 0;
   background-image: radial-gradient(
     ellipse at 10% 160%,
     #093436 0%,
-    #07080e 50%
+    #07080e 60%
   );
 }
 
 #bottomRightDiv {
   position: absolute;
   z-index: 1;
-  height: 60rem;
-  width: 80rem;
+  height: 37.5rem;
+  width: 50rem;
   bottom: 0;
   right: 0;
   background-image: radial-gradient(circle at 60% 70%, #093436 0%, #07080e 70%);
@@ -102,7 +102,7 @@
 
 .serviceDescriptionText {
   color: #92a49e;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.5;
 }
 

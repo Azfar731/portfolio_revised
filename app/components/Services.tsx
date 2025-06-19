@@ -45,7 +45,7 @@ export default function Services() {
         <CircularText text_param={` Azfar Razzaq •`} />
       </div>
       <div id="topDiv" className="radialGradient"></div>
-      <div id="bottomLeftDiv" className="radialGradient"></div>
+      {/* <div id="bottomLeftDiv" className="radialGradient"></div> */}
       <div id="bottomRightDiv" className="radialGradient"></div>
       <div id="servicesContent">
         <span className="smallText">HOW CAN I HELP?</span>
