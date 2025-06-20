@@ -28,6 +28,18 @@
   color: darkgray;
 }
 
+@media (min-width: 991px) and (max-width: 1440px) {
+  #intro-Content h1 {
+    font-size: clamp(44px, calc(100vw * 0.0444444), 64px);
+  }
+
+  #intro-Content p {
+    font-size: clamp(14px, calc(100vw * 0.0133333 + 0.8px), 20px);
+    width: 30vw;
+  }
+  
+}
+
 @media (max-width: 990px) {
   .introContainer {
     flex-direction: column;

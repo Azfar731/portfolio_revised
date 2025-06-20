@@ -10,6 +10,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import "./blog.css";
 import type { Article } from "~/utils/types";
+import IconDividerWithAvatar from "~/components/ProfileIcon";
 
 export async function loader({ params }: LoaderFunctionArgs) {
   const { slug } = params;
@@ -47,7 +48,7 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
       <header className="py-12 mx-auto flex flex-col items-center gap-8 text-white relative">
         <div className="dot-grid dot-grid-left hidden lg:block"></div>
         <div className="dot-grid dot-grid-right hidden lg:block"></div>
-        
+
         <img
           src={article.cover_image}
           alt="Package Icon"
@@ -64,6 +65,7 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
           {article.title}
         </h1>
       </header>{" "}
+      <IconDividerWithAvatar />
       <div id="article-body" className="w-full max-w-3xl mx-auto text-white">
         <div className="px-4 py-8 space-y-4 leading-relaxed text-lg prose prose-invert">
           <Markdown
