@@ -13,7 +13,7 @@ export default function BlogCard({ article }: { article: ArticleInfo }) {
     { bg: "bg-purple-200", text: "text-purple-800" },
   ];
   return (
-    <a href={article.url} target="_blank" rel="noopener noreferrer">
+    <a href={`/blogs/${article.slug}`} >
       <div
         className="blogCard"
         onMouseEnter={() => setIsHovering(true)}

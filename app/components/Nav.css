@@ -6,14 +6,13 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 0 3rem;
-  transition: background-color .3s;
+  transition: background-color 0.3s;
 }
 
 /* when menu is open, make nav background black */
 .nav--open {
   background-color: #000;
 }
-
 
 .nav__brand {
   font-family: "Warnes", cursive;
@@ -38,7 +37,7 @@ nav {
 .nav-overlay__link {
   color: #fff;
   font-size: 2.5rem;
-  transition: all .2s;
+  transition: all 0.2s;
   text-decoration: none !important;
 }
 
@@ -57,7 +56,7 @@ nav {
   padding: 0.7rem 1.2rem;
   background-color: #001b1f;
   border-radius: 2.5rem;
-  box-shadow: 0 0 0.5rem rgba(0,0,0,0.5);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
   color: #fff;
   opacity: 0.9;
   cursor: pointer;
@@ -76,24 +75,31 @@ nav {
   white-space: nowrap;
 }
 
-/* -------------- hamburger button -------------- */
-.hamburger-btn {
-  display: none;          /* hidden by default */
-  cursor: pointer;
-  z-index: 60;    
-  color: white;        /* above nav */
+.nav__blogs-link {
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
+/* -------------- hamburger button -------------- */
+.hamburger-btn {
+  display: none; /* hidden by default */
+  cursor: pointer;
+  z-index: 60;
+  color: white; /* above nav */
+}
 
 /* -------------- full-screen overlay -------------- */
 .nav-overlay {
   position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   background: #000;
   opacity: 0;
   visibility: hidden;
-  transition: opacity .3s, visibility .3s;
+  transition: opacity 0.3s, visibility 0.3s;
   z-index: 40;
 }
 
@@ -129,15 +135,20 @@ nav {
     height: 80px;
     padding: 0 2rem;
   }
-  .nav__brand { font-size: 2rem; }
-  .status-button { padding: 1rem 2rem; }
-  .status-text { font-size: 1rem; }
+  .nav__brand {
+    font-size: 2rem;
+  }
+  .status-button {
+    padding: 1rem 2rem;
+  }
+  .status-text {
+    font-size: 1rem;
+  }
 }
-
 
 @media (max-width: 768px) {
   /* hide your WhatsApp link, show hamburger */
-  nav{
+  nav {
     position: fixed;
     top: 0;
     width: 100%;
@@ -145,26 +156,27 @@ nav {
     backdrop-filter: blur(15px);
     z-index: 100;
   }
-  .whatsapp-btn { display: none; }
+  .nav-links {
+    display: none; /* hide links on small screens */
+  }
+ 
 
   /* shrink brand a bit if you want */
-  .nav__brand { font-size: 2.2rem; }
-  
-  .hamburger-btn{
+  .nav__brand {
+    font-size: 1.5rem;
+  }
+
+  .hamburger-btn {
     display: block;
   }
 }
-
-
+/* 
 @media (max-width: 768px) {
-  /* hide your WhatsApp link, show hamburger */
-  
-  
-  /* shrink brand a bit if you want */
-  .nav__brand { font-size: 1.5rem; }
-  
-  
-}
+
+  .nav__brand {
+    font-size: 1.5rem;
+  }
+} */
 
 /* 
 

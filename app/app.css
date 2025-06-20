@@ -4,10 +4,13 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-Warnes: "Warnes", "cursive";
+
   --color-neonGreen: #14fdb1;
   --color-h3Color: #73fcd6;
   --color-h4Color: #aaf7ec;
   --color-oceanBlue: #1b878a;
+
+  --breakpoint-tablet: 991px;
 }
 * {
   /* margin: 0; */

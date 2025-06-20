@@ -21,20 +21,20 @@ export async function loader() {
 export default async function Blogs({ loaderData }: Route.ComponentProps) {
   const { articles } = loaderData;
   return (
-    <div className="w-full flex flex-col px-6 items-center justify-center gap-8">
+    <div className="w-full flex flex-col px-6 items-center justify-center gap-8 max-md:pt-30 max-tablet:pt-20">
       <h1 className="text-6xl font-bold text-neonGreen">Blogs</h1>
       <p className="text-lg text-gray-400">
-        Welcome to the blogs section. I hope you find these posts helpful—feel
-        free to leave a comment or review!
+      Welcome to the blogs section. I hope you find these posts helpful—feel
+      free to leave a comment or review!
       </p>
       <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-8xl px-4">
-        {
-          articles.map(article => {
-            return (
-              <BlogCard key={article.id} article={article} />
-            )
-          })
-        }
+      {
+        articles.map(article => {
+        return (
+          <BlogCard key={article.id} article={article} />
+        )
+        })
+      }
       </section>
     </div>
   );
