@@ -39,10 +39,12 @@
 }
 
 .blogCardStack {
+  display: block;
   margin-top: 1em;
   display: flex;
   align-items: center;
-  gap: 1em;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 /* 
@@ -111,6 +113,38 @@
   width: 2.5rem;
 }
 
+@media (min-width: 991px) and (max-width: 1440px) {
+  .blogCardTitle {
+    /* slope = (40px − 27px) / (1440 − 990) ≈ 0.0288889px per px of viewport
+       intercept = 27px − slope × 990px ≈ −1.6px */
+    font-size: clamp(18px, calc(100vw * 0.0177778 + 0.4px), 26px);
+  }
+  .blogCardTitleHover {
+    /* slope = (40px − 27px) / (1440 − 990) ≈ 0.0288889px per px of viewport
+       intercept = 27px − slope × 990px ≈ −1.6px */
+    font-size: clamp(18px, calc(100vw * 0.0177778 + 0.4px), 26px);
+  }
+
+  .project_description_text {
+    /* slope = (16px − 11px) / (1440 − 990) = 5/450 = 0.0111111px per px
+       intercept ≈ 0px */
+    font-size: clamp(11px, calc(100vw * 0.0111111), 16px);
+  }
+
+  .tech_stack_icons {
+    height: clamp(24px, calc(100vw * 0.0355556 - 10px), 40px);
+    width: clamp(24px, calc(100vw * 0.0355556 - 10px), 40px);
+  }
+
+  .project_description_container {
+    height: clamp(52px, calc(100vw * 0.0622222 - 9.6px), 80px);
+  }
+
+  .titleContainer {
+    height: clamp(90px, calc(100vw * 0.0844444 + 6.4px), 128px);
+  }
+}
+
 @media (max-width: 990px) {
   .blogCardTitle {
     font-size: 2rem;
@@ -176,6 +210,3 @@
     font-size: 1rem;
   }
 }
-
-
-

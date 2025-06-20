@@ -42,13 +42,13 @@ export default function BlogCard({ article }: { article: ArticleInfo }) {
                 {article.title}
               </div>
             </div>
-            <img
+            {/* <img
               src={arrow}
               alt="little arrow image"
               className={`transform w-8 transition-transform duration-300 ${
                 isHovering ? "rotate-45" : "rotate-90"
               }`}
-            />
+            /> */}
           </div>
           <div className="blogCardStack">
             {article.tag_list.map((tag, index) => {
