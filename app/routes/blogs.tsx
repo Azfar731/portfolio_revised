@@ -27,12 +27,12 @@ export default async function Blogs({ loaderData }: Route.ComponentProps) {
       Welcome to the blogs section. I hope you find these posts helpful—feel
       free to leave a comment or review!
       </p>
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-8xl px-4">
+      <section className="grid grid-cols-1 tablet:grid-cols-3 gap-6 w-full max-w-8xl px-4">
       {
         articles.map(article => {
         return (
           <BlogCard key={article.id} article={article} />
-        )
+      )
         })
       }
       </section>

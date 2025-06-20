@@ -44,16 +44,6 @@
   gap: 1em;
 }
 
-/* 
-.workCardPartners {
-  margin-top: 3em;
-  font-size: 1.2rem;
-  white-space: pre;
-  display: flex;
-  align-items: center;
-  color: #707b79;
-} */
-
 .project_description_container {
   margin-top: 1em;
   height: 80px;
@@ -108,6 +98,39 @@
 .tech_stack_icons {
   height: 2.5rem;
   width: 2.5rem;
+}
+
+@media (min-width: 991px) and (max-width: 1440px) {
+  .workCardTitle {
+    /* slope = (40px − 27px) / (1440 − 990) ≈ 0.0288889px per px of viewport
+       intercept = 27px − slope × 990px ≈ −1.6px */
+    font-size: clamp(18px, calc(100vw * 0.0177778 + 0.4px), 26px);
+  }
+  .workCardTitleHover {
+    /* slope = (40px − 27px) / (1440 − 990) ≈ 0.0288889px per px of viewport
+       intercept = 27px − slope × 990px ≈ −1.6px */
+    font-size: clamp(18px, calc(100vw * 0.0177778 + 0.4px), 26px);
+  }
+
+  .project_description_text {
+    /* slope = (16px − 11px) / (1440 − 990) = 5/450 = 0.0111111px per px
+       intercept ≈ 0px */
+    font-size: clamp(11px, calc(100vw * 0.0111111), 16px);
+  }
+
+  .tech_stack_icons {
+    height: clamp(24px, calc(100vw * 0.0355556 - 10px), 40px);
+
+    width: clamp(24px, calc(100vw * 0.0355556 - 10px), 40px);
+  }
+
+  .project_description_container {
+    height: clamp(52px, calc(100vw * 0.0622222 - 9.6px), 80px);
+  }
+
+  .titleContainer {
+    height: clamp(24px, calc(100vw * 0.0533333 - 28.8px), 48px);
+  }
 }
 
 @media (max-width: 990px) {
