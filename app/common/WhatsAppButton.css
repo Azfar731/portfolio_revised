@@ -35,6 +35,41 @@
   box-shadow: 1rem 1.5rem 5rem 2rem #082019;
 }
 
+@media (min-width: 991px) and (max-width: 1440px) {
+  .whatsapp-button {
+    /* height: 56px → 64px across 991–1440px */
+    height: clamp(56px, calc(38.37px + 1.78vw), 64px);
+
+    /* width: 264px → 352px across 991–1440px */
+    width: clamp(264px, calc(69.84px + 19.6vw), 352px);
+
+    /* left padding: 1.5rem → 2rem */
+    padding-left: clamp(
+      24px,
+      calc(24px + (32 - 24) * ((100vw - 991px) / (1440 - 991))),
+      32px
+    );
+  }
+
+  /* now scoped inside the same media query: */
+  .whatsapp-button span {
+    /* 14px → 20px over the 991–1440px range */
+    font-size: clamp(
+      14px,
+      calc(14px + (20 - 14) * ((100vw - 991px) / (1440 - 991))),
+      20px
+    );
+  }
+  .whatsapp-button img {
+    /* 40px (2.5rem) → 48px (3rem) */
+    height: clamp(
+      40px,
+      calc(40px + (48 - 40) * ((100vw - 991px) / (1440 - 991))),
+      48px
+    );
+  }
+}
+
 @media (max-width: 990px) {
   .whatsapp-button {
     height: 4rem;
@@ -54,7 +89,7 @@
   }
 }
 
-@media (max-width: 480px){
+@media (max-width: 480px) {
   .whatsapp-button {
     height: 3rem;
     width: 17rem;
@@ -72,5 +107,3 @@
     margin-right: 0rem;
   }
 }
-
-
