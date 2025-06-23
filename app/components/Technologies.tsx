@@ -51,7 +51,6 @@ export default function Technologies() {
 
     //set width on resize
     const handleResize = () => {
-      console.log("Width: ", window.innerWidth);
       setScreenWidth(window.innerWidth);
     };
 

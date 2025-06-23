@@ -4,7 +4,6 @@
   display: flex;
   justify-content: center;
   justify-items: center;
-  
 }
 
 .slTopGradient {
@@ -49,7 +48,6 @@
   gap: 0.5rem;
 }
 
-
 .link > span {
   font-size: 1rem;
 }
@@ -62,6 +60,26 @@
 .link:hover {
   background-color: #05292b;
   cursor: pointer;
+}
+
+.top-right-arrow {
+  size: 1rem;
+}
+
+@media (min-width: 991px) and (max-width: 1440px) {
+  .link > span {
+    font-size: clamp(11px, calc(100vw * 0.0111104), 16px);
+  }
+
+  .site-icons {
+    height: clamp(11px, calc(100vw * 0.0111104), 16px);
+    width: clamp(11px, calc(100vw * 0.0111104), 16px);
+  }
+
+  .top-right-arrow {
+    height: clamp(11px, calc(100vw * 0.0111104), 16px);
+    width: clamp(11px, calc(100vw * 0.0111104), 16px);
+  }
 }
 
 @media (max-width: 990px) {
@@ -100,7 +118,7 @@
 }
 
 @media (max-width: 480px) {
-    .site-icons {
+  .site-icons {
     height: 30px;
     width: 30px;
   }

@@ -35,7 +35,7 @@ export default function LinkContainers() {
             <div className="link">
               {site.icon}
               <span>{site.name}</span>
-              <GoArrowUpRight size={15} className="top-right-arrow" />
+              <GoArrowUpRight  className="top-right-arrow" />
             </div>
           </a>
         </div>

@@ -6,7 +6,7 @@ header {
     width: 60%;
     display: flex;
     justify-content: center;
-    padding: 2rem 0;
+    padding: 32px 0;
     border-radius: 50px;
     box-shadow: 0 0 0.1rem grey;
     background: rgb(2 10 7/ 50%);
@@ -37,9 +37,9 @@ header {
 }
 
 .headerElementName{
-    padding: 0.5rem 0;
+    padding: 8px 0;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.875rem;
     transition: color 0.3s;
     display: flex;
     justify-content: center;
