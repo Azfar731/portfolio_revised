@@ -5,7 +5,7 @@
 }
 
 .scrollingText {
-  font-size: 12.5rem;
+  font-size: 200px;
   display: inline-block;
   animation: 10s scroller infinite linear;
   color: black;
@@ -26,13 +26,17 @@
   }
 }
 
+@media (max-width: 1440px) and (min-width: 991px) {
+  .scrollingText {
+    font-size: clamp(140px, calc(100vw * 0.1333333 + 8px), 200px);
+  }
+}
 
 @media (max-width: 768px) {
   .scrollingText {
     font-size: 9rem;
   }
 }
-
 
 @media (max-width: 480px) {
   .scrollingText {
