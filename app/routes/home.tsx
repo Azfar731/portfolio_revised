@@ -43,7 +43,7 @@ export default function  Home() {
             className="transparentDiv"
           >
             <div className="fixedPart">
-              <SocialLinks socialLinks={personData.socialLinks}/>
+              <SocialLinks />
               <Footer name={personData.name} email={personData.email}/>
             </div>
           </div>
