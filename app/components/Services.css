@@ -106,26 +106,17 @@
   line-height: 1.5;
 }
 
-
 @media (min-width: 991px) and (max-width: 1440px) {
   .serviceTitleLine {
     /* slope = (40px − 27px) / (1440 − 990) ≈ 0.0288889px per px of viewport
        intercept = 27px − slope × 990px ≈ −1.6px */
-    font-size: clamp(
-      27px,
-      calc(100vw * 0.0288889 - 1.6px),
-      40px
-    );
+    font-size: clamp(27px, calc(100vw * 0.0288889 - 1.6px), 40px);
   }
 
   .serviceDescriptionText {
     /* slope = (16px − 11px) / (1440 − 990) = 5/450 = 0.0111111px per px
        intercept ≈ 0px */
-    font-size: clamp(
-      11px,
-      calc(100vw * 0.0111111),
-      16px
-    );
+    font-size: clamp(11px, calc(100vw * 0.0111111), 16px);
   }
 }
 
@@ -198,6 +189,12 @@
 }
 
 @media (max-width: 640px) {
+  #Services {
+   
+    margin-top: 15rem;
+    /* overflow: hidden; */
+  }
+
   #topDiv {
     height: 40rem;
     width: 100%;
