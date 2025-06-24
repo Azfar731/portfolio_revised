@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Introduction from "../components/Introduction";
 import Header from "../layout/Header";
 import AboutMe from "../components/AboutMe";
@@ -33,13 +33,13 @@ export default function  Home() {
 
               <RecentWork />
               <Services />
-              <ScrollingText text={" - Let's Connect"} />
+              <ScrollingText text={"--Let's Connect"} />
             </div>
           </div>
           {/*Transparents div id is used to scroll to fixed section,
       as fixed section is not a part of the scrollabel div*/}
           <div
-            id="Profiles"
+            id="ContactSection"
             className="transparentDiv"
           >
             <div className="fixedPart">

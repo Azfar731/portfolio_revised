@@ -15,14 +15,14 @@ export default function Nav({ name }: { name: string }) {
     { to: "#Work", label: "Work" },
     { to: "#Services", label: "Services" },
     { to: "/blogs", label: "Blogs" },
-    { to: "#Profiles", label: "Contact" },
+    { to: "#ContactSection", label: "Contact" },
   ];
 
   // shown on any other route
   const otherLinks = [
     { to: "/", label: "Home" },
     { to: "/blogs", label: "Blogs" },
-    { to: "/#Profiles", label: "Contact" },
+    { to: "/#ContactSection", label: "Contact" },
   ];
 
   // choose which set to show

@@ -1,24 +1,40 @@
 import "./ScrollingText.css";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function ScrollingText({ text }: { text: string }) {
-  //used for replicating text content inside the container, however it didn't work as expected
-  // useEffect(() => {
-  //   let component = document.querySelector(".scrollingText2");
-  //   if (component) {
-  //     const elem = component.cloneNode(true);
-  //     const container = document.querySelector(".scrollingTextContainer2");
-  //     if (!container) {
-  //       throw new Error("scrollingTextContainer2 not found");
-  //     }
-  //     container.append(elem);
-  //   }
-  // }, []);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [cloneCount, setCloneCount] = useState(2);
+
+  useEffect(() => {
+    function updateClones() {
+      const container = containerRef.current;
+      if (!container) return;
+
+      // Measure the width of one text instance
+      const firstText = container.querySelector(
+        ".scrollingText"
+      ) as HTMLElement;
+      if (!firstText) return;
+      const textWidth = firstText.offsetWidth;
+      const containerWidth = container.offsetWidth;
+
+      // Calculate how many copies are needed to fill + one extra
+      const count = Math.ceil(containerWidth / textWidth) + 1;
+      setCloneCount(count);
+    }
+
+    updateClones();
+    window.addEventListener("resize", updateClones);
+    return () => window.removeEventListener("resize", updateClones);
+  }, [text]);
 
   return (
-    <div className="scrollingTextContainer">
-      <div className="scrollingText">{text}</div>
-      <div className="scrollingText">{text}</div>
+    <div className="scrollingTextContainer" ref={containerRef}>
+      {Array.from({ length: cloneCount }).map((_, i) => (
+        <div className="scrollingText" key={i}>
+          {text}
+        </div>
+      ))}
     </div>
   );
 }

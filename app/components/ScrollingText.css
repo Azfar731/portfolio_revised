@@ -1,10 +1,12 @@
 .scrollingTextContainer {
   overflow: hidden;
-  white-space: pre;
   background-color: #13e5a1;
+  white-space: nowrap; /* prevent wrapping of inline items */
+  font-size: 0; /* remove gaps between inline-block items */
 }
 
 .scrollingText {
+  white-space: normal; /* allow text to wrap and ignore extra spaces */
   font-size: 200px;
   display: inline-block;
   animation: 10s scroller infinite linear;
@@ -20,15 +22,16 @@
   }
 }
 
-@media (max-width: 990px) {
-  .scrollingText {
-    font-size: 10rem;
-  }
-}
-
+/* responsive font-sizes */
 @media (max-width: 1440px) and (min-width: 991px) {
   .scrollingText {
     font-size: clamp(140px, calc(100vw * 0.1333333 + 8px), 200px);
+  }
+}
+
+@media (max-width: 990px) {
+  .scrollingText {
+    font-size: 10rem;
   }
 }
 

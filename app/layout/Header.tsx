@@ -1,12 +1,15 @@
+import { useScrollSpy } from "~/hook/scrollSpy";
 import "./Header.css";
+
 
 export default function Header({ currentSection }: { currentSection: string }) {
   const arr = [
     { name: "ABOUT ME", id: "AboutMe" },
     { name: "WORK", id: "Work" },
     { name: "SERVICES", id: "Services" },
-    { name: "PROFILES", id: "Profiles" },
+    { name: "Contact", id: "ContactSection" },
   ];
+  const current = useScrollSpy(arr.map((elem) => elem.id) );
 
   const elem = arr.map((elem, index) => {
     return (
@@ -18,7 +21,7 @@ export default function Header({ currentSection }: { currentSection: string }) {
         >
           <div
             className={`headerElementName ${
-              currentSection === elem.id ? "active" : ""
+              current === elem.id ? "active" : ""
             }`}
           >
             {elem.name}
