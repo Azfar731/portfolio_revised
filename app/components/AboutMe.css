@@ -4,6 +4,8 @@ hr {
 
 #AboutMe {
   width: 95%;
+  max-width: 1368px;
+  margin-inline: auto;
   display: flex;
   justify-content: center;
   align-items: center;
