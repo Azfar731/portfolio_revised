@@ -21,15 +21,15 @@
   background-image: radial-gradient(circle at 70% 38%, #093436 0%, #010405 70%);
 }
 
-
-
-
-
+.introduction-content-container {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+}
 @media (max-width: 990px) {
   #introTopLeftGradient {
     height: 100%;
     width: 100%;
-    /* display:none; */
   }
   #introRightGradient {
     display: none;

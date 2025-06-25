@@ -1,6 +1,8 @@
 .introContainer {
   display: flex;
   z-index: 2;
+  
+
 }
 
 #profileImageContainer {

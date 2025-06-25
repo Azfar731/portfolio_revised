@@ -17,8 +17,10 @@ export default function Introduction({
     <div id="intro">
       <div id="introTopLeftGradient" className="radialGradient"></div>
       <div id="introRightGradient" className="radialGradient"></div>
-      <Nav name={name} />
-      <IntroContent introContent={introContent} />
+      <div className="introduction-content-container">
+        <Nav name={name} />
+        <IntroContent introContent={introContent} />
+      </div>
     </div>
   );
 }
