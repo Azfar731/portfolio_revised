@@ -22,7 +22,7 @@
 .linksContainer {
   width: 55%;
   margin: 0 auto;
-  max-width: 80%;
+  max-width: 792px;
   height: 5rem; /* Tailwind’s h-28 */
   border-radius: 5rem; /* Tailwind’s rounded-[5rem] */
   box-shadow: 0 0 0.1rem 0.1rem rgba(255, 255, 255, 0.3);

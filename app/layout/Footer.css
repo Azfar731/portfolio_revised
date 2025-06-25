@@ -1,5 +1,7 @@
 #Footer {
   width: 95%;
+  max-width: 1262.86px;
+
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -111,10 +113,7 @@
   }
 }
 
-
-
 @media (max-width: 480px) {
-  
   #Footer {
     padding: 2rem 2rem;
   }
@@ -126,8 +125,7 @@
   .footer-name {
     font-size: 1.8rem;
   }
-  .email{
+  .email {
     font-size: 1.2rem;
   }
-
 }
