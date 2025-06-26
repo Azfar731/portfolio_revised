@@ -1,167 +1,155 @@
-
-#Technologies{
-    position: relative;
-    height: 1008px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#Technologies {
+  position: relative;
+  height: 1008px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .technologiesCenterdiv {
-    height: 100%;
-    width: 80%;
-    background-image: radial-gradient(circle at center, #093436 0%,  #010405 45%)
+  height: 100%;
+  width: 80%;
+  background-image: radial-gradient(circle at center, #093436 0%, #010405 45%);
 }
 
-.circle{
-    position: absolute;
-    border-radius: 50%;
-    border: 1px dashed #707b79;
-    z-index: 2;
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed #707b79;
+  z-index: 2;
 }
 
-#technologiesOuterCircle{
-    height: 504px;
-    width: 504px;
+#technologiesOuterCircle {
+  height: 504px;
+  width: 504px;
 }
 
-#technologiesInnerCircle{
-    height: 252px;
-    width: 252px;    
+#technologiesInnerCircle {
+  height: 252px;
+  width: 252px;
 }
 
-.globeImageContainer{
-    position: absolute;
-    height:655px;
-    width:655px;
-    z-index: 3;
-    /* background-color: green; */
-    border-radius: 50%;
-    overflow: hidden;
+.globeImageContainer {
+  position: absolute;
+  height: 655px;
+  width: 655px;
+  z-index: 3;
+  /* background-color: green; */
+  border-radius: 50%;
+  overflow: hidden;
 }
 
-.globeImage{
-    position: absolute;
-    height: 514px;
-    width: 514px;
-    right: -32%;
-    bottom: -26%;
-    opacity: 20%;
-    transform: rotate(-136deg);
+.globeImage {
+  position: absolute;
+  height: 514px;
+  width: 514px;
+  right: -32%;
+  bottom: -26%;
+  opacity: 20%;
+  transform: rotate(-136deg);
 }
 
-
-.globeIconContainer{
-    position: absolute;
-    z-index:4;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
+.globeIconContainer {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.rotationAxis{
-    height: 563px;
-    animation: movement 10s linear infinite; 
+.rotationAxis {
+  height: 563px;
+  animation: movement 10s linear infinite;
 }
 
 .globeImageContainer2 {
-    height: 4rem;
-    width: 4rem;
-    background: aquamarine;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    /* animation: movement 30s linear infinite; */
-    
+  height: 4rem;
+  width: 4rem;
+  background: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  /* animation: movement 30s linear infinite; */
 }
 
 .globeImage2 {
-    height: 60%;
-    width: 60%;
-    animation: movement 8s linear infinite;
-    
+  height: 60%;
+  width: 60%;
+  animation: movement 8s linear infinite;
 }
 
 @keyframes movement {
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .technologiesText {
-    position: absolute;
-    z-index: 5;
-    width: 50rem;
-    font-size: 5rem;
-    text-align: center;
+  position: absolute;
+  z-index: 5;
+  width: 48rem;
+  font-size: 5rem;
+  text-align: center;
 }
 
-.scrollingAnimationContainer{
-    position: relative;
-    z-index: 6;
-    width: 856px;
-    height: 534px;
-    /* background-color: red; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* opacity: 20%; */
+.scrollingAnimationContainer {
+  position: relative;
+  z-index: 6;
+  width: 856px;
+  height: 534px;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* opacity: 20%; */
 }
 
+@media (min-width: 991px) and (max-width: 1440px) {
+  .technologiesText {
+    font-size: clamp(60px, calc(100vw * 0.0444444 + 16px), 80px);
+  }
+}
 
 @media (max-width: 990px) {
-    
-
-#Technologies{
-
+  #Technologies {
     height: 40rem;
-    
-}
+  }
 
-
-.technologiesText {
-    
+  .technologiesText {
     z-index: 5;
     width: 40rem;
     font-size: 4rem;
-}
+  }
 
-
-.globeImageContainer{
-    
+  .globeImageContainer {
     position: absolute;
-    height:40rem;
-    width:40rem;
-    
-}
+    height: 40rem;
+    width: 40rem;
+  }
 
-#technologiesOuterCircle{
+  #technologiesOuterCircle {
     height: 25rem;
     width: 25rem;
-}
+  }
 
-#technologiesInnerCircle{
+  #technologiesInnerCircle {
     height: 12rem;
-    width: 12rem;    
-}
+    width: 12rem;
+  }
 
-
-.rotationAxis{
+  .rotationAxis {
     height: 29rem;
-    animation: movement 10s linear infinite; 
+    animation: movement 10s linear infinite;
+  }
 }
-
-}   
-
-
 
 @media (max-width: 768px) {
-    #Technologies{
-      display: none;
-    }
+  #Technologies {
+    display: none;
+  }
 }

@@ -1,6 +1,7 @@
 import "./Technology.css";
 import { motion, useTransform } from "framer-motion";
 import { SiSolidity } from "react-icons/si";
+
 export default function Technology3(props) {
   const x = useTransform(
     props.scrollYProgress,

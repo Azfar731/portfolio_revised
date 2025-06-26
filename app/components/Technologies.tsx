@@ -4,9 +4,26 @@ import globe2 from "../assets/globe2.png";
 import Technology from "./Technology";
 import { useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import Technology2 from "./Technology2";
-import Technology3 from "./Tech3";
-import Technology4 from "./Tech4";
+import { getIcon } from "~/utils/iconFactory";
+
+const technologiesData = [
+  {
+    text: "Remix",
+    icon: "si:SiRemix",
+  },
+  {
+    text: "React",
+    icon: "fa6:FaReact",
+  },
+  {
+    text: "Solidity",
+    icon: "si:SiSolidity",
+  },
+  {
+    text: "Typescript",
+    icon: "si:SiTypescript",
+  },
+];
 
 export default function Technologies() {
   const targetRef = useRef(null);
@@ -80,30 +97,19 @@ export default function Technologies() {
       </div>
 
       <div ref={targetRef} className="scrollingAnimationContainer">
-        <Technology
-          text="Remix"
-          scrollYprogress={scrollYProgress}
-          x={{ start: "0rem", end: end_point[0].x }}
-          y={{ start: "0rem", end: end_point[0].y }}
-        />
-        <Technology2
-          text={"React"}
-          scrollYProgress={scrollYProgress}
-          x={{ start: "0rem", end: end_point[1].x }}
-          y={{ start: "0rem", end: end_point[1].y }}
-        />
-        <Technology3
-          text={"Solidity"}
-          scrollYProgress={scrollYProgress}
-          x={{ start: "0rem", end: end_point[2].x }}
-          y={{ start: "0rem", end: end_point[2].y }}
-        />
-        <Technology4
-          text={"Typescript"}
-          scrollYProgress={scrollYProgress}
-          x={{ start: "0rem", end: end_point[3].x }}
-          y={{ start: "0rem", end: end_point[3].y }}
-        />
+        {technologiesData.map((tech, index) => {
+          return (
+            <Technology
+              key={index}
+              text={tech.text}
+              scrollYprogress={scrollYProgress}
+              x={{ start: "0rem", end: end_point[index].x }}
+              y={{ start: "0rem", end: end_point[index].y }}
+        
+              Tech_icon={getIcon(tech.icon)}
+            />
+          );
+        })}
       </div>
     </div>
   );
