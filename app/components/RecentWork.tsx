@@ -36,8 +36,8 @@ const projectsData = [
   },
   {
     title: "Khalil&Khalil",
-    project_image: "CapCompare.PNG",
-    project_url: "https://randomUrl.com",
+    project_image: "KhalilandKhalil.png",
+    project_url: "https://www.khalilandkhalil.com/",
     project_description:
       "A website for Khalil&Khalil law firm, operating in mulitple cities of Pakistan.",
     tech_icons: ["fa6:FaReact", "si:SiJavascript", "fa6:FaNode"],
