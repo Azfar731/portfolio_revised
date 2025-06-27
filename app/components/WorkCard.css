@@ -96,8 +96,8 @@
 }
 
 .tech_stack_icons {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 30px;
+  width: 30px;
 }
 
 @media (min-width: 991px) and (max-width: 1440px) {
@@ -119,9 +119,9 @@
   }
 
   .tech_stack_icons {
-    height: clamp(24px, calc(100vw * 0.0355556 - 10px), 40px);
+    height: clamp(16px, calc(100vw * 0.0311111 - 14.8px), 30px);
 
-    width: clamp(24px, calc(100vw * 0.0355556 - 10px), 40px);
+    width: clamp(16px, calc(100vw * 0.0311111 - 14.8px), 30px);
   }
 
   .project_description_container {
