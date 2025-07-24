@@ -23,7 +23,7 @@ const projectsData = [
   {
     title: "CapCompare",
     project_image: "CapCompare.PNG",
-    project_url: "https://randomUrl.com",
+    project_url: "https://coin-compare-project.vercel.app/home",
     project_description:
       "A Crypto market cap comparison app that allows users to compare market caps of different Crypto coins.",
     tech_icons: [
