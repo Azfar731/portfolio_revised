@@ -27,7 +27,23 @@ const projectsData = [
       "fa6:FaNode",
     ],
   },
-
+  {
+    title: "Infinite Carousel NPM Package",
+    project_image: "InfiniteCarousel.png",
+    project_url:
+      "https://www.npmjs.com/package/@azfar_razzaq/react-infinite-carousel",
+    project_description:
+      "A public NPM package to help developers implement infinite carousels with ease.",
+    tech_icons: ["fa6:FaNode", "fa6:FaReact", "si:SiTypescript"],
+  },
+  {
+    title: "Swan Studio",
+    project_image: "SwanStudio.png",
+    project_url: "https://swanstudio.uk/",
+    project_description:
+      "A website for Swan Studio, a clothing brand based in the UK.",
+    tech_icons: ["fa6:FaShopify"],
+  },
   {
     title: "Transaction Submitter",
     project_image: "TransactionSubmitter.png",
@@ -55,19 +71,7 @@ const projectsData = [
       "si:SiTailwindcss",
     ],
   },
-  {
-    title: "Infinite Carousel",
-    project_image: "InfiniteCarousel.png",
-    project_url: "https://github.com/Azfar731/infinite_carousel",
-    project_description:
-      "A simple repo that showcases how to implement a seamless infinite carousel through tailwind v4.",
-    tech_icons: [
-      "fa6:FaNode",
-      "fa6:FaReact",
-      "si:SiTypescript",
-      "si:SiTailwindcss",
-    ],
-  },
+
   {
     title: "Movie Finder",
     project_image: "MovieFinder.PNG",
