@@ -1,16 +1,18 @@
 .scrollingTextContainer {
   overflow: hidden;
   background-color: #13e5a1;
-  white-space: nowrap; /* prevent wrapping of inline items */
-  font-size: 0; /* remove gaps between inline-block items */
+  display: flex;
+  /* white-space: nowrap;  */
+  /* font-size: 0;  */
 }
 
 .scrollingText {
-  white-space: normal; /* allow text to wrap and ignore extra spaces */
+  white-space: nowrap; /* allow text to wrap and ignore extra spaces */
   font-size: 200px;
   display: inline-block;
   animation: 10s scroller infinite linear;
   color: black;
+  flex-shrink: 0;
 }
 
 @keyframes scroller {
