@@ -5,21 +5,14 @@ import { getIcon } from "../utils/iconFactory";
 
 const projectsData = [
   {
-    title: "Movie Finder",
-    project_image: "MovieFinder.PNG",
-    project_url: "https://moviefinderproject.netlify.app/",
+    title: "Khalil&Khalil",
+    project_image: "KhalilandKhalil.png",
+    project_url: "https://www.khalilandkhalil.com/",
     project_description:
-      "A movie finder app that allows users to search for movies and view their details.",
+      "A website for Khalil&Khalil law firm, operating in mulitple cities of Pakistan.",
     tech_icons: ["fa6:FaReact", "si:SiJavascript", "fa6:FaNode"],
   },
-  {
-    title: "Colour Picker",
-    project_image: "Color-Picker.PNG",
-    project_url: "https://colourpickerproject.netlify.app/",
-    project_description:
-      "A color picker app that allows users to select and save colors.",
-    tech_icons: ["fa6:FaReact", "si:SiJavascript", "fa6:FaNode"],
-  },
+
   {
     title: "CapCompare",
     project_image: "CapCompare.PNG",
@@ -34,14 +27,7 @@ const projectsData = [
       "fa6:FaNode",
     ],
   },
-  {
-    title: "Khalil&Khalil",
-    project_image: "KhalilandKhalil.png",
-    project_url: "https://www.khalilandkhalil.com/",
-    project_description:
-      "A website for Khalil&Khalil law firm, operating in mulitple cities of Pakistan.",
-    tech_icons: ["fa6:FaReact", "si:SiJavascript", "fa6:FaNode"],
-  },
+
   {
     title: "Transaction Submitter",
     project_image: "TransactionSubmitter.png",
@@ -81,6 +67,22 @@ const projectsData = [
       "si:SiTypescript",
       "si:SiTailwindcss",
     ],
+  },
+  {
+    title: "Movie Finder",
+    project_image: "MovieFinder.PNG",
+    project_url: "https://moviefinderproject.netlify.app/",
+    project_description:
+      "A movie finder app that allows users to search for movies and view their details.",
+    tech_icons: ["fa6:FaReact", "si:SiJavascript", "fa6:FaNode"],
+  },
+  {
+    title: "Colour Picker",
+    project_image: "Color-Picker.PNG",
+    project_url: "https://colourpickerproject.netlify.app/",
+    project_description:
+      "A color picker app that allows users to select and save colors.",
+    tech_icons: ["fa6:FaReact", "si:SiJavascript", "fa6:FaNode"],
   },
 ];
 
