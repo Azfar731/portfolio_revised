@@ -1,42 +1,45 @@
+import { useLayoutEffect, useRef, useState } from "react";
 import "./ScrollingText.css";
-import { useEffect, useRef, useState } from "react";
 
 export default function ScrollingText({ text }: { text: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [cloneCount, setCloneCount] = useState(4);
+  const [cloneCount, setCloneCount] = useState(2); // initial guess
 
-  useEffect(() => {
+  /* ─── keep the “auto-calculate clone count” logic ────────────────────────── */
+  useLayoutEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
     function updateClones() {
-      console.log("Update Clone function running");
-      const container = containerRef.current;
-      if (!container) return;
-
-      // Measure the width of one text instance
-      const firstText = container.querySelector(
+      const first = container!.querySelector(
         ".scrollingText"
-      ) as HTMLElement;
-      if (!firstText) return;
-      const textWidth = firstText.offsetWidth;
-      const containerWidth = container.offsetWidth;
+      ) as HTMLElement | null;
+      if (!first) return;
 
-      // Calculate how many copies are needed to fill + one extra
-      const count = Math.ceil(containerWidth / textWidth) + 1;
-      console.log(`Calculated clone count: ${count}`);
-      setCloneCount(count);
+      const textWidth = first.offsetWidth;
+      const containerWidth = container!.offsetWidth;
+      const needed = Math.ceil(containerWidth / textWidth) + 1; // fill + 1 extra
+      setCloneCount(needed);
     }
-    console.log("UseEffect ruuning");
-    updateClones();
+
+    updateClones(); // run once on mount
     window.addEventListener("resize", updateClones);
     return () => window.removeEventListener("resize", updateClones);
   }, [text]);
 
+  /* build one list of clones, then duplicate it once for a seamless loop */
+  const clones = Array.from({ length: cloneCount }).map((_, i) => (
+    <div className="scrollingText" key={i}>
+      {text}
+    </div>
+  ));
+
   return (
     <div className="scrollingTextContainer" ref={containerRef}>
-      {Array.from({ length: cloneCount }).map((_, i) => (
-        <div className="scrollingText" key={i}>
-          {text}
-        </div>
-      ))}
+      {/* key forces a remount when cloneCount changes → animation restarts cleanly */}
+      <div className="scrollTrack" key={cloneCount}>
+        {clones}
+        {clones}
+      </div>
     </div>
   );
 }
