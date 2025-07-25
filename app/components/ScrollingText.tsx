@@ -3,10 +3,11 @@ import { useEffect, useRef, useState } from "react";
 
 export default function ScrollingText({ text }: { text: string }) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [cloneCount, setCloneCount] = useState(2);
+  const [cloneCount, setCloneCount] = useState(4);
 
   useEffect(() => {
     function updateClones() {
+      console.log("Update Clone function running");
       const container = containerRef.current;
       if (!container) return;
 
@@ -20,9 +21,10 @@ export default function ScrollingText({ text }: { text: string }) {
 
       // Calculate how many copies are needed to fill + one extra
       const count = Math.ceil(containerWidth / textWidth) + 1;
+      console.log(`Calculated clone count: ${count}`);
       setCloneCount(count);
     }
-
+    console.log("UseEffect ruuning");
     updateClones();
     window.addEventListener("resize", updateClones);
     return () => window.removeEventListener("resize", updateClones);
