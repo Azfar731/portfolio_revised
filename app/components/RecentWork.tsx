@@ -5,25 +5,18 @@ import { getIcon } from "../utils/iconFactory";
 
 const projectsData = [
   {
-    title: "Movie Finder",
-    project_image: "MovieFinder.PNG",
-    project_url: "https://moviefinderproject.netlify.app/",
+    title: "Khalil&Khalil",
+    project_image: "KhalilandKhalil.png",
+    project_url: "https://www.khalilandkhalil.com/",
     project_description:
-      "A movie finder app that allows users to search for movies and view their details.",
+      "A website for Khalil&Khalil law firm, operating in mulitple cities of Pakistan.",
     tech_icons: ["fa6:FaReact", "si:SiJavascript", "fa6:FaNode"],
   },
-  {
-    title: "Colour Picker",
-    project_image: "Color-Picker.PNG",
-    project_url: "https://colourpickerproject.netlify.app/",
-    project_description:
-      "A color picker app that allows users to select and save colors.",
-    tech_icons: ["fa6:FaReact", "si:SiJavascript", "fa6:FaNode"],
-  },
+
   {
     title: "CapCompare",
     project_image: "CapCompare.PNG",
-    project_url: "https://randomUrl.com",
+    project_url: "https://coin-compare-project.vercel.app/home",
     project_description:
       "A Crypto market cap comparison app that allows users to compare market caps of different Crypto coins.",
     tech_icons: [
@@ -35,12 +28,21 @@ const projectsData = [
     ],
   },
   {
-    title: "Khalil&Khalil",
-    project_image: "KhalilandKhalil.png",
-    project_url: "https://www.khalilandkhalil.com/",
+    title: "Infinite Carousel NPM Package",
+    project_image: "InfiniteCarousel.png",
+    project_url:
+      "https://www.npmjs.com/package/@azfar_razzaq/react-infinite-carousel",
     project_description:
-      "A website for Khalil&Khalil law firm, operating in mulitple cities of Pakistan.",
-    tech_icons: ["fa6:FaReact", "si:SiJavascript", "fa6:FaNode"],
+      "A public NPM package to help developers implement infinite carousels with ease.",
+    tech_icons: ["fa6:FaNode", "fa6:FaReact", "si:SiTypescript"],
+  },
+  {
+    title: "Swan Studio",
+    project_image: "SwanStudio.png",
+    project_url: "https://swanstudio.uk/",
+    project_description:
+      "A website for Swan Studio, a clothing brand based in the UK.",
+    tech_icons: ["fa6:FaShopify"],
   },
   {
     title: "Transaction Submitter",
@@ -69,18 +71,22 @@ const projectsData = [
       "si:SiTailwindcss",
     ],
   },
+
   {
-    title: "Infinite Carousel",
-    project_image: "InfiniteCarousel.png",
-    project_url: "https://github.com/Azfar731/infinite_carousel",
+    title: "Movie Finder",
+    project_image: "MovieFinder.PNG",
+    project_url: "https://moviefinderproject.netlify.app/",
     project_description:
-      "A simple repo that showcases how to implement a seamless infinite carousel through tailwind v4.",
-    tech_icons: [
-      "fa6:FaNode",
-      "fa6:FaReact",
-      "si:SiTypescript",
-      "si:SiTailwindcss",
-    ],
+      "A movie finder app that allows users to search for movies and view their details.",
+    tech_icons: ["fa6:FaReact", "si:SiJavascript", "fa6:FaNode"],
+  },
+  {
+    title: "Colour Picker",
+    project_image: "Color-Picker.PNG",
+    project_url: "https://colourpickerproject.netlify.app/",
+    project_description:
+      "A color picker app that allows users to select and save colors.",
+    tech_icons: ["fa6:FaReact", "si:SiJavascript", "fa6:FaNode"],
   },
 ];
 
