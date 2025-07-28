@@ -33,7 +33,7 @@ export default function  Home() {
 
               <RecentWork />
               <Services />
-              <ScrollingText text={"--Let's Connect"} />
+              <ScrollingText text={" - Let's Connect"} />
             </div>
           </div>
           {/*Transparents div id is used to scroll to fixed section,

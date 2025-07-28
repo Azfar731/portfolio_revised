@@ -3,35 +3,13 @@
   background-color: #13e5a1;
 }
 
-/* NEW: only the track is animated */
-.scrollTrack {
-  /* shrink-wrap: inline-level boxes size themselves to their contents */
-  display: inline-flex;
-
-  /* defensive: forbid shrinking & Safari fallback */
-  flex: 0 0 auto;
-  width: max-content;
-  white-space: nowrap;
-  animation: scrollTrack 15s linear infinite;
-}
-
-/* move the whole track left by exactly half its width
-   (track contains two identical lists) */
-@keyframes scrollTrack {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
 
 /* individual clones are now static */
 .scrollingText {
   font-size: 200px;
   color: black;
   flex-shrink: 0;
-  white-space: nowrap;
+  white-space: pre;
 }
 
 /* responsive font-sizes */

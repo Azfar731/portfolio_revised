@@ -10,6 +10,7 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
+    "@azfar_razzaq/react-infinite-carousel": "^3.0.0",
     "@react-router/node": "^7.5.2",
     "@react-router/serve": "^7.5.2",
     "framer-motion": "^11.2.12",
