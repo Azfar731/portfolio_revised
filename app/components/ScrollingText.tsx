@@ -1,4 +1,3 @@
-import { useLayoutEffect, useRef, useState } from "react";
 import "./ScrollingText.css";
 import Carousel from "@azfar_razzaq/react-infinite-carousel";
 
