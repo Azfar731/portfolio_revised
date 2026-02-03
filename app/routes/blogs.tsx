@@ -1,8 +1,9 @@
 import type { ArticleInfo } from "~/utils/types";
 import type { Route } from "./+types/blogs"
 import BlogCard from "~/components/BlogCard";
-export async function loader() {
-  const response = await fetch("https://dev.to/api/articles?username=azfar731");
+
+export async function clientLoader() {
+  // const response = await fetch("https://dev.to/api/articles?username=azfar731");
   try {
     const response = await fetch(
       `https://dev.to/api/articles?username=azfar731`

@@ -12,7 +12,7 @@ import "./blog.css";
 import type { Article } from "~/utils/types";
 import IconDividerWithAvatar from "~/components/ProfileIcon";
 
-export async function loader({ params }: LoaderFunctionArgs) {
+export async function clientLoader({ params }: LoaderFunctionArgs) {
   const { slug } = params;
   if (!slug) {
     throw new Response("Not Found", { status: 404 });
@@ -21,7 +21,7 @@ export async function loader({ params }: LoaderFunctionArgs) {
 
   try {
     const response = await fetch(
-      `https://dev.to/api/articles/azfar731/${slug}`
+      `https://dev.to/api/articles/azfar731/${slug}`,
     );
     if (!response.ok) {
       throw new Response("Not Found", { status: 404 });
