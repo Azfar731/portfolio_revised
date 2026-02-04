@@ -8,8 +8,8 @@ import { getIcon } from "~/utils/iconFactory";
 
 const technologiesData = [
   {
-    text: "Remix",
-    icon: "si:SiRemix",
+    text: "React Router",
+    icon: "si:SiReactrouter",
   },
   {
     text: "React",
@@ -22,6 +22,18 @@ const technologiesData = [
   {
     text: "Typescript",
     icon: "si:SiTypescript",
+  },
+  {
+    text: "Node.js",
+    icon: "fa6:FaNodeJs",
+  },
+  {
+    text: "Next.js",
+    icon: "si:SiNextdotjs",
+  },
+  {
+    text: "Express",
+    icon: "si:SiExpress",
   },
 ];
 
@@ -38,16 +50,22 @@ export default function Technologies() {
 
   const ending_positions = {
     a: [
-      { x: "7rem", y: "12rem" },
-      { x: "-1rem", y: "-14rem" },
-      { x: "-1.2rem", y: "15rem" },
+      { x: "10rem", y: "12rem" },
+      { x: "3rem", y: "-10rem" },
+      { x: "5rem", y: "15rem" },
       { x: "-7rem", y: "-14rem" },
+      { x: "-3.5rem", y: "-15rem" },
+      { x: "-3.5rem", y: "-9rem" },
+      { x: "-8rem", y: "9rem" },
     ],
     b: [
-      { x: "5rem", y: "10rem" },
-      { x: "-2.5rem", y: "-10rem" },
-      { x: "-1rem", y: "12rem" },
-      { x: "-2.5rem", y: "-10rem" },
+      { x: "14rem", y: "10rem" },
+      { x: "3rem", y: "2rem" },
+      { x: "13rem", y: "12rem" },
+      { x: "-7rem", y: "-10rem" },
+      { x: "-3.5rem", y: "-12rem" },
+      { x: "-3.5rem", y: "-7rem" },
+      { x: "-8rem", y: "9rem" },
     ],
   };
 
@@ -105,7 +123,6 @@ export default function Technologies() {
               scrollYprogress={scrollYProgress}
               x={{ start: "0rem", end: end_point[index].x }}
               y={{ start: "0rem", end: end_point[index].y }}
-        
               Tech_icon={getIcon(tech.icon)}
             />
           );
