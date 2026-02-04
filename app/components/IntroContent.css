@@ -1,16 +1,37 @@
 .introContainer {
   display: flex;
-  z-index: 2;
-  
-
+  position: relative;
 }
 
 #profileImageContainer {
   width: 58vw;
+  position: relative;
+  z-index: 1; /* keep the image below the gradients */
+}
+
+#profileImageContainer::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 140px; /* adjust */
+  background: linear-gradient(to bottom, #010405 0%, rgba(1, 4, 5, 0) 100%);
+  z-index: 2; /* above image */
+  pointer-events: none;
+}
+
+#profileImageContainer img {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 0;
 }
 
 #intro-Content {
   position: relative;
+  z-index: 3; /* text/content stays above gradients */
   width: 40vw;
   max-width: 38.7rem;
 }
@@ -39,7 +60,6 @@
     font-size: clamp(14px, calc(100vw * 0.0133333 + 0.8px), 20px);
     width: 30vw;
   }
-  
 }
 
 @media (max-width: 990px) {
@@ -80,8 +100,14 @@
 }
 
 @media (max-width: 480px) {
+  #profileImageContainer::before {
+    height: 110px; /* tweak until the edge disappears */
+  }
+
   #profileImageContainer {
     height: 70vh;
+    width: auto;
+    margin-top: 100px;
   }
 
   #intro-Content h1 {

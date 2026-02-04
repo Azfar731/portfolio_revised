@@ -102,7 +102,16 @@ body {
 
 .radialGradient {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
+  pointer-events: none;
+
+  /* the Webflow trick: small element, big painted output */
+  filter: blur(110px);
+  opacity: 0.9;
+
+  /* optional but very close to the reference look on dark backgrounds */
+  mix-blend-mode: lighten;
+  transform: translateZ(0); /* avoids some blur artifacts */
 }
 
 .rightBorder {
@@ -111,6 +120,7 @@ body {
 
 .centered {
   top: 50%;
+
   left: 50%;
   transform: translate(-50%, -50%);
 }
