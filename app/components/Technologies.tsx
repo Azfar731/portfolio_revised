@@ -2,9 +2,10 @@ import "./Technologies.css";
 import globe from "../assets/globe.png";
 import globe2 from "../assets/globe2.png";
 import Technology from "./Technology";
-import { useScroll } from "framer-motion";
+import { useScroll } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { getIcon } from "~/utils/iconFactory";
+import { start } from "repl";
 
 const technologiesData = [
   {
@@ -34,11 +35,29 @@ export default function Technologies() {
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["start end", "center end"],
+    offset: ["center end", "end end"],
   });
 
   const [screenWidth, setScreenWidth] = useState<number>(0);
   let end_point;
+  let start_point;
+
+  const starting_positions = {
+    a: [
+      { x: "10rem", y: "12rem" },
+      { x: "3rem", y: "-10rem" },
+      { x: "5rem", y: "15rem" },
+      { x: "-7rem", y: "-14rem" },
+      { x: "-3.5rem", y: "-15rem" },
+    ],
+    b: [
+      { x: "5rem", y: "8rem" },
+      { x: "-6rem", y: "0rem" },
+      { x: "10rem", y: "8rem" },
+      { x: "-15rem", y: "-8rem" },
+      { x: "-5rem", y: "-8rem" },
+    ],
+  };
 
   const ending_positions = {
     a: [
@@ -47,29 +66,28 @@ export default function Technologies() {
       { x: "5rem", y: "15rem" },
       { x: "-7rem", y: "-14rem" },
       { x: "-3.5rem", y: "-15rem" },
-      { x: "-3.5rem", y: "-9rem" },
-      { x: "-8rem", y: "9rem" },
     ],
     b: [
-      { x: "14rem", y: "10rem" },
-      { x: "3rem", y: "2rem" },
+      { x: "8rem", y: "12rem" },
+      { x: "-10rem", y: "2rem" },
       { x: "13rem", y: "12rem" },
-      { x: "-7rem", y: "-10rem" },
+      { x: "-20rem", y: "-13rem" },
       { x: "-3.5rem", y: "-12rem" },
-      { x: "-3.5rem", y: "-7rem" },
-      { x: "-8rem", y: "9rem" },
     ],
   };
 
   switch (true) {
     case screenWidth > 990:
       end_point = ending_positions.a;
+      start_point = starting_positions.a;
       break;
     case screenWidth > 900:
       end_point = ending_positions.b;
+      start_point = starting_positions.b;
       break;
     default:
       end_point = ending_positions.b;
+      start_point = starting_positions.b;
   }
 
   useEffect(() => {
@@ -113,8 +131,8 @@ export default function Technologies() {
               key={index}
               text={tech.text}
               scrollYprogress={scrollYProgress}
-              x={{ start: "0rem", end: end_point[index].x }}
-              y={{ start: "0rem", end: end_point[index].y }}
+              x={{ start: start_point[index].x, end: end_point[index].x }}
+              y={{ start: start_point[index].y, end: end_point[index].y }}
               Tech_icon={getIcon(tech.icon)}
             />
           );
