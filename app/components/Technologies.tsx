@@ -5,7 +5,6 @@ import Technology from "./Technology";
 import { useScroll } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { getIcon } from "~/utils/iconFactory";
-import { start } from "repl";
 
 const technologiesData = [
   {
@@ -57,17 +56,31 @@ export default function Technologies() {
       { x: "-15rem", y: "-8rem" },
       { x: "-5rem", y: "-8rem" },
     ],
+    c: [
+      { x: "5rem", y: "8rem" },
+      { x: "-6rem", y: "0rem" },
+      { x: "10rem", y: "8rem" },
+      { x: "-15rem", y: "-8rem" },
+      { x: "-5rem", y: "-8rem" },
+    ],
   };
 
   const ending_positions = {
     a: [
-      { x: "10rem", y: "12rem" },
-      { x: "3rem", y: "-10rem" },
-      { x: "5rem", y: "15rem" },
-      { x: "-7rem", y: "-14rem" },
-      { x: "-3.5rem", y: "-15rem" },
+      { x: "-3rem", y: "15rem" },
+      { x: "-12rem", y: "-12rem" },
+      { x: "5rem", y: "18rem" },
+      { x: "-7rem", y: "-18rem" },
+      { x: "-2rem", y: "-12rem" },
     ],
     b: [
+      { x: "8rem", y: "12rem" },
+      { x: "-10rem", y: "2rem" },
+      { x: "13rem", y: "12rem" },
+      { x: "-20rem", y: "-13rem" },
+      { x: "-3.5rem", y: "-12rem" },
+    ],
+    c: [
       { x: "8rem", y: "12rem" },
       { x: "-10rem", y: "2rem" },
       { x: "13rem", y: "12rem" },
@@ -77,13 +90,17 @@ export default function Technologies() {
   };
 
   switch (true) {
-    case screenWidth > 990:
+    case screenWidth > 1200:
       end_point = ending_positions.a;
       start_point = starting_positions.a;
       break;
-    case screenWidth > 900:
+    case screenWidth > 990:
       end_point = ending_positions.b;
       start_point = starting_positions.b;
+      break;
+    case screenWidth > 900:
+      end_point = ending_positions.c;
+      start_point = starting_positions.c;
       break;
     default:
       end_point = ending_positions.b;
