@@ -88,6 +88,28 @@ const projectsData = [
       "A color picker app that allows users to select and save colors.",
     tech_icons: ["fa6:FaReact", "si:SiJavascript", "fa6:FaNode"],
   },
+  {
+    title: "Alarm App",
+    project_image: "AlarmApp.png",
+    project_url: "https://github.com/Azfar731/AlarmApp",
+    project_description:
+      "An alarm app with a few extra features than standard ones.",
+    tech_icons: ["si:SiKotlin", "si:SiAndroidstudio", "si:SiMaterialdesign"],
+  },
+  {
+    title: "Saloon Dashboard",
+    project_image: "Dashboard.png",
+    project_url: "https://github.com/Azfar731/Saloon-Management-System",
+    project_description:
+      "A web based dashboard for a saloon business to manage everything from one place",
+    tech_icons: [
+      "fa6:FaReact",
+      "si:SiTypescript",
+      "fa6:FaNode",
+      "si:SiReactrouter",
+      "si:SiPostgresql",
+    ],
+  },
 ];
 
 export default function RecentWork() {

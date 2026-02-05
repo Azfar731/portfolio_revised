@@ -16,16 +16,8 @@ const technologiesData = [
     icon: "fa6:FaReact",
   },
   {
-    text: "Solidity",
-    icon: "si:SiSolidity",
-  },
-  {
     text: "Typescript",
     icon: "si:SiTypescript",
-  },
-  {
-    text: "Node.js",
-    icon: "fa6:FaNodeJs",
   },
   {
     text: "Next.js",
