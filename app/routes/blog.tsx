@@ -44,7 +44,7 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
 
   return (
     <div className="max-w-3xl w-full max-w-[100vw] pt-20 px-4 flex flex-col items-center overflow-x-hidden">
-      <header className="py-12 mx-auto flex flex-col items-center gap-8 text-white relative">
+      <section className="py-12 mx-auto flex flex-col items-center gap-8 text-white relative">
         <div className="dot-grid dot-grid-left hidden lg:block"></div>
         <div className="dot-grid dot-grid-right hidden lg:block"></div>
 
@@ -77,7 +77,7 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
         <h1 className="text-4xl font-bold text-center max-w-3xl">
           {article.title}
         </h1>
-      </header>{" "}
+      </section>{" "}
       <IconDividerWithAvatar />
       <div id="article-body" className="w-full max-w-3xl mx-auto text-white">
         <div className="px-4 py-8 space-y-4 leading-relaxed text-lg prose prose-invert">
