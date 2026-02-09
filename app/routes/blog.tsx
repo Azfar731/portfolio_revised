@@ -3,9 +3,6 @@
 import type { LoaderFunctionArgs } from "react-router";
 import type { Route } from "./+types/blog";
 import Markdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import rehypeRaw from "rehype-raw";
-
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import "./blog.css";
