@@ -13,7 +13,7 @@ export default function IconDividerWithAvatar() {
       </a>
 
       <img
-        src="/public/profile_pic.jpg"
+        src="/profile_pic.jpg"
         alt="User Avatar"
         className="mx-4 w-16 h-16 rounded-full object-cover border-2 border-white shadow-sm"
       />
