@@ -2,6 +2,7 @@
 
 import type { LoaderFunctionArgs } from "react-router";
 import type { Route } from "./+types/blog";
+import { useState } from "react";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
@@ -38,6 +39,7 @@ export async function clientLoader({ params }: LoaderFunctionArgs) {
 
 export default function BlogPost({ loaderData }: Route.ComponentProps) {
   const { article } = loaderData;
+  const [isCoverImageLoaded, setIsCoverImageLoaded] = useState(false);
   //   const html = marked(article.body_markdown);
 
   return (
@@ -46,11 +48,25 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
         <div className="dot-grid dot-grid-left hidden lg:block"></div>
         <div className="dot-grid dot-grid-right hidden lg:block"></div>
 
-        <img
-          src={article.cover_image}
-          alt="Package Icon"
-          className="max-w-full lg:w-1/2 h-auto"
-        />
+        {article.cover_image ? (
+          <div className="max-w-full lg:w-1/2 w-full">
+            {!isCoverImageLoaded && (
+              <div
+                className="w-full aspect-video bg-gray-700/50 rounded-md animate-pulse"
+                aria-hidden="true"
+              />
+            )}
+            <img
+              src={article.cover_image}
+              alt={`${article.title} cover`}
+              className={`w-full h-auto ${
+                isCoverImageLoaded ? "block" : "hidden"
+              }`}
+              onLoad={() => setIsCoverImageLoaded(true)}
+              onError={() => setIsCoverImageLoaded(true)}
+            />
+          </div>
+        ) : null}
 
         <div className="flex items-center uppercase tracking-widest text-gray-400 mb-4 space-x-2">
           <span>{article.tags[0]}</span>

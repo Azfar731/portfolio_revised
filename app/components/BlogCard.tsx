@@ -5,6 +5,7 @@ import type { ArticleInfo } from "~/utils/types";
 
 export default function BlogCard({ article }: { article: ArticleInfo }) {
   const [isHovering, setIsHovering] = useState(false);
+  const [isImageLoaded, setIsImageLoaded] = useState(!article.cover_image);
   const colors = [
     { bg: "bg-red-200", text: "text-red-800" },
     { bg: "bg-green-200", text: "text-green-800" },
@@ -19,7 +20,25 @@ export default function BlogCard({ article }: { article: ArticleInfo }) {
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
-        <img src={`${article.cover_image}`} className="blogCardImage" alt="" />
+        <div className="relative w-full overflow-hidden rounded-[1.5rem] aspect-video bg-[#2a2d31]">
+          {!isImageLoaded && (
+            <div
+              className="absolute inset-0 animate-pulse bg-[#34383d]"
+              aria-hidden="true"
+            />
+          )}
+          {article.cover_image ? (
+            <img
+              src={article.cover_image}
+              className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
+                isImageLoaded ? "opacity-100" : "opacity-0"
+              }`}
+              alt={`${article.title} cover`}
+              onLoad={() => setIsImageLoaded(true)}
+              onError={() => setIsImageLoaded(true)}
+            />
+          ) : null}
+        </div>
         <div
           className={`flex flex-col w-full rounded-[1rem] p-[3%] transition-colors duration-300 ${
             isHovering ? "bg-[#0d0d0d]" : "bg-[#242629]"
