@@ -149,7 +149,7 @@
 
   .project_description_container {
     margin-top: 1em;
-    height: 60px;
+    height: auto;
   }
 
   .project_description_text {
