@@ -1,6 +1,5 @@
 import "./IntroContent.css";
 import WhatsAppButton from "../common/WhatsAppButton";
-import portfolioImg from "/portfolio_img.jpeg";
 
 export default function IntroContent({
   introContent,
@@ -14,7 +13,7 @@ export default function IntroContent({
   return (
     <div className="introContainer">
       <div id="profileImageContainer">
-        <img src={portfolioImg} alt="Profile" />
+        <img src="port_image3.png" alt="Profile" />
       </div>
       <div id="intro-Content">
         <h2 className="smallText">{introContent.jobTitle}</h2>

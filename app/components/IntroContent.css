@@ -74,7 +74,7 @@
   }
 
   #profileImageContainer {
-    height: 90vh;
+    height: auto;
   }
 
   #intro-Content h1 {
@@ -95,7 +95,8 @@
   }
 
   #profileImageContainer {
-    height: 80vh;
+    height: auto;
+    margin-top: 20px;
   }
 }
 
@@ -105,9 +106,9 @@
   }
 
   #profileImageContainer {
-    height: 70vh;
+    height: auto;
     width: auto;
-    margin-top: 100px;
+    margin-top: 20px;
   }
 
   #intro-Content h1 {
