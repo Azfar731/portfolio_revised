@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import { Cross as Hamburger } from "hamburger-react";
 import "./Nav.css";
@@ -7,9 +7,14 @@ export default function Nav({ name }: { name: string }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen((o) => !o);
 
+  // ✅ NEW: wait until client hydration before using `hash` for active link styling
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
   const { pathname, hash } = useLocation();
 
-  // the “home” page hash-links
   const rootLinks = [
     { to: "#AboutMe", label: "About Me" },
     { to: "#Work", label: "Work" },
@@ -18,14 +23,12 @@ export default function Nav({ name }: { name: string }) {
     { to: "#ContactSection", label: "Contact" },
   ];
 
-  // shown on any other route
   const otherLinks = [
     { to: "/", label: "Home" },
     { to: "/blogs", label: "Blogs" },
     { to: "/#ContactSection", label: "Contact" },
   ];
 
-  // choose which set to show
   const links = pathname === "/" ? rootLinks : otherLinks;
 
   return (
@@ -64,15 +67,17 @@ export default function Nav({ name }: { name: string }) {
         </button>
       </nav>
 
-      {/* full-screen overlay menu */}
       <div
         className={menuOpen ? "nav-overlay nav-overlay--open" : "nav-overlay"}
         onClick={toggleMenu}
       >
         <ul className="nav-overlay__list">
           {links.map(({ to, label }) => {
-            // decide active state: hash vs. pathname
-            const isActive = to.startsWith("#") ? hash === to : pathname === to;
+            // ✅ CHANGED: hash-based active state only after hydration
+            const isHashLink = to.startsWith("#");
+            const isActive = isHashLink
+              ? hydrated && hash === to
+              : pathname === to;
 
             return (
               <li key={to}>
