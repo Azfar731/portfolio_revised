@@ -29,6 +29,7 @@ body {
   position: relative;
   z-index: -7;
   background-color: #010405;
+  user-select: none;
 }
 
 .loadingScreen {

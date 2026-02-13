@@ -31,7 +31,10 @@
 .email {
   font-size: 1rem;
   padding: 0.5rem;
+  user-select: all;
+  /* text-decoration: none; */
 }
+
 /* 
 .email:hover{
     color: white;
@@ -48,7 +51,7 @@
 .animated-underline {
   /* display: inline-block; */
   position: relative;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .animated-underline::after {
