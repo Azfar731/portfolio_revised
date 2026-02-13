@@ -110,8 +110,8 @@ body {
   opacity: 0.9;
 
   /* optional but very close to the reference look on dark backgrounds */
-  mix-blend-mode: lighten;
-  transform: translateZ(0); /* avoids some blur artifacts */
+  /* mix-blend-mode: lighten; */
+  /* transform: translateZ(0);  */
 }
 
 .rightBorder {
