@@ -19,7 +19,7 @@ export async function clientLoader() {
   }
 }
 
-export default async function Blogs({ loaderData }: Route.ComponentProps) {
+export default function Blogs({ loaderData }: Route.ComponentProps) {
   const { articles } = loaderData;
   return (
     <div className="w-full flex flex-col px-6 items-center justify-center gap-8 max-md:pt-30 max-tablet:pt-20">

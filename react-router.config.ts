@@ -18,7 +18,7 @@ export default {
   // Server-side render by default, to enable SPA mode set this to `false`
   ssr: false,
   async prerender() {
-    // const blogRoutes = await getBlogSlugs();
-    return ["/"];
+    const blogRoutes = await getBlogSlugs();
+    return ["/", "/blogs", ...blogRoutes];
   },
 } satisfies Config;
