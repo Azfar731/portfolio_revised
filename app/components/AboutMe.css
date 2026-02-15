@@ -94,4 +94,8 @@ hr {
   .list-item .text {
     font-size: 1.1rem;
   }
+
+  .listContainer {
+    padding-left: 0;
+  }
 }
