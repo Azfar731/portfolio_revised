@@ -47,7 +47,7 @@ export default function AboutMe({ aboutMeList }: { aboutMeList: string[] }) {
   return (
     <div id="AboutMe" className="group">
       <div
-        className="vl hidden md:block  border-l-2 border-stone-900 group-hover:border-oceanBlue group-hover:shadow-[0_0_20px_2px_#1b878a]"
+        id="vl" className="border-l-2 border-stone-900 group-hover:border-oceanBlue group-hover:shadow-[0_0_20px_2px_#1b878a]"
         style={hoverState ? styles.current.hover : styles.current.default}
       ></div>
       <div className="listContainer">{listItems}</div>
