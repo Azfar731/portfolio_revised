@@ -69,6 +69,9 @@ hr {
     padding-left: 1rem;
   }
 
+  #vl {
+    display: none;
+  }
   .list-item {
     padding: 1rem;
   }
@@ -83,6 +86,9 @@ hr {
     flex: 1;
     line-height: 1.5;
     font-size: 1.2rem;
+  }
+  .listContainer {
+    padding-left: 0;
   }
 }
 
