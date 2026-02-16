@@ -28,7 +28,7 @@ const projectsData = [
     ],
   },
   {
-    title: "Infinite Carousel NPM Package",
+    title: "Infinite Carousel",
     project_image: "InfiniteCarousel.png",
     project_url:
       "https://www.npmjs.com/package/@azfar_razzaq/react-infinite-carousel",
