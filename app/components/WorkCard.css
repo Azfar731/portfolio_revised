@@ -134,6 +134,34 @@
 }
 
 @media (max-width: 990px) {
+  #animatedTitle {
+    display: none !important;
+  }
+
+  /* 2) Make the title layout normal (no clipping/absolute positioning) */
+  .titleContainer {
+    position: static;
+    overflow: visible;
+    height: auto;
+  }
+
+  .textLine {
+    position: static;
+    top: auto;
+    opacity: 1;
+    transition: none !important;
+  }
+
+  /* 3) Neutralize hover animation classes (so default title stays static) */
+  .line1-enter,
+  .line1-exit,
+  .line2-enter,
+  .line2-exit {
+    top: auto;
+    opacity: 1;
+    transition: none !important;
+  }
+
   .workCardTitle {
     font-size: 2rem;
   }

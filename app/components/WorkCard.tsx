@@ -33,17 +33,17 @@ export default function WorkCard({
             isHovering ? "bg-[#0d0d0d]" : "bg-[#242629]"
           }`}
         >
-          <div className="workCardHeading">
-            <div className="titleContainer">
+          <div id="workCardHeading" className="workCardHeading">
+            <div id="titleContainer" className="titleContainer">
               <div
-                className={`workCardTitle textLine ${
+                id="defaultTitle" className={`workCardTitle textLine ${
                   isHovering ? "line1-exit" : "line1-enter"
                 }`}
               >
                 {title}
               </div>
               <div
-                className={`workCardTitleHover textLine ${
+                id="animatedTitle" className={`workCardTitleHover textLine ${
                   isHovering ? "line2-enter" : "line2-exit"
                 }`}
               >
