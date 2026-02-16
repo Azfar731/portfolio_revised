@@ -32,6 +32,7 @@ export async function clientLoader({ params }: LoaderFunctionArgs) {
 
     return { article };
   } catch (error) {
+    if (error instanceof Response) throw error;
     console.error("Error fetching article:", error);
     throw new Response("Failed to fetch article", { status: 500 });
   }

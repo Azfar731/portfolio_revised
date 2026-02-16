@@ -9,6 +9,7 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
+import ErrorUI from "./components/ErrorUI";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -54,15 +55,18 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   let details = "An unexpected error occurred.";
   let stack: string | undefined;
 
-  if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? "404" : "Error";
-    details =
-      error.status === 404
-        ? "The requested page could not be found."
-        : error.statusText || details;
+  if (isRouteErrorResponse(error) && error.status === 404) {
+    return <ErrorUI />;
   } else if (import.meta.env.DEV && error && error instanceof Error) {
     details = error.message;
     stack = error.stack;
+  } else {
+    return (
+      <ErrorUI
+        title="Internal Server Error"
+        message={`An unexpected error occurred.\nTry Reloading the Page.`}
+      />
+    );
   }
 
   return (

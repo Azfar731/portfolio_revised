@@ -12,4 +12,5 @@ export default [
     route("/blogs", "routes/blogs.tsx"),
     route("/blogs/:slug", "routes/blog.tsx"),
   ]),
+  route("*", "routes/catchall.tsx"), // catchall route,
 ] satisfies RouteConfig;
