@@ -2,7 +2,7 @@ import { useScrollSpy } from "~/hook/scrollSpy";
 import "./Header.css";
 
 
-export default function Header({ currentSection }: { currentSection: string }) {
+export default function Header() {
   const arr = [
     { name: "ABOUT ME", id: "AboutMe" },
     { name: "WORK", id: "Work" },
@@ -13,7 +13,7 @@ export default function Header({ currentSection }: { currentSection: string }) {
 
   const elem = arr.map((elem, index) => {
     return (
-      <a key={elem.id} href={`#${elem.id}`}>
+      <a key={elem.id} href={`#${elem.id}`} aria-label={`Navigate to ${elem.name} section`}>
         <div
           className={`headerElement ${
             index < arr.length - 1 ? "rightBorder" : ""

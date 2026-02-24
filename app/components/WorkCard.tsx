@@ -17,7 +17,7 @@ export default function WorkCard({
   const [isHovering, setIsHovering] = useState(false);
 
   return (
-    <a href={project_url} target="_blank" rel="noopener noreferrer">
+    <a href={project_url} target="_blank" rel="noopener noreferrer" aria-label={`Link to Project ${title}`}>
       <div
         className="workCard"
         onMouseEnter={() => setIsHovering(true)}

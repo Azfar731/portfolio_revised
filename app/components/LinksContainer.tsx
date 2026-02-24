@@ -31,11 +31,16 @@ export default function LinkContainers() {
             idx < sites.length - 1 ? "rightBorder" : ""
           }`}
         >
-          <a href={site.link} target="_blank" rel="noopener noreferrer">
+          <a
+            href={site.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Link to Azfar Razzaq's ${site.name} profile `}
+          >
             <div className="link">
               {site.icon}
               <span>{site.name}</span>
-              <GoArrowUpRight  className="top-right-arrow" />
+              <GoArrowUpRight className="top-right-arrow" />
             </div>
           </a>
         </div>

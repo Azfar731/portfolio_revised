@@ -11,7 +11,11 @@ export default function Footer({
     <div id="Footer">
       <div className="nameEmail">
         <span className="footer-name">{name}</span>
-        <a href={`mailto:${email}`} className=" email animated-underline">
+        <a
+          href={`mailto:${email}`}
+          className=" email animated-underline"
+          aria-label={`Email Azfar Razzaq at ${email}`}
+        >
           {email}
         </a>
       </div>

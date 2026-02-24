@@ -8,6 +8,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       className="whatsapp-button-container"
+      aria-label="WhatsApp Button"
     >
       <div className="whatsapp-button">
         <span>Happy to chat on WhatsApp</span>

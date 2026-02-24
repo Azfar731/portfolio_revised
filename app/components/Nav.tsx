@@ -60,7 +60,9 @@ export default function Nav({ name }: { name: string }) {
 
         <button
           className="hamburger-btn"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-label={
+            menuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
           onClick={toggleMenu}
         >
           <Hamburger size={40} toggled={menuOpen} />
