@@ -13,7 +13,7 @@ export default function IntroContent({
   return (
     <div className="introContainer">
       <div id="profileImageContainer">
-        <img src="port_image3.png" fetchPriority="high" alt="Profile" />
+        <img src="port_image.webp" fetchPriority="high" alt="Profile" />
       </div>
       <div id="intro-Content">
         <h2 className="smallText">{introContent.jobTitle}</h2>
