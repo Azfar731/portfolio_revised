@@ -6,7 +6,7 @@ import { getIcon } from "../utils/iconFactory";
 const projectsData = [
   {
     title: "Khalil&Khalil",
-    project_image: "KhalilandKhalil.png",
+    project_image: "KhalilandKhalil.webp",
     project_url: "https://www.khalilandkhalil.com/",
     project_description:
       "A website for Khalil&Khalil law firm, operating in mulitple cities of Pakistan.",
@@ -15,7 +15,7 @@ const projectsData = [
 
   {
     title: "CapCompare",
-    project_image: "CapCompare.PNG",
+    project_image: "CapCompare.webp",
     project_url: "https://coin-compare-project.vercel.app/home",
     project_description:
       "A Crypto market cap comparison app that allows users to compare market caps of different Crypto coins.",
@@ -29,7 +29,7 @@ const projectsData = [
   },
   {
     title: "Infinite Carousel",
-    project_image: "InfiniteCarousel.png",
+    project_image: "InfiniteCarousel.webp",
     project_url:
       "https://www.npmjs.com/package/@azfar_razzaq/react-infinite-carousel",
     project_description:
@@ -38,7 +38,7 @@ const projectsData = [
   },
   {
     title: "Swan Studio",
-    project_image: "SwanStudio.png",
+    project_image: "SwanStudio.webp",
     project_url: "https://swanstudio.uk/",
     project_description:
       "A website for Swan Studio, a clothing brand based in the UK.",
@@ -46,7 +46,7 @@ const projectsData = [
   },
   {
     title: "Transaction Submitter",
-    project_image: "TransactionSubmitter.png",
+    project_image: "TransactionSubmitter.webp",
     project_url: "https://github.com/Azfar731/Transaction-Submitter",
     project_description:
       "This project showcases a system for managing blockchain transactions with a database-driven queue. It features a smart contract with a mutable state variable and a web application that lets users read and update this variable.",
@@ -59,7 +59,7 @@ const projectsData = [
   },
   {
     title: "Multi Part Form",
-    project_image: "MultiPartForm.png",
+    project_image: "MultiPartForm.webp",
     project_url: "https://github.com/Azfar731/multi_part_form",
     project_description:
       "This repository showcases how to implement a multi-part form in react router v7.",
@@ -74,7 +74,7 @@ const projectsData = [
 
   {
     title: "Movie Finder",
-    project_image: "MovieFinder.PNG",
+    project_image: "MovieFinder.webp",
     project_url: "https://moviefinderproject.netlify.app/",
     project_description:
       "A movie finder app that allows users to search for movies and view their details.",
@@ -82,7 +82,7 @@ const projectsData = [
   },
   {
     title: "Colour Picker",
-    project_image: "Color-Picker.PNG",
+    project_image: "Color-Picker.webp",
     project_url: "https://colourpickerproject.netlify.app/",
     project_description:
       "A color picker app that allows users to select and save colors.",
@@ -90,7 +90,7 @@ const projectsData = [
   },
   {
     title: "Alarm App",
-    project_image: "AlarmApp.png",
+    project_image: "AlarmApp.webp",
     project_url: "https://github.com/Azfar731/AlarmApp",
     project_description:
       "An alarm app with a few extra features than standard ones.",
@@ -98,7 +98,7 @@ const projectsData = [
   },
   {
     title: "Saloon Dashboard",
-    project_image: "Dashboard.png",
+    project_image: "Dashboard.webp",
     project_url: "https://github.com/Azfar731/Saloon-Management-System",
     project_description:
       "A web based dashboard for a saloon business to manage everything from one place",
