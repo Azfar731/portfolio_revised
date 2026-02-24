@@ -2,6 +2,20 @@ import type { ArticleInfo } from "~/utils/types";
 import type { Route } from "./+types/blogs"
 import BlogCard from "~/components/BlogCard";
 
+
+export function meta(_: Route.MetaArgs) {
+  return [
+    { title: "Blogs - Azfar Razzaq" },
+    { name: "description", content: "Read my latest blog posts on web development, design, and more." },
+    {
+      name: "keywords",
+      content:
+        "Azfar Razzaq, Blogs, Web developmet blogs, full stack developer, web developer, React,React.js, Node.js, React Router, React Router v7, TypeScript, Next.js, Express.js, front-end development, full-stack development, secure web development, cybersecurity, secure coding, API development, responsive design, performance optimization, scalable architecture, freelance developer, agency-level web development",
+    },
+  ];
+}
+
+
 export async function clientLoader() {
   // const response = await fetch("https://dev.to/api/articles?username=azfar731");
   try {
