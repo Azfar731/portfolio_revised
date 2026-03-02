@@ -29,7 +29,7 @@ export default function CircularText({ text_param }: { text_param: string }) {
   return (
     <div className="circularTextContainer">
       <img src={arrow} alt="arrow symbol" />
-      <h5 className="circularText"></h5>
+      <div className="circularText"></div>
     </div>
   );
 }
