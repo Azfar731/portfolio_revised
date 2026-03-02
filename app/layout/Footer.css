@@ -18,12 +18,8 @@
 
 .footer-name {
   font-family: "Warnes", cursive;
-  font-weight: 400;
-  font-style: normal;
   font-size: 2rem;
   background: linear-gradient(90deg, #19eada, #14fdb1);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
 }
@@ -32,15 +28,7 @@
   font-size: 1rem;
   padding: 0.5rem;
   user-select: all;
-  /* text-decoration: none; */
 }
-
-/* 
-.email:hover{
-    color: white;
-    border-bottom: 2px solid green;
-    transform: scaleX(1);
-} */
 
 #Footer > span {
   color: #92a49e;
@@ -49,9 +37,7 @@
 }
 
 .animated-underline {
-  /* display: inline-block; */
   position: relative;
-  /* cursor: pointer; */
 }
 
 .animated-underline::after {
