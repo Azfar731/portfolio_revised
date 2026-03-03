@@ -1,6 +1,5 @@
 import "./Technology.css";
 import { motion, useTransform } from "motion/react";
-import { RiRemixRunFill } from "react-icons/ri";
 
 export default function Technology({
   text,

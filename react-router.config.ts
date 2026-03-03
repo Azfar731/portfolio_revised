@@ -8,7 +8,7 @@ async function getBlogSlugs(): Promise<string[]> {
     const data = await res.json();
     return data.map((article: any) => `/blogs/${article.slug}`);
   } catch (err) {
-    console.error("Error fetching blog slugs:", err);
+    // console.error("Error fetching blog slugs:", err);
     return []; // Return empty if error
   }
 }

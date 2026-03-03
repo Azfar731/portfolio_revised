@@ -1,5 +1,4 @@
 //route for displaying a single blog post
-
 import type { LoaderFunctionArgs } from "react-router";
 import type { Route } from "./+types/blog";
 import { useState } from "react";
@@ -15,7 +14,7 @@ export async function clientLoader({ params }: LoaderFunctionArgs) {
   if (!slug) {
     throw new Response("Not Found", { status: 404 });
   }
-  console.log("Fetching article with slug:", slug);
+  
 
   try {
     const response = await fetch(
@@ -33,7 +32,7 @@ export async function clientLoader({ params }: LoaderFunctionArgs) {
     return { article };
   } catch (error) {
     if (error instanceof Response) throw error;
-    console.error("Error fetching article:", error);
+    // console.error("Error fetching article:", error);
     throw new Response("Failed to fetch article", { status: 500 });
   }
 }

@@ -28,7 +28,7 @@ export async function clientLoader() {
     const articles: ArticleInfo[] = await response.json();
     return { articles };
   } catch (error) {
-    console.error("Error fetching article:", error);
+    // console.error("Error fetching article:", error);
     throw new Response("Failed to fetch articles list", { status: 500 });
   }
 }
