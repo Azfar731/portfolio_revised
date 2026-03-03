@@ -1,6 +1,5 @@
 import "./RecentWork.css";
 import WorkCard from "./WorkCard";
-// import projectsData from "../data/projectsdata.json";
 import { getIcon } from "../utils/iconFactory";
 
 const projectsData = [

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./BlogCard.css"; // Keep for non-style animations
-import arrow from "../assets/icons8-arrow-32.png";
 import type { ArticleInfo } from "~/utils/types";
 
 export default function BlogCard({ article }: { article: ArticleInfo }) {
@@ -61,13 +60,7 @@ export default function BlogCard({ article }: { article: ArticleInfo }) {
                 {article.title}
               </div>
             </div>
-            {/* <img
-              src={arrow}
-              alt="little arrow image"
-              className={`transform w-8 transition-transform duration-300 ${
-                isHovering ? "rotate-45" : "rotate-90"
-              }`}
-            /> */}
+           
           </div>
           <div className="blogCardStack">
             {article.tag_list.map((tag, index) => {

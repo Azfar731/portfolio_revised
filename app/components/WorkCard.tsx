@@ -50,13 +50,7 @@ export default function WorkCard({
                 {title}
               </div>
             </div>
-            {/* <img
-              src={arrow}
-              alt="little arrow image"
-              className={`transform w-8 transition-transform duration-300 ${
-                isHovering ? "rotate-45" : "rotate-90"
-              }`}
-            /> */}
+            
             <FaArrowRightLong
               className={`transform w-8 transition-transform duration-300  ${
                 isHovering ? "rotate-[-45deg]" : ""
