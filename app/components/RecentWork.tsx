@@ -1,6 +1,7 @@
 import "./RecentWork.css";
 import WorkCard from "./WorkCard";
 import { getIcon } from "../utils/iconFactory";
+import type { IconType } from "react-icons";
 
 const projectsData = [
   {
@@ -122,7 +123,7 @@ export default function RecentWork() {
         project_description={proj.project_description}
         tech_icons={proj.tech_icons
           .map(getIcon)
-          .filter((item) => item !== null)}
+          .filter((item): item is IconType => item !== null)}
       />
     );
   });

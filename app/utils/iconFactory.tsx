@@ -1,19 +1,54 @@
 // src/utils/iconFactory.tsx
-import * as Fa6 from "react-icons/fa6";
-import * as Si   from "react-icons/si";
+import type { IconType } from "react-icons";
+
+// ✅ Import ONLY the icons you use
+import { FaReact, FaNode, FaShopify } from "react-icons/fa6";
+
+import {
+  SiJavascript,
+  SiReactrouter,
+  SiTypescript,
+  SiTailwindcss,
+  SiExpress,
+  SiSolidity,
+  SiKotlin,
+  SiAndroidstudio,
+  SiMaterialdesign,
+  SiPostgresql,
+  SiNextdotjs,
+} from "react-icons/si";
 
 /**
- * Returns the React component for an icon ID such as "fa6:FaReact".
- * If the ID is invalid it returns null (so your UI doesn’t crash).
+ * Registry of allowed icons.
+ * Add new icons here when you start using them.
  */
-export function getIcon(id: string) {
-  const [lib, name] = id.split(":");
-  const libraries: Record<string, Record<string, unknown>> = {
-    fa6: Fa6,
-    si: Si
-  };
+const ICONS = {
+  fa6: {
+    FaReact,
+    FaNode,
+    FaShopify,
+  },
+  si: {
+    SiJavascript,
+    SiReactrouter,
+    SiTypescript,
+    SiTailwindcss,
+    SiExpress,
+    SiSolidity,
+    SiKotlin,
+    SiAndroidstudio,
+    SiMaterialdesign,
+    SiPostgresql,
+    SiNextdotjs,
+  },
+} as const satisfies Record<string, Record<string, IconType>>;
 
-  const library = libraries[lib];
+export function getIcon(id: string): IconType | null {
+  const [lib, name] = id.split(":");
+  const library = ICONS[lib as keyof typeof ICONS];
   if (!library) return null;
-  return library[name] as React.ComponentType | null;
+
+  return (library as Record<string, IconType>)[name] ?? null;
 }
+
+
