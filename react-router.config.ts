@@ -13,12 +13,16 @@ async function getBlogSlugs(): Promise<string[]> {
   }
 }
 
+const slugs = [ "how-i-improved-my-portfolio-performance-with-lighthouse"]
+
+const blogRoutes = slugs.map((slug) => `/blogs/${slug}`)
+
 export default {
   // Config options...
   // Server-side render by default, to enable SPA mode set this to `false`
   ssr: false,
   async prerender() {
-    const blogRoutes = await getBlogSlugs();
+    // const blogRoutes = await getBlogSlugs();
     return ["/", "/blogs", ...blogRoutes];
   },
 } satisfies Config;

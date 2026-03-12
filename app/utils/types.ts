@@ -1,18 +1,14 @@
 type ArticleSuccess = {
-  id: number;
+  id?: number;
   title: string;
   description: string;
   readable_publish_date: string;
-  slug: string;
-  path: string;
-  url: string;
-  language: string;
+  slug?: string;
+  url?: string;
   cover_image: string;
-  social_image: string;
-  canonical_url: string;
-  reading_time_minutes: number;
+  social_image?: string;
+  canonical_url?: string;
   tags: string[];
-  body_html: string;
   body_markdown: string;
 };
 

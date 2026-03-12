@@ -1,46 +1,105 @@
-//route for displaying a single blog post
-import type { LoaderFunctionArgs } from "react-router";
+// route for displaying a single self-hosted blog post
 import type { Route } from "./+types/blog";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Markdown from "react-markdown";
+import matter from "gray-matter";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import "./blog.css";
 import type { Article } from "~/utils/types";
 import IconDividerWithAvatar from "~/components/ProfileIcon";
 
-export async function clientLoader({ params }: LoaderFunctionArgs) {
+type BlogFrontmatter = {
+  title: string;
+  description: string;
+  cover_image: string;
+  tags: string[] | string;
+  readable_publish_date: string;
+  canonical_url?: string;
+  slug: string;
+};
+
+// Load local markdown files as raw text.
+// File name becomes the blog slug, e.g. app/content/blogs/my-post.md -> /blog/my-post
+const blogFiles = import.meta.glob("/app/content/blogs/*.md", {
+  query: "?raw",
+  import: "default",
+}) as Record<string, () => Promise<string>>;
+
+function normalizeTags(tags: BlogFrontmatter["tags"]): string[] {
+  if (Array.isArray(tags)) {
+    return tags.map((tag) => String(tag).trim()).filter(Boolean);
+  }
+
+  if (typeof tags === "string") {
+    return tags
+      .split(",")
+      .map((tag) => tag.trim())
+      .filter(Boolean);
+  }
+
+  return [];
+}
+
+export async function loader({ params }: Route.LoaderArgs) {
   const { slug } = params;
+
   if (!slug) {
     throw new Response("Not Found", { status: 404 });
   }
-  
+
+  // Find the markdown file whose filename matches the route slug
+  const matchedEntry = Object.entries(blogFiles).find(([filePath]) =>
+    filePath.endsWith(`/${slug}.md`),
+  );
+
+  if (!matchedEntry) {
+    throw new Response("Not Found", { status: 404 });
+  }
 
   try {
-    const response = await fetch(
-      `https://dev.to/api/articles/azfar731/${slug}`,
-    );
-    if (!response.ok) {
-      throw new Response("Not Found", { status: 404 });
-    }
-    const article: Article = await response.json();
+    const [, loadMarkdown] = matchedEntry;
+    const rawMarkdown = await loadMarkdown();
 
-    if ("error" in article) {
-      throw new Response("An error occurred", { status: article.status });
+    const { data, content } = matter(rawMarkdown);
+    const frontmatter = data as BlogFrontmatter;
+
+    if (!frontmatter.title || !frontmatter.readable_publish_date) {
+      throw new Response("Invalid blog frontmatter", { status: 500 });
     }
+
+    const article: Article = {
+      title: frontmatter.title,
+      description: frontmatter.description,
+      cover_image: frontmatter.cover_image,
+      tags: normalizeTags(frontmatter.tags),
+      readable_publish_date: frontmatter.readable_publish_date,
+      canonical_url: frontmatter.canonical_url,
+      slug: frontmatter.slug,
+      body_markdown: content,
+    };
 
     return { article };
   } catch (error) {
     if (error instanceof Response) throw error;
-    // console.error("Error fetching article:", error);
-    throw new Response("Failed to fetch article", { status: 500 });
+    throw new Response("Failed to load article", { status: 500 });
   }
 }
 
 export default function BlogPost({ loaderData }: Route.ComponentProps) {
   const { article } = loaderData;
   const [isCoverImageLoaded, setIsCoverImageLoaded] = useState(false);
-  //   const html = marked(article.body_markdown);
+
+  const imgRef = useRef<HTMLImageElement | null>(null);
+
+  useEffect(() => {
+    setIsCoverImageLoaded(false);
+
+    const img = imgRef.current;
+    if (img?.complete) {
+      setIsCoverImageLoaded(true);
+    }
+  }, [article.cover_image]);
 
   return (
     <div className="max-w-3xl w-full max-w-[100vw] pt-20 px-4 flex flex-col items-center overflow-x-hidden">
@@ -48,28 +107,30 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
         <div className="dot-grid dot-grid-left hidden lg:block"></div>
         <div className="dot-grid dot-grid-right hidden lg:block"></div>
 
-        {article.cover_image ? (
-          <div className="max-w-full lg:w-1/2 w-full">
+        <div className="w-full lg:w-1/2">
+          <div className="relative aspect-[2/1] overflow-hidden rounded-md bg-gray-700/20">
             {!isCoverImageLoaded && (
               <div
-                className="w-full aspect-video bg-gray-700/50 rounded-md animate-pulse"
+                className="absolute inset-0 animate-pulse bg-gray-700/50"
                 aria-hidden="true"
               />
             )}
+
             <img
+              ref={imgRef}
               src={article.cover_image}
               alt={`${article.title} cover`}
-              className={`w-full h-auto ${
-                isCoverImageLoaded ? "block" : "hidden"
+              className={`absolute inset-0 block h-full w-full object-cover transition-opacity duration-300 ${
+                isCoverImageLoaded ? "opacity-100" : "opacity-0"
               }`}
               onLoad={() => setIsCoverImageLoaded(true)}
               onError={() => setIsCoverImageLoaded(true)}
             />
           </div>
-        ) : null}
+        </div>
 
         <div className="flex items-center uppercase tracking-widest text-gray-400 mb-4 space-x-2">
-          <span>{article.tags[0]}</span>
+          <span>{article.tags?.[0] ?? "blog"}</span>
           <span>—</span>
           <span>{article.readable_publish_date}</span>
         </div>
@@ -77,8 +138,10 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
         <h1 className="text-4xl font-bold text-center max-w-3xl">
           {article.title}
         </h1>
-      </section>{" "}
+      </section>
+
       <IconDividerWithAvatar />
+
       <div id="article-body" className="w-full max-w-3xl mx-auto text-white">
         <div className="px-4 py-8 space-y-4 leading-relaxed text-lg prose prose-invert">
           <Markdown
@@ -144,6 +207,7 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
           </Markdown>
         </div>
       </div>
+
       <section className="text-center py-8 px-6 my-8 bg-gray-800 border-t border-gray-700 rounded-full border-opacity-40">
         <h3 className="text-2xl text-[#14fdb1] font-semibold mb-4">
           Thank you for reading ❤️
