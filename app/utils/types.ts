@@ -9,7 +9,7 @@ type Article = {
   base_images_path: string;
   social_image?: string;
   canonical_url?: string;
-  tags: string[];
+  tag_list: string[];
   body_markdown: string;
 };
 

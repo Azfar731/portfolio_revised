@@ -1,16 +1,3 @@
----
-title: "How I Improved My Portfolio Performance with Lighthouse"
-description: "A case study on improving my portfolio's performance"
-slug: "how-i-improved-my-portfolio-performance-with-lighthouse"
-cover_image: "/blog_images/how-i-improved-my-portfolio-performance-with-lighthouse/hero.webp"
-base_images_path: "/blog_images/how-i-improved-my-portfolio-performance-with-lighthouse"
-canonical_url: ""
-tags:
-  - performance
-  - react
-  - lighthouse
-readable_publish_date: "March 5, 2026"
----
 
 Okay, so you have learned what Google Lighthouse is, how it works, and what the metrics are. But most tutorials keep telling you what the metrics are instead of showing you how to actually improve them.
 For that purpose, I am structuring this article as a case study in which I am going to optimize the performance of my own portfolio through Google Lighthouse while also highlighting what to

@@ -2,50 +2,53 @@
 import type { Route } from "./+types/blog";
 import { useEffect, useRef, useState } from "react";
 import Markdown from "react-markdown";
-import matter from "gray-matter";
+
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import "./blog.css";
 import type { Article } from "~/utils/types";
 import IconDividerWithAvatar from "~/components/ProfileIcon";
 
-type BlogFrontmatter = {
+type BlogIndexArticle = {
   title: string;
   description: string;
+  slug: string;
   cover_image: string;
   base_images_path: string;
-  tags: string[] | string;
-  readable_publish_date: string;
+  path: string;
+  url?: string;
   canonical_url?: string;
-  slug: string;
+  tag_list: string[];
+  readable_publish_date: string;
 };
 
-// Load local markdown files as raw text.
-// File name becomes the blog slug, e.g. app/content/blogs/my-post.md -> /blog/my-post
+// Load all local markdown files as raw text.
+// File name becomes the blog slug, e.g. app/content/blogs/my-post.md -> my-post
 const blogFiles = import.meta.glob("/app/content/blogs/*.md", {
   query: "?raw",
   import: "default",
 }) as Record<string, () => Promise<string>>;
 
-function normalizeTags(tags: BlogFrontmatter["tags"]): string[] {
-  if (Array.isArray(tags)) {
-    return tags.map((tag) => String(tag).trim()).filter(Boolean);
-  }
+// Load the blog index JSON once
+const allJsonModules = import.meta.glob("/app/content/blogs/all.json", {
+  import: "default",
+  eager: true,
+}) as Record<string, BlogIndexArticle[]>;
 
-  if (typeof tags === "string") {
-    return tags
-      .split(",")
-      .map((tag) => tag.trim())
-      .filter(Boolean);
-  }
+const allArticles = Object.values(allJsonModules)[0] ?? [];
 
-  return [];
-}
 
 export async function loader({ params }: Route.LoaderArgs) {
   const { slug } = params;
 
   if (!slug) {
+    throw new Response("Not Found", { status: 404 });
+  }
+
+  // Find article metadata in all.json
+  const matchedArticle = allArticles.find((article) => article.slug === slug);
+
+  if (!matchedArticle) {
     throw new Response("Not Found", { status: 404 });
   }
 
@@ -62,23 +65,19 @@ export async function loader({ params }: Route.LoaderArgs) {
     const [, loadMarkdown] = matchedEntry;
     const rawMarkdown = await loadMarkdown();
 
-    const { data, content } = matter(rawMarkdown);
-    const frontmatter = data as BlogFrontmatter;
-
-    if (!frontmatter.title || !frontmatter.readable_publish_date) {
-      throw new Response("Invalid blog frontmatter", { status: 500 });
-    }
+    // Keeps compatibility if your markdown files still contain frontmatter
+   
 
     const article: Article = {
-      title: frontmatter.title,
-      description: frontmatter.description,
-      cover_image: frontmatter.cover_image,
-      base_images_path: frontmatter.base_images_path,
-      tags: normalizeTags(frontmatter.tags),
-      readable_publish_date: frontmatter.readable_publish_date,
-      canonical_url: frontmatter.canonical_url,
-      slug: frontmatter.slug,
-      body_markdown: content,
+      title: matchedArticle.title,
+      description: matchedArticle.description,
+      cover_image: matchedArticle.cover_image,
+      base_images_path: matchedArticle.base_images_path,
+      tag_list: matchedArticle.tag_list,
+      readable_publish_date: matchedArticle.readable_publish_date,
+      canonical_url: matchedArticle.canonical_url,
+      slug: matchedArticle.slug,
+      body_markdown: rawMarkdown,
     };
 
     return { article };
@@ -94,7 +93,11 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
 
   const imgRef = useRef<HTMLImageElement | null>(null);
 
-  const processedContent = article.body_markdown.replaceAll("{{base}}", article.base_images_path);
+  const processedContent = article.body_markdown.replaceAll(
+    "{{base}}",
+    article.base_images_path,
+  );
+
   // for smoothly showing the cover image once it's loaded, we track its loading state and apply a fade-in effect
   useEffect(() => {
     setIsCoverImageLoaded(false);
@@ -135,7 +138,7 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
         </div>
 
         <div className="flex items-center uppercase tracking-widest text-gray-400 mb-4 space-x-2">
-          <span>{article.tags?.[0] ?? "blog"}</span>
+          <span>{article.tag_list?.[0] ?? "blog"}</span>
           <span>—</span>
           <span>{article.readable_publish_date}</span>
         </div>
