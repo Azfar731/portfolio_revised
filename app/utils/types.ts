@@ -1,23 +1,17 @@
-type ArticleSuccess = {
+type Article = {
   id?: number;
   title: string;
   description: string;
   readable_publish_date: string;
-  slug?: string;
+  slug: string;
   url?: string;
   cover_image: string;
+  base_images_path: string;
   social_image?: string;
   canonical_url?: string;
   tags: string[];
   body_markdown: string;
 };
-
-type ArticleError = {
-  error: string;
-  status: number;
-};
-
-type Article = ArticleSuccess | ArticleError;
 
 
 type ArticleInfo = {

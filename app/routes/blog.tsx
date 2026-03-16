@@ -13,6 +13,7 @@ type BlogFrontmatter = {
   title: string;
   description: string;
   cover_image: string;
+  base_images_path: string;
   tags: string[] | string;
   readable_publish_date: string;
   canonical_url?: string;
@@ -72,6 +73,7 @@ export async function loader({ params }: Route.LoaderArgs) {
       title: frontmatter.title,
       description: frontmatter.description,
       cover_image: frontmatter.cover_image,
+      base_images_path: frontmatter.base_images_path,
       tags: normalizeTags(frontmatter.tags),
       readable_publish_date: frontmatter.readable_publish_date,
       canonical_url: frontmatter.canonical_url,
@@ -92,6 +94,8 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
 
   const imgRef = useRef<HTMLImageElement | null>(null);
 
+  const processedContent = article.body_markdown.replaceAll("{{base}}", article.base_images_path);
+  // for smoothly showing the cover image once it's loaded, we track its loading state and apply a fade-in effect
   useEffect(() => {
     setIsCoverImageLoaded(false);
 
@@ -102,7 +106,7 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
   }, [article.cover_image]);
 
   return (
-    <div className="max-w-3xl w-full max-w-[100vw] pt-20 px-4 flex flex-col items-center overflow-x-hidden">
+    <div className="max-w-3xl w-full max-w-[100vw] pt-20 px-4 flex flex-col items-center overflow-x-hidden select-text">
       <section className="py-12 mx-auto flex flex-col items-center gap-8 text-white relative">
         <div className="dot-grid dot-grid-left hidden lg:block"></div>
         <div className="dot-grid dot-grid-right hidden lg:block"></div>
@@ -184,6 +188,9 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
                   {...props}
                 />
               ),
+              img: ({ node, ...props }) => (
+                <img {...props} loading="lazy" fetchPriority="low" />
+              ),
               code({ node, inline, className, children, ...props }: any) {
                 const match = /language-(\w+)/.exec(className || "");
                 return !inline && match ? (
@@ -203,7 +210,7 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
               },
             }}
           >
-            {article.body_markdown}
+            {processedContent}
           </Markdown>
         </div>
       </div>

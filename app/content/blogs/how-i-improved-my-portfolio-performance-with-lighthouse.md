@@ -2,7 +2,8 @@
 title: "How I Improved My Portfolio Performance with Lighthouse"
 description: "Performed Case study on my own portfolio"
 slug: "how-i-improved-my-portfolio-performance-with-lighthouse"
-cover_image: "/blog_images/lighthouse_cover.webp"
+cover_image: "/blog_images/how-i-improved-my-portfolio-performance-with-lighthouse/hero.webp"
+base_images_path: "/blog_images/how-i-improved-my-portfolio-performance-with-lighthouse"
 canonical_url: ""
 tags:
   - performance
@@ -42,7 +43,7 @@ Before getting into the case study itself, here are a few things worth keeping i
 - You do not need to fix every single thing Lighthouse highlights. In some cases, a flagged item may just be part of how your site is built, and changing it may not be worth the effort unless it is something causing major issues.
 - A good place to start is the insights with the highest warning level. The red ones usually deserve attention first because they tend to have the biggest impact. The yellow ones are worth considering too, especially when the fix is small and easy to apply.
 
-![Lighthouse Severity Levels|491](severity_levels.png)
+![Lighthouse Severity Levels|491]({{base}}/severity_levels.webp)
 
 ## How I Optimized My Portfolio
 
@@ -54,11 +55,11 @@ Before making any changes, I first ran Lighthouse multiple times to get a more r
 
 **Mobile Version:**
 
-![Lighthouse Mobile Performance Score][55_score.png]
+![Lighthouse Mobile Performance Score]({{base}}/55_score.webp)
 
 **Desktop Version:**
 
-![Lighthouse Desktop Performance Score][68_score.png|388]
+![Lighthouse Desktop Performance Score]({{base}}/68_score.webp)
 
 Moving forward ,I will be using the mobile view to analyze performance. This is because google is mobile-first, and in my case, both mobile and desktop versions load the same assets and only differ in layout, so improving results on mobile would also improve the results on desktop version.
 
@@ -66,7 +67,7 @@ Moving forward ,I will be using the mobile view to analyze performance. This is 
 
 My initial mobile Lighthouse score was **55**. To understand where that score was coming from, I broke down the metric contributions below:
 
-![Lighthouse Mobile Score breakdown][55_score_expanded.png|274]
+![Lighthouse Mobile Score breakdown]({{base}}/55_score_expanded.webp)
 
 | Metric | Contribution | What it showed                                    |
 | ------ | ------------ | ------------------------------------------------- |
@@ -84,28 +85,28 @@ As the breakdown shows, **LCP** carries a lot of weight in the performance score
 
 Filtering down the Lighthouse suggestions for FCP, I got the following insights.
 
-![FCP Issues highlighted by Lighthouse][FCP_issues.png]
+![FCP Issues highlighted by Lighthouse]({{base}}/FCP_issues.webp)
 
 #### Reducing JavaScript Bundle Size
 
 Normally I would have started with the **Insights** tab first, but one thing in the diagnostics stood out immediately. Lighthouse showed potential savings of `2445KiB` from unused JavaScript. When I checked the built JavaScript bundles, the total size was `2517KB`. That is absurd for a page like this, because a reasonable bundle size is usually in the low hundreds of KB, not multiple MB. Most of that size was coming from `home.js` alone at `2005KB`, while `index.js` was another `472KB`.
 
-![Reduce Unused Javascript issue][reduce_js.png]
+![Reduce Unused Javascript issue]({{base}}/reduce_js.webp)
 
 After seeing that, I inspected the libraries I was importing in my components to find what was causing such a huge bundle size. It turned out that one library was responsible for most of it. I only needed a small part of that library, so I changed the import and used just the subset I actually needed. This brought the build size down by a lot.
 
 This fix caused such a massive improvement because the JavaScript bundles were simply too large before. The browser had to download much more code than necessary, which delayed how quickly the page could start showing content. That was hurting **FCP**, and because of that, **LCP** was also affected. Once the bundle size dropped, the JavaScript loaded much faster and the performance score jumped from **55** to **87**.
 
-![87 Performance Score][87_score.png|380]
+![87 Performance Score]({{base}}/87_score.webp)
 
 Even though Lighthouse marks `Reduce unused JavaScript` as unscored, cutting down that much JavaScript still had a direct effect on the page's actual loading performance. You can also see in the diagnostics below that the JavaScript size dropped to a much more reasonable level after the fix:
-![resolved reduce unused javascript issue ][reduce_js_result.png|509]
+![resolved reduce unused javascript issue ]({{base}}/reduce_js_result.webp)
 
 #### Self-Hosting Google Fonts
 
 Now I moved back to the **Insights** tab. The biggest issue there was `Render Blocking Requests`. It showed that apart from requests to my own server, the page was also making a request to the **Google Fonts API**. That request alone was costing around `1020ms`.
 
-![Render blocking requests issue](blocking_request.png)
+![Render blocking requests issue]({{base}}/blocking_request.webp)
 
 This was happening because I was using Google Fonts through the embed code. That is fine during development, but once your site is finalized and you already know which fonts and font styles you need, it makes more sense to self-host them. Self-hosting the fonts has a few clear advantages:
 
@@ -117,17 +118,17 @@ This was happening because I was using Google Fonts through the embed code. That
 
 You can download font files directly from Google Fonts, but it usually gives you `.ttf` files. Those are not ideal for the web because the file sizes are larger than needed. You can convert them to `woff2` yourself, or you can use the [Google-WebFont-Helper](https://gwfh.mranftl.com/fonts) website. It lets you download `woff2` versions of Google Fonts directly.
 
-![Google Webfonts helper website][google_webfonts.png]
+![Google Webfonts helper website]({{base}}/google_webfonts.webp)
 
 After self-hosting the fonts, the performance score went up to around **95-96**. This improvement came from removing that extra external request and reducing the render-blocking delay caused by the font loading.  
-![95 performance score][95_score.png|523]
+![95 performance score]({{base}}/95_score.webp)
 
 At this point, the performance score was already above 90, which is generally a good range. But I still decided to go through the remaining insights because some of the fixes were easy to apply and could still improve the website's actual performance, even if the score did not change much.
 
 #### Prioritizing the LCP Image
 
 The next insight showed that the LCP image was not being fetched with high priority.
-![LCP request discovery issue][LCP_request_discovery.png|520]
+![LCP request discovery issue]({{base}}/LCP_request_discovery.webp)
 
 This was a simple fix. I only needed to add `fetchPriority="high"` to the LCP image. Even though this did not noticeably change the performance score by itself, it is still a good practice because the browser can start prioritizing the most important image earlier.
 
@@ -138,7 +139,7 @@ On top of that, I also compressed the images by lowering their quality to around
 
 After replacing the images, I was able to reduce their combined size from around **8000KB** to **200KB**.
 
-![Total Image size comparison][./ss/image_size_before_after.png]
+![Total Image size comparison]({{base}}/image_size_before_after.webp)
 
 ### Results Afer Optimization:
 
@@ -147,10 +148,10 @@ To improve the performance of the portfolio, I reduced the JavaScript bundle siz
 As a result, the **mobile performance score** improved from **55 to 96**, while the **desktop performance score** improved from **68 to 100**.
 
 Mobile Scores:
-![Final Lighthouse Mobile score][./ss/final_mobile_score.png|402]
+![Final Lighthouse Mobile score]({{base}}/Final_mobile_score.webp)
 
 Desktop Scores:
-![Final Lighthouse Desktop score][./ss/final_desktop_score.png|409]
+![Final Lighthouse Desktop score]({{base}}/Final_desktop_score.webp)
 
 I also acted on some of the **Accessibility** and **SEO** insights, which helped improve those scores as well. However, I am not covering them here so the article stays focused on performance.
 
@@ -158,7 +159,7 @@ I also acted on some of the **Accessibility** and **SEO** insights, which helped
 
 There was one insight called `Network Dependency Tree`. It showed that during the initial page load, some requests were depending on earlier requests before they could start. In simple terms, the browser was not able to fetch everything in parallel because parts of the page were waiting on other resources first.
 
-![Network Dependency Tree issue][network_dependency_tree.png]
+![Network Dependency Tree issue]({{base}}/network_dependency_tree.webp)
 
 Even though Lighthouse marked this insight with a high severity level, I decided not to act on it. In my case, this behavior was part of how the page was built, and fixing it would have required a lot more time and effort than the other changes.
 
