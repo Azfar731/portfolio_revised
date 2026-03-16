@@ -1,10 +1,23 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./BlogCard.css"; // Keep for non-style animations
 import type { ArticleInfo } from "~/utils/types";
+import { Link } from "react-router";
 
 export default function BlogCard({ article }: { article: ArticleInfo }) {
   const [isHovering, setIsHovering] = useState(false);
-  const [isImageLoaded, setIsImageLoaded] = useState(!article.cover_image);
+  const [isCoverImageLoaded, setIsCoverImageLoaded] = useState(false);
+  const imgRef = useRef<HTMLImageElement | null>(null);
+
+  // Mirror the cover image loading logic used in blog.tsx so the skeleton fades out the same way.
+  useEffect(() => {
+    setIsCoverImageLoaded(false);
+
+    const img = imgRef.current;
+    if (img?.complete) {
+      setIsCoverImageLoaded(true);
+    }
+  }, [article.cover_image]);
+
   const colors = [
     { bg: "bg-red-200", text: "text-red-800" },
     { bg: "bg-green-200", text: "text-green-800" },
@@ -13,14 +26,14 @@ export default function BlogCard({ article }: { article: ArticleInfo }) {
     { bg: "bg-purple-200", text: "text-purple-800" },
   ];
   return (
-    <a href={`/blogs/${article.slug}`} >
+    <Link to={article.path}>
       <div
         className="blogCard"
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
         <div className="relative w-full overflow-hidden rounded-[1.5rem] aspect-video bg-[#2a2d31]">
-          {!isImageLoaded && (
+          {!isCoverImageLoaded && (
             <div
               className="absolute inset-0 animate-pulse bg-[#34383d]"
               aria-hidden="true"
@@ -28,13 +41,14 @@ export default function BlogCard({ article }: { article: ArticleInfo }) {
           )}
           {article.cover_image ? (
             <img
+              ref={imgRef}
               src={article.cover_image}
               className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${
-                isImageLoaded ? "opacity-100" : "opacity-0"
+                isCoverImageLoaded ? "opacity-100" : "opacity-0"
               }`}
               alt={`${article.title} cover`}
-              onLoad={() => setIsImageLoaded(true)}
-              onError={() => setIsImageLoaded(true)}
+              onLoad={() => setIsCoverImageLoaded(true)}
+              onError={() => setIsCoverImageLoaded(true)}
             />
           ) : null}
         </div>
@@ -60,7 +74,6 @@ export default function BlogCard({ article }: { article: ArticleInfo }) {
                 {article.title}
               </div>
             </div>
-           
           </div>
           <div className="blogCardStack">
             {article.tag_list.map((tag, index) => {
@@ -84,6 +97,6 @@ export default function BlogCard({ article }: { article: ArticleInfo }) {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 }

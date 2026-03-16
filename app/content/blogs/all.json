@@ -1,0 +1,14 @@
+[
+  {
+    "title": "How I Improved My Portfolio Performance with Lighthouse",
+    "description": "A case study on improving my portfolio's performance",
+    "slug": "how-i-improved-my-portfolio-performance-with-lighthouse",
+    "cover_image": "/blog_images/how-i-improved-my-portfolio-performance-with-lighthouse/hero.webp",
+    "base_images_path": "/blog_images/how-i-improved-my-portfolio-performance-with-lighthouse",
+    "path": "/blogs/how-i-improved-my-portfolio-performance-with-lighthouse",
+    "url": "",
+    "canonical_url": "",
+    "tag_list": ["performance", "react", "lighthouse"],
+    "readable_publish_date": "March 5, 2026"
+  }
+]

@@ -13,22 +13,20 @@ type Article = {
   body_markdown: string;
 };
 
-
 type ArticleInfo = {
-  id: number;
+  // id: number;
   title: string;
   description: string;
   readable_publish_date: string;
   slug: string;
   path: string;
   url: string;
-  language: string;
+  // language: string;
   cover_image: string;
-  social_image: string;
+  // social_image: string;
   canonical_url: string;
-  reading_time_minutes: number;
+  // reading_time_minutes: number;
   tag_list: string[];
 };
-
 
 export type { Article, ArticleInfo };

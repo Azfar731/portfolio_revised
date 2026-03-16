@@ -1,7 +1,7 @@
 import type { ArticleInfo } from "~/utils/types";
 import type { Route } from "./+types/blogs"
 import BlogCard from "~/components/BlogCard";
-
+import articlesList from "~/content/blogs/all.json";
 
 export function meta(_: Route.MetaArgs) {
   return [
@@ -16,25 +16,30 @@ export function meta(_: Route.MetaArgs) {
 }
 
 
-export async function clientLoader() {
-  // const response = await fetch("https://dev.to/api/articles?username=azfar731");
-  try {
-    const response = await fetch(
-      `https://dev.to/api/articles?username=azfar731`
-    );
-    if (!response.ok) {
-      throw new Response("Not Found", { status: 404 });
-    }
-    const articles: ArticleInfo[] = await response.json();
-    return { articles };
-  } catch (error) {
-    // console.error("Error fetching article:", error);
-    throw new Response("Failed to fetch articles list", { status: 500 });
-  }
+// export async function clientLoader() {
+  
+//   try {
+//     const response = await fetch(
+//       `https://dev.to/api/articles?username=azfar731`
+//     );
+//     if (!response.ok) {
+//       throw new Response("Not Found", { status: 404 });
+//     }
+//     const articles: ArticleInfo[] = await response.json();
+//     return { articles };
+//   } catch (error) {
+//     // console.error("Error fetching article:", error);
+//     throw new Response("Failed to fetch articles list", { status: 500 });
+//   }
+// }
+
+export async function loader(){
+  return {articlesList} as { articlesList: ArticleInfo[] };
 }
 
 export default function Blogs({ loaderData }: Route.ComponentProps) {
-  const { articles } = loaderData;
+  const { articlesList } = loaderData;
+
   return (
     <div className="w-full flex flex-col px-6 items-center justify-center gap-8 max-md:pt-30 max-tablet:pt-20">
       <h1 className="text-6xl font-bold text-neonGreen">Blogs</h1>
@@ -44,9 +49,9 @@ export default function Blogs({ loaderData }: Route.ComponentProps) {
       </p>
       <section className="grid grid-cols-1 tablet:grid-cols-3 gap-6 w-full max-w-8xl px-4">
       {
-        articles.map(article => {
+        articlesList.map(articleData => {
         return (
-          <BlogCard key={article.id} article={article} />
+          <BlogCard key={articleData.slug} article={articleData} />
       )
         })
       }
