@@ -124,6 +124,7 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
               ref={imgRef}
               src={article.cover_image}
               alt={`${article.title} cover`}
+              fetchPriority="high"
               className={`absolute inset-0 block h-full w-full object-cover transition-opacity duration-300 ${
                 isCoverImageLoaded ? "opacity-100" : "opacity-0"
               }`}
