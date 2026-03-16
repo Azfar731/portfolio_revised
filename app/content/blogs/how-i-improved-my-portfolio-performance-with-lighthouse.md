@@ -1,6 +1,6 @@
 ---
 title: "How I Improved My Portfolio Performance with Lighthouse"
-description: "Performed Case study on my own portfolio"
+description: "A case study on improving my portfolio's performance"
 slug: "how-i-improved-my-portfolio-performance-with-lighthouse"
 cover_image: "/blog_images/how-i-improved-my-portfolio-performance-with-lighthouse/hero.webp"
 base_images_path: "/blog_images/how-i-improved-my-portfolio-performance-with-lighthouse"
@@ -12,11 +12,11 @@ tags:
 readable_publish_date: "March 5, 2026"
 ---
 
-Ok, so you have learned what google lighthouse is, how it works, what the metrics are etc. But all of the tutorials keep telling you repeatedly about what the metrics are instead of teaching you how to actually improve them.
-For this purpose, I am structuing this article as a case-study where i am going to optimize the performance of my own portfolio through Google Lighthouse and meanwhile highlight what to
-focus on, what to ignore and some useful tips while utilizing Google Lighthouse.
+Okay, so you have learned what Google Lighthouse is, how it works, and what the metrics are. But most tutorials keep telling you what the metrics are instead of showing you how to actually improve them.
+For that purpose, I am structuring this article as a case study in which I am going to optimize the performance of my own portfolio through Google Lighthouse while also highlighting what to
+focus on, what to ignore, and some useful tips for using Google Lighthouse.
 
-## Pre-Requisite
+## Prerequisite
 
 I wrote this article for junior developers, especially those using Google Lighthouse for the first time and trying to understand how to act on its reports in a practical way.
 
@@ -37,7 +37,7 @@ Before using Lighthouse, make sure you are testing in the right environment.
 
 Before getting into the case study itself, here are a few things worth keeping in mind when reading Lighthouse results.
 
-- Lighthouse scores can vary from one scan to another. Sometimes the difference can even be 20 to 30 points, so do not judge your site based on a single run. Run Lighthouse around 4 to 5 times first to get a more reliable picture. You can also run it at with some difference(1-2 hour) for a better overall view.
+- Lighthouse scores can vary from one scan to another. Sometimes the difference can even be 20 to 30 points, so do not judge your site based on a single run. Run Lighthouse around 4 to 5 times first to get a more reliable picture. You can also run it again after some time (1-2 hours) for a better overall view.
 - After fixing an issue, do not just look at the final Performance score. Go back to the **Insights** tab and check whether that insight is no longer highlighted or whether its severity has gone down. Also check the values shown next to it, such as time saved, file size, or delay, and see if they improved.
 - Some fixes may not lead to a noticeable jump in the Performance score. That does not necessarily mean the fix was useless. Some improvements are not heavily reflected in the score but they can still boost the site's overall performance.
 - You do not need to fix every single thing Lighthouse highlights. In some cases, a flagged item may just be part of how your site is built, and changing it may not be worth the effort unless it is something causing major issues.
@@ -61,7 +61,7 @@ Before making any changes, I first ran Lighthouse multiple times to get a more r
 
 ![Lighthouse Desktop Performance Score]({{base}}/68_score.webp)
 
-Moving forward ,I will be using the mobile view to analyze performance. This is because google is mobile-first, and in my case, both mobile and desktop versions load the same assets and only differ in layout, so improving results on mobile would also improve the results on desktop version.
+Moving forward, I will be using the mobile view to analyze performance. This is because Google is mobile-first, and in my case, both mobile and desktop versions load the same assets and only differ in layout, so improving results on mobile would also improve the results on the desktop version.
 
 ### Initial Mobile Performance Breakdown
 
@@ -91,7 +91,7 @@ Filtering down the Lighthouse suggestions for FCP, I got the following insights.
 
 Normally I would have started with the **Insights** tab first, but one thing in the diagnostics stood out immediately. Lighthouse showed potential savings of `2445KiB` from unused JavaScript. When I checked the built JavaScript bundles, the total size was `2517KB`. That is absurd for a page like this, because a reasonable bundle size is usually in the low hundreds of KB, not multiple MB. Most of that size was coming from `home.js` alone at `2005KB`, while `index.js` was another `472KB`.
 
-![Reduce Unused Javascript issue]({{base}}/reduce_js.webp)
+![Reduce Unused JavaScript issue]({{base}}/reduce_js.webp)
 
 After seeing that, I inspected the libraries I was importing in my components to find what was causing such a huge bundle size. It turned out that one library was responsible for most of it. I only needed a small part of that library, so I changed the import and used just the subset I actually needed. This brought the build size down by a lot.
 
@@ -100,7 +100,7 @@ This fix caused such a massive improvement because the JavaScript bundles were s
 ![87 Performance Score]({{base}}/87_score.webp)
 
 Even though Lighthouse marks `Reduce unused JavaScript` as unscored, cutting down that much JavaScript still had a direct effect on the page's actual loading performance. You can also see in the diagnostics below that the JavaScript size dropped to a much more reasonable level after the fix:
-![resolved reduce unused javascript issue ]({{base}}/reduce_js_result.webp)
+![Resolved Reduce Unused JavaScript issue]({{base}}/reduce_js_result.webp)
 
 #### Self-Hosting Google Fonts
 
@@ -114,11 +114,11 @@ This was happening because I was using Google Fonts through the embed code. That
 - It removes the extra DNS, TCP, and TLS connection setup needed to fetch fonts from Google.
 - It is better for privacy and supports GDPR compliance by avoiding transmission of visitor IP addresses and related request data to Google for font delivery. See [Google Fonts and GDPR: How to Stay Compliant?](https://www.cookieyes.com/documentation/google-fonts-and-gdpr/).
 
-##### Using `woff2` instead of `ttf`
+##### Using `WOFF2` instead of `TTF`
 
-You can download font files directly from Google Fonts, but it usually gives you `.ttf` files. Those are not ideal for the web because the file sizes are larger than needed. You can convert them to `woff2` yourself, or you can use the [Google-WebFont-Helper](https://gwfh.mranftl.com/fonts) website. It lets you download `woff2` versions of Google Fonts directly.
+You can download font files directly from Google Fonts, but they usually come as `.ttf` files. Those are not ideal for the web because the file sizes are larger than needed. You can convert them to `woff2` yourself, or you can use the [Google-WebFont-Helper](https://gwfh.mranftl.com/fonts) website. It lets you download `woff2` versions of Google Fonts directly.
 
-![Google Webfonts helper website]({{base}}/google_webfonts.webp)
+![Google Web Font Helper website]({{base}}/google_webfonts.webp)
 
 After self-hosting the fonts, the performance score went up to around **95-96**. This improvement came from removing that extra external request and reducing the render-blocking delay caused by the font loading.  
 ![95 performance score]({{base}}/95_score.webp)
@@ -141,7 +141,7 @@ After replacing the images, I was able to reduce their combined size from around
 
 ![Total Image size comparison]({{base}}/image_size_before_after.webp)
 
-### Results Afer Optimization:
+### Results After Optimization:
 
 To improve the performance of the portfolio, I reduced the JavaScript bundle size, self-hosted the Google Fonts, prioritized the LCP image, and optimized the image sizes. Together, these fixes improved how quickly the page started rendering and how quickly the important content loaded.
 
@@ -163,14 +163,14 @@ There was one insight called `Network Dependency Tree`. It showed that during th
 
 Even though Lighthouse marked this insight with a high severity level, I decided not to act on it. In my case, this behavior was part of how the page was built, and fixing it would have required a lot more time and effort than the other changes.
 
-Another reason I ignored it was that the maximum critical path latency was only around `300ms`. That is not nothing, compared to the other issues I had already fixed, it was not important enough to justify a bigger rewrite.
+Another reason I ignored it was that the maximum critical path latency was only around `300ms`. That is not nothing, but compared to the other issues I had already fixed, it was not important enough to justify a bigger rewrite.
 
 ## How to Keep Track of Performance Over Time
 
 Improving performance once is not enough. As you keep adding new features, images, libraries, or third-party scripts, the performance of the site can start dropping again. That is why it is important to keep checking it over time.
 
 - A simple habit is to run Lighthouse again after every major update. This can be after adding a new section, a new library, new images, or anything else that changes how the page loads. If you want to take it a step further, you can also integrate Lighthouse into your **CI/CD pipeline** and set a minimum performance threshold. That way, the build can fail automatically if the score drops below the level you want to maintain.
-- It also helps to keep a record of your scores and key metrics like **FCP**, **LCP**, and **CLS**. This makes it easier to spot regressions early. Lighthouse allows you to save the reports in mulitple formats(html, json etc.), so it makes keeping track of the scores easier.
+- It also helps to keep a record of your scores and key metrics like **FCP**, **LCP**, and **CLS**. This makes it easier to spot regressions early. Lighthouse allows you to save the reports in multiple formats (HTML, JSON, etc.), which makes it easier to keep track of the scores.
 - If your site starts getting enough traffic, start checking **PageSpeed Insights** as well. It can show you how real users are actually experiencing your website through **CrUX** data, which is something Lighthouse alone cannot give you.
 - As a more advanced step, you can also use the **web-vitals** library or analytics-based monitoring to track performance from real users directly. This gives you a better idea of how the site is behaving outside of lab tests.
 
