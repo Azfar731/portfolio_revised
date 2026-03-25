@@ -1,7 +1,6 @@
+Okay, so you’ve learned what Google Lighthouse is, how it works, and what the metrics mean. But most tutorials stop there instead of showing you how to actually improve them.
 
-Okay, so you have learned what Google Lighthouse is, how it works, and what the metrics are. But most tutorials keep telling you what the metrics are instead of showing you how to actually improve them.
-For that purpose, I am structuring this article as a case study in which I am going to optimize the performance of my own portfolio through Google Lighthouse while also highlighting what to
-focus on, what to ignore, and some useful tips for using Google Lighthouse.
+For that purpose, I am structuring this article as a case study in which I am going to optimize the performance of my own portfolio through Google Lighthouse while also highlighting what to focus on, what to ignore, and some useful tips for using Google Lighthouse.
 
 ## Prerequisite
 
@@ -17,24 +16,24 @@ Before using Lighthouse, make sure you are testing in the right environment.
 - Open the site in an incognito window before running Lighthouse. This helps avoid browser extensions interfering with the test results.
 
 > [!Tip]
-> If your website has been live for some time and gets enough traffic, PageSpeed Insights can show you how real users are actually experiencing it through Chrome UX Report (CrUX) data. This makes it useful for spotting real-world performance issues and making decisions based on actual user data.
-> At the same time, you still need to know how to read a Lighthouse report properly. PageSpeed Insights also uses Google Lighthouse, so the lab data, audits, and improvement insights are still presented in a very similar way.
+> If your website has been live for some time and gets enough traffic, [PageSpeed Insights](https://pagespeed.web.dev/) can show you how real users are actually experiencing it through Chrome UX Report (CrUX) data. This makes it useful for spotting real-world performance issues and making decisions based on actual user data.
+> At the same time, you still need to know how to analyze  a Lighthouse report properly. PageSpeed Insights also uses Google Lighthouse, so the lab data, audits, and improvement insights are still presented in a very similar way.
 
 ## How to Analyze Lighthouse Results
 
-Before getting into the case study itself, here are a few things worth keeping in mind when reading Lighthouse results.
+Before getting into the case study itself, here are a few things worth keeping in mind when analyzing Lighthouse results.
 
 - Lighthouse scores can vary from one scan to another. Sometimes the difference can even be 20 to 30 points, so do not judge your site based on a single run. Run Lighthouse around 4 to 5 times first to get a more reliable picture. You can also run it again after some time (1-2 hours) for a better overall view.
 - After fixing an issue, do not just look at the final Performance score. Go back to the **Insights** tab and check whether that insight is no longer highlighted or whether its severity has gone down. Also check the values shown next to it, such as time saved, file size, or delay, and see if they improved.
 - Some fixes may not lead to a noticeable jump in the Performance score. That does not necessarily mean the fix was useless. Some improvements are not heavily reflected in the score but they can still boost the site's overall performance.
-- You do not need to fix every single thing Lighthouse highlights. In some cases, a flagged item may just be part of how your site is built, and changing it may not be worth the effort unless it is something causing major issues.
+- You do not need to fix every single thing Lighthouse highlights. In some cases, a flagged item may just be part of how your site is built, and changing it may not be worth the effort unless it is causing major issues.
 - A good place to start is the insights with the highest warning level. The red ones usually deserve attention first because they tend to have the biggest impact. The yellow ones are worth considering too, especially when the fix is small and easy to apply.
 
 ![Lighthouse Severity Levels|491]({{base}}/severity_levels.webp)
 
 ## How I Optimized My Portfolio
 
-Up to this point, I have covered the setup and the things to keep in mind while reading Lighthouse results. Now it is time for the practical part, where I go through my own portfolio step by step and show what I fixed, what I ignored, and why.
+Up to this point, I have covered the setup and the things to keep in mind while analyzing Lighthouse results. Now it is time for the practical part, where I go through my own portfolio step by step and show what I fixed, what I ignored, and why.
 
 ### Pre-Optimization Results
 
@@ -156,11 +155,11 @@ Another reason I ignored it was that the maximum critical path latency was only 
 
 Improving performance once is not enough. As you keep adding new features, images, libraries, or third-party scripts, the performance of the site can start dropping again. That is why it is important to keep checking it over time.
 
-- A simple habit is to run Lighthouse again after every major update. This can be after adding a new section, a new library, new images, or anything else that changes how the page loads. If you want to take it a step further, you can also integrate Lighthouse into your **CI/CD pipeline** and set a minimum performance threshold. That way, the build can fail automatically if the score drops below the level you want to maintain.
+- A simple habit is to run Lighthouse again after every major update. This can be after adding a new section, a new library, new images, or anything else that changes how the page loads. If you want to take it a step further, you can also integrate Lighthouse into your **CI/CD pipeline** and set a minimum performance threshold. That way, the build will fail automatically if the score drops below the level you want to maintain.
 - It also helps to keep a record of your scores and key metrics like **FCP**, **LCP**, and **CLS**. This makes it easier to spot regressions early. Lighthouse allows you to save the reports in multiple formats (HTML, JSON, etc.), which makes it easier to keep track of the scores.
-- If your site starts getting enough traffic, start checking **PageSpeed Insights** as well. It can show you how real users are actually experiencing your website through **CrUX** data, which is something Lighthouse alone cannot give you.
+- If your site starts getting enough traffic, start checking **PageSpeed Insights** as well. It can show you how real users are actually experiencing your website through **CrUX** data. This functionality has also been integrated into Chrome Dev Tools under the Performance tab.
 - As a more advanced step, you can also use the **web-vitals** library or analytics-based monitoring to track performance from real users directly. This gives you a better idea of how the site is behaving outside of lab tests.
 
 ## Conclusion
 
-In the end, the goal is not to chase a perfect score every single time. The real goal is to understand what is slowing your site down. Once you know how to read Lighthouse properly, it becomes much easier to decide what to fix, what to ignore, and how to keep the site fast over time.
+In the end, the goal is not to chase a perfect score every single time. The real goal is to understand what is slowing your site down. Once you know how to analyze Lighthouse report properly, it becomes much easier to decide what to fix, what to ignore, and how to keep the site fast over time.
