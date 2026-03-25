@@ -2,7 +2,7 @@
 import type { Route } from "./+types/blog";
 import { useEffect, useRef, useState } from "react";
 import Markdown from "react-markdown";
-
+import remarkGfm from "remark-gfm";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import "./blog.css";
@@ -37,7 +37,6 @@ const allJsonModules = import.meta.glob("/app/content/blogs/all.json", {
 
 const allArticles = Object.values(allJsonModules)[0] ?? [];
 
-
 export async function loader({ params }: Route.LoaderArgs) {
   const { slug } = params;
 
@@ -66,7 +65,6 @@ export async function loader({ params }: Route.LoaderArgs) {
     const rawMarkdown = await loadMarkdown();
 
     // Keeps compatibility if your markdown files still contain frontmatter
-   
 
     const article: Article = {
       title: matchedArticle.title,
@@ -153,6 +151,7 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
       <div id="article-body" className="w-full max-w-3xl mx-auto text-white">
         <div className="px-4 py-8 space-y-4 leading-relaxed text-lg prose prose-invert">
           <Markdown
+            remarkPlugins={[remarkGfm]}
             components={{
               h1: ({ node, ...props }) => (
                 <h1 className="text-4xl font-bold" {...props} />
@@ -195,6 +194,34 @@ export default function BlogPost({ loaderData }: Route.ComponentProps) {
               img: ({ node, ...props }) => (
                 <img {...props} loading="lazy" fetchPriority="low" />
               ),
+
+              table: ({ node, ...props }) => (
+                <div className="my-6 overflow-x-auto">
+                  <table
+                    className="w-full border-collapse border border-gray-600 text-left"
+                    {...props}
+                  />
+                </div>
+              ),
+              thead: ({ node, ...props }) => (
+                <thead className="bg-gray-800" {...props} />
+              ),
+              th: ({ node, ...props }) => (
+                <th
+                  className="border border-gray-600 px-4 py-2 font-semibold"
+                  {...props}
+                />
+              ),
+              td: ({ node, ...props }) => (
+                <td
+                  className="border border-gray-600 px-4 py-2 align-top"
+                  {...props}
+                />
+              ),
+              tr: ({ node, ...props }) => (
+                <tr className="border-b border-gray-600" {...props} />
+              ),
+
               code({ node, inline, className, children, ...props }: any) {
                 const match = /language-(\w+)/.exec(className || "");
                 return !inline && match ? (
