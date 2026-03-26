@@ -8,8 +8,16 @@
     <loc>https://azfar-razzaq.vercel.app/blogs</loc>
     <lastmod>2026-03-02</lastmod>
   </url>
-   <url>
+  <url>
     <loc>https://azfar-razzaq.vercel.app/blogs/creating-a-multi-part-form-easily-with-react-router-no-third-party-libraries-203e</loc>
     <lastmod>2026-03-02</lastmod>
+  </url>
+  <url>
+    <loc>https://azfar-razzaq.vercel.app/blogs/how-i-improved-my-portfolio-performance-with-lighthouse</loc>
+    <lastmod>2026-03-26</lastmod>
+  </url>
+  <url>
+    <loc>https://azfar-razzaq.vercel.app/blogs/react-router-now-supports-contextual-routing-with-link-unstable-mask</loc>
+    <lastmod>2026-03-26</lastmod>
   </url>
 </urlset>

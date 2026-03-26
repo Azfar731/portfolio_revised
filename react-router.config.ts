@@ -1,28 +1,24 @@
 import type { Config } from "@react-router/dev/config";
-
+import blogsData from "./app/content/blogs/all.json";
 // Async function to get blog slugs
-async function getBlogSlugs(): Promise<string[]> {
-  try {
-    const res = await fetch("https://dev.to/api/articles?username=azfar731");
-    if (!res.ok) throw new Error("Failed to fetch articles");
-    const data = await res.json();
-    return data.map((article: any) => `/blogs/${article.slug}`);
-  } catch (err) {
-    // console.error("Error fetching blog slugs:", err);
-    return []; // Return empty if error
-  }
-}
+//get blog slugs from /app/content/blogs/all.json
 
-const slugs = [ "how-i-improved-my-portfolio-performance-with-lighthouse"]
+const getBlogSlugs = () => {
+  return blogsData.map((article) => `/blogs/${article.slug}`);
+};
 
-const blogRoutes = slugs.map((slug) => `/blogs/${slug}`)
+// const slugs = [
+//   "how-i-improved-my-portfolio-performance-with-lighthouse",
+//   "creating-a-multi-part-form-easily-with-react-router-no-third-party-libraries",
+// ];
+
+// const blogRoutes = getBlogSlugs().map((slug) => `/blogs/${slug}`);
 
 export default {
   // Config options...
   // Server-side render by default, to enable SPA mode set this to `false`
   ssr: false,
   async prerender() {
-    // const blogRoutes = await getBlogSlugs();
-    return ["/", "/blogs", ...blogRoutes];
+    return ["/", "/blogs", ...getBlogSlugs()];
   },
 } satisfies Config;
