@@ -15,8 +15,8 @@ export default function Introduction({
 }) {
   return (
     <div id="intro">
-      <div id="introTopLeftGradient" className="radialGradient"></div>
-      <div id="introRightGradient" className="radialGradient"></div>
+      {/* <div id="introTopLeftGradient" className="radialGradient"></div> */}
+      {/* <div id="introRightGradient" className="radialGradient"></div> */}
       <div className="introduction-content-container">
         <Nav name={name} />
         <IntroContent introContent={introContent} />

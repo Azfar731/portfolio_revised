@@ -10,11 +10,11 @@ export default function LinkContainers() {
       name: "Stack Overflow",
       link: "https://stackoverflow.com/users/26767975/azfar-razzaq",
     },
-    {
-      icon: <FaLinkedin className="site-icons" />,
-      name: "LinkedIn",
-      link: "https://www.linkedin.com/in/azfar-razzaq/",
-    },
+    // {
+    //   icon: <FaLinkedin className="site-icons" />,
+    //   name: "LinkedIn",
+    //   link: "https://www.linkedin.com/in/azfar-razzaq/",
+    // },
     {
       icon: <FaGithub className="site-icons" />,
       name: "GitHub",

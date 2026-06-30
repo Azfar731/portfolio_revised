@@ -5,9 +5,17 @@ import type { IconType } from "react-icons";
 
 const projectsData = [
   {
+    title: "Ameeraz Beauty Saloon",
+    project_image: "ameerazsaloon.webp",
+    project_url: "https://ameerazbeautysalon.com/",
+    project_description:
+      "A website for Ameeraz Beauty Saloon, operating in Lahore, Pakistan.",
+    tech_icons: ["fa6:FaReact", "si:SiTypescript", "fa6:FaNode"],
+  },
+  {
     title: "Khalil&Khalil",
     project_image: "KhalilandKhalil.webp",
-    project_url: "https://www.khalilandkhalil.com/",
+    project_url: "https://khalil-and-khalil.vercel.app/",
     project_description:
       "A website for Khalil&Khalil law firm, operating in mulitple cities of Pakistan.",
     tech_icons: ["fa6:FaReact", "si:SiJavascript", "fa6:FaNode"],
